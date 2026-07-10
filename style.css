@@ -1983,3 +1983,39 @@ body {
     margin-top: 24px !important;
   }
 }
+
+
+/* ===== Aligned BIM project cards ===== */
+.bim-model-card-grid {
+  align-items: stretch;
+}
+
+.bim-model-card-grid .category-project {
+  display: grid !important;
+  grid-template-rows: auto 1fr auto;
+  align-content: stretch;
+}
+
+.bim-model-card-grid .category-project h3 {
+  min-height: 2.25em;
+  margin: 0 0 16px !important;
+  line-height: 1.12;
+}
+
+.bim-model-card-grid .category-project p {
+  align-self: start;
+  margin: 0 !important;
+}
+
+.bim-model-card-grid .category-project .project-status {
+  align-self: end;
+  margin-top: 28px !important;
+  padding-top: 0 !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 760px) {
+  .bim-model-card-grid .category-project h3 {
+    min-height: 0;
+  }
+}
