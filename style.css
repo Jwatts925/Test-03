@@ -284,15 +284,35 @@ h1 {
 }
 .role-heading p { margin: 6px 0 0; color: var(--ink-soft); font-weight: 600; }
 .role-heading > span { color: var(--ink-soft); font-size: 0.86rem; text-align: right; }
-.timeline-card ul { margin: 28px 0 0; padding-left: 20px; color: var(--ink-soft); }
+.timeline-body {
+  margin-top: 28px;
+}
+.timeline-body.has-logo {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+.timeline-inline-logo {
+  width: 68px;
+  height: auto;
+  margin-top: 4px;
+}
+.timeline-card ul { margin: 0; padding-left: 20px; color: var(--ink-soft); }
 .timeline-card li + li { margin-top: 12px; }
 
 .section-dark .eyebrow { color: #ef8a65; }
+.experience-capabilities {
+  margin-top: 26px;
+}
 .capability-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 64px;
+}
+.capability-grid-merged {
+  margin-top: 28px;
 }
 .capability-card {
   min-height: 320px;
@@ -471,6 +491,29 @@ h1 {
   box-shadow: none;
 }
 
+#experience.section-dark .experience-capabilities {
+  scroll-margin-top: 110px;
+}
+
+#experience.section-dark .capability-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.11);
+}
+
+#experience.section-dark .capability-card h3,
+#experience.section-dark .skills-wrap h3 {
+  color: var(--white);
+}
+
+#experience.section-dark .capability-card p {
+  color: #c4cdd1;
+}
+
+#experience.section-dark .tag-list span {
+  background: rgba(255,255,255,0.07);
+  color: #dce2e4;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
@@ -489,6 +532,8 @@ h1 {
   .capability-grid { grid-template-columns: 1fr 1fr; }
   .project-grid { grid-template-columns: 1fr 1fr; }
   .timeline-item { grid-template-columns: 135px 1fr; }
+  .timeline-body.has-logo { grid-template-columns: 60px 1fr; gap: 18px; }
+  .capability-grid-merged { margin-top: 18px; }
 }
 
 @media (max-width: 760px) {
@@ -524,6 +569,8 @@ h1 {
   .timeline-item { grid-template-columns: 1fr; gap: 14px; }
   .role-heading { flex-direction: column; }
   .role-heading > span { text-align: left; }
+  .timeline-body.has-logo { grid-template-columns: 1fr; gap: 16px; }
+  .timeline-inline-logo { width: 72px; }
   .capability-grid, .skills-wrap, .project-grid { grid-template-columns: 1fr; }
   .capability-card { min-height: 270px; }
   .about-photo-shell { padding: 18px; }
