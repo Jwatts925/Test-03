@@ -1835,3 +1835,30 @@ body {
     gap: 14px;
   }
 }
+
+
+/* ===== BIM models page cleanup ===== */
+.bim-pdf-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 22px;
+}
+
+.bim-pdf-status,
+.bim-pdf-page-label {
+  display: none !important;
+}
+
+.category-project .project-number {
+  display: none !important;
+}
+
+.category-project h3 {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .bim-pdf-actions {
+    justify-content: flex-start;
+  }
+}
