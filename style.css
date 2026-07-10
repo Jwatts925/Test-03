@@ -1939,3 +1939,47 @@ body {
     gap: 14px;
   }
 }
+
+
+/* ===== Tightened BIM cards + reordered sheets/navigation ===== */
+.category-work-grid {
+  margin-top: 34px !important;
+}
+
+.category-project {
+  min-height: 0 !important;
+  padding: 26px !important;
+}
+
+.category-project h3 {
+  margin: 0 0 14px !important;
+}
+
+.category-project .project-status {
+  margin-top: 24px !important;
+  padding-top: 0 !important;
+}
+
+.bim-sheet-gallery {
+  margin-top: 34px !important;
+}
+
+.category-navigation {
+  margin-top: 34px !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .category-work-grid {
+    margin-top: 26px !important;
+  }
+
+  .category-project {
+    padding: 22px !important;
+  }
+
+  .bim-sheet-gallery,
+  .category-navigation {
+    margin-top: 24px !important;
+  }
+}
