@@ -1682,3 +1682,156 @@ body {
     margin-top: 18px;
   }
 }
+
+
+/* ===== Clean single-PDF BIM portfolio viewer ===== */
+.bim-pdf-portfolio {
+  margin-top: 86px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(63, 96, 177, 0.20);
+}
+
+.bim-pdf-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 36px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.bim-pdf-heading h2 {
+  max-width: 900px;
+  margin: 0;
+  color: #3f60b1 !important;
+  font-size: clamp(2.4rem, 4.8vw, 5rem);
+  line-height: 1;
+}
+
+.bim-pdf-open {
+  color: #ffffff;
+  background: #ff8a5b;
+  border-color: #ff8a5b;
+}
+
+.bim-pdf-open:hover,
+.bim-pdf-open:focus-visible {
+  color: #3f60b1;
+  background: #f2f230;
+  border-color: #f2f230;
+}
+
+.bim-pdf-viewer {
+  position: relative;
+  min-height: 360px;
+}
+
+.bim-pdf-status {
+  position: sticky;
+  top: 92px;
+  z-index: 20;
+  display: flex;
+  width: max-content;
+  align-items: baseline;
+  gap: 7px;
+  margin: 0 14px -45px auto;
+  padding: 10px 14px;
+  color: #ffffff;
+  background: rgba(63, 96, 177, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 10px 26px rgba(24, 40, 82, 0.20);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+}
+
+.bim-pdf-status span {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bim-pdf-status strong {
+  color: #f2f230;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+}
+
+.bim-pdf-loading {
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  color: rgba(63, 96, 177, 0.72);
+  background: rgba(210, 215, 223, 0.34);
+  border: 1px solid rgba(63, 96, 177, 0.16);
+  font-weight: 600;
+}
+
+.bim-pdf-pages {
+  display: grid;
+  gap: 24px;
+}
+
+.bim-pdf-page {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(63, 96, 177, 0.16);
+  box-shadow: 0 20px 48px rgba(38, 58, 110, 0.14);
+  scroll-margin-top: 118px;
+}
+
+.bim-pdf-page canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+}
+
+.bim-pdf-page-label {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 14px;
+  color: #ff8a5b;
+  background: #ffffff;
+  border-top: 1px solid rgba(63, 96, 177, 0.12);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bim-pdf-fallback {
+  min-height: 280px;
+  padding: 50px 24px;
+  text-align: center;
+  background: rgba(210, 215, 223, 0.34);
+  border: 1px solid rgba(63, 96, 177, 0.16);
+}
+
+.bim-pdf-fallback p {
+  margin: 0 0 20px;
+  color: #3f60b1 !important;
+}
+
+@media (max-width: 760px) {
+  .bim-pdf-heading {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .bim-pdf-open {
+    width: max-content;
+  }
+
+  .bim-pdf-status {
+    top: 76px;
+    margin-right: 8px;
+    margin-bottom: -42px;
+    padding: 8px 11px;
+  }
+
+  .bim-pdf-pages {
+    gap: 14px;
+  }
+}

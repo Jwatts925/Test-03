@@ -62,3 +62,14 @@ The source PDF remains available at:
 The rendered pages are stored in:
 
 `assets/bim-portfolio-pages/`
+
+
+## BIM Master Pages PDF viewer
+
+The BIM & Coordination page now loads a single PDF:
+
+`assets/bim-masterpages.pdf`
+
+The viewer is rendered with `pdf-viewer.js` and does not require the former
+`assets/bim-portfolio-pages/` image folder. It includes a clean scrolling
+layout, page counter, and Open PDF fallback button.

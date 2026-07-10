@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+  <script type="module" src="pdf-viewer.js"></script>
 </head>
 <body class="category-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -88,6 +89,55 @@
           <a href="documentation.html">Documentation</a>
           <a href="visualization.html">Visualization</a>
         </nav>
+
+        <section class="bim-pdf-portfolio" aria-labelledby="bim-pdf-title">
+          <div class="bim-pdf-heading">
+            <div>
+              <p class="eyebrow">Project Portfolio</p>
+              <h2 id="bim-pdf-title">BIM project overview</h2>
+            </div>
+
+            <a
+              class="button bim-pdf-open"
+              href="assets/bim-masterpages.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Open PDF ↗
+            </a>
+          </div>
+
+          <div
+            class="bim-pdf-viewer"
+            data-pdf-viewer
+            data-pdf-src="assets/bim-masterpages.pdf"
+          >
+            <div class="bim-pdf-status" aria-live="polite">
+              <span>Page</span>
+              <strong id="bim-pdf-current-page">01</strong>
+              <span>/ <span id="bim-pdf-total-pages">02</span></span>
+            </div>
+
+            <div class="bim-pdf-loading" id="bim-pdf-loading">
+              Loading portfolio…
+            </div>
+
+            <div class="bim-pdf-pages" id="bim-pdf-pages"></div>
+
+            <div class="bim-pdf-fallback" id="bim-pdf-fallback" hidden>
+              <p>The inline viewer could not load.</p>
+              <a
+                class="button"
+                href="assets/bim-masterpages.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Open the PDF ↗
+              </a>
+            </div>
+          </div>
+        </section>
+
       </div>
     </section>
 
