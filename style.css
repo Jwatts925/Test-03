@@ -2485,3 +2485,31 @@ body {
     margin: 0 !important;
   }
 }
+
+
+/* ===== Capabilities heading + lower divider ===== */
+.capabilities-heading {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.capabilities-heading .eyebrow {
+  color: #f2e53b;
+}
+
+.skills-wrap-dark {
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  padding-bottom: 28px;
+  margin-bottom: 34px;
+}
+
+@media (max-width: 760px) {
+  .capabilities-heading {
+    margin-bottom: 14px;
+  }
+
+  .skills-wrap-dark {
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+  }
+}
