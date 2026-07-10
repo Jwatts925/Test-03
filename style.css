@@ -2234,3 +2234,122 @@ body {
     width: 112px;
   }
 }
+
+
+/* ===== Consistent company-logo sizing and company locations ===== */
+.timeline-item-company {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 38px;
+  row-gap: 0;
+}
+
+.timeline-item-company .timeline-side,
+.timeline-item-company .timeline-card {
+  display: contents;
+}
+
+.timeline-item-company .timeline-date {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.timeline-item-company .role-heading {
+  grid-column: 2;
+  grid-row: 1;
+  padding-bottom: 28px;
+}
+
+.timeline-item-company .timeline-body {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 0;
+}
+
+.timeline-item-company .timeline-company-logo {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  width: auto !important;
+  max-width: 96px;
+  max-height: 96px;
+  margin: 0 !important;
+  object-fit: contain;
+}
+
+.timeline-item-company .timeline-company-logo--wide {
+  max-width: 112px;
+  max-height: 72px;
+}
+
+.timeline-item-company .timeline-company-logo--arup {
+  max-width: 112px;
+  max-height: 54px;
+}
+
+.role-heading p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.38em;
+}
+
+.company-location {
+  color: inherit;
+  font-size: 0.92em;
+  font-weight: 500;
+  opacity: 0.82;
+}
+
+@media (max-width: 980px) {
+  .timeline-item-company {
+    grid-template-columns: 135px minmax(0, 1fr);
+  }
+
+  .timeline-item-company .timeline-company-logo {
+    max-width: 82px;
+    max-height: 82px;
+  }
+
+  .timeline-item-company .timeline-company-logo--wide {
+    max-width: 98px;
+    max-height: 64px;
+  }
+
+  .timeline-item-company .timeline-company-logo--arup {
+    max-width: 98px;
+    max-height: 48px;
+  }
+}
+
+@media (max-width: 760px) {
+  .timeline-item-company {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 14px;
+  }
+
+  .timeline-item-company .timeline-side,
+  .timeline-item-company .timeline-card {
+    display: block;
+  }
+
+  .timeline-item-company .role-heading {
+    padding-bottom: 0;
+  }
+
+  .timeline-item-company .timeline-company-logo,
+  .timeline-item-company .timeline-company-logo--wide,
+  .timeline-item-company .timeline-company-logo--arup {
+    width: auto !important;
+    max-width: 112px;
+    max-height: 74px;
+    margin: 18px 0 0 !important;
+  }
+
+  .timeline-item-company .timeline-body {
+    margin-top: 28px;
+  }
+}
