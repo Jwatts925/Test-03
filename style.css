@@ -1862,3 +1862,43 @@ body {
     justify-content: flex-start;
   }
 }
+
+
+/* ===== Reliable native BIM PDF viewer ===== */
+.bim-native-pdf-shell {
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(63, 96, 177, 0.16);
+  box-shadow: 0 20px 48px rgba(38, 58, 110, 0.14);
+}
+
+.bim-native-pdf {
+  display: block;
+  width: 100%;
+  height: min(82vh, 1040px);
+  min-height: 680px;
+  background: #ffffff;
+  border: 0;
+}
+
+.bim-native-pdf-fallback {
+  margin: 0;
+  padding: 13px 16px;
+  color: rgba(63, 96, 177, 0.72) !important;
+  background: #ffffff;
+  border-top: 1px solid rgba(63, 96, 177, 0.12);
+  font-size: 0.86rem;
+  text-align: right;
+}
+
+.bim-native-pdf-fallback a {
+  color: #ff8a5b;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .bim-native-pdf {
+    height: 72vh;
+    min-height: 520px;
+  }
+}

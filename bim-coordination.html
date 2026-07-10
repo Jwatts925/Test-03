@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
-  <script type="module" src="pdf-viewer.js"></script>
 </head>
 <body class="category-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -99,31 +98,23 @@
             </a>
           </div>
 
-          <div
-            class="bim-pdf-viewer"
-            data-pdf-viewer
-            data-pdf-src="assets/bim-masterpages.pdf"
-          >
+          <div class="bim-native-pdf-shell">
+            <iframe
+              class="bim-native-pdf"
+              src="assets/bim-masterpages.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH"
+              title="Selected BIM models portfolio"
+              loading="lazy"
+            ></iframe>
 
-            <div class="bim-pdf-loading" id="bim-pdf-loading">
-              Loading portfolio…
-            </div>
-
-            <div class="bim-pdf-pages" id="bim-pdf-pages"></div>
-
-            <div class="bim-pdf-fallback" id="bim-pdf-fallback" hidden>
-              <p>The inline viewer could not load.</p>
-              <a
-                class="button"
-                href="assets/bim-masterpages.pdf"
-                target="_blank"
-                rel="noopener"
-              >
-                Open the PDF ↗
+            <p class="bim-native-pdf-fallback">
+              The PDF is not appearing?
+              <a href="assets/bim-masterpages.pdf" target="_blank" rel="noopener">
+                Open it in a new tab ↗
               </a>
-            </div>
+            </p>
           </div>
         </section>
+
 
       </div>
     </section>
