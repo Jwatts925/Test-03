@@ -2210,3 +2210,27 @@ body {
     margin-top: 28px;
   }
 }
+
+
+/* ===== Additional company logos in experience timeline ===== */
+.timeline-company-logo--wide {
+  width: 120px;
+}
+
+.timeline-company-logo--arup {
+  width: 118px;
+}
+
+@media (max-width: 980px) {
+  .timeline-company-logo--wide,
+  .timeline-company-logo--arup {
+    width: 102px;
+  }
+}
+
+@media (max-width: 760px) {
+  .timeline-company-logo--wide,
+  .timeline-company-logo--arup {
+    width: 112px;
+  }
+}
