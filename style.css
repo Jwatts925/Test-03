@@ -1954,27 +1954,28 @@ body {
 /* ===== Full-width BIM sheets ===== */
 .bim-sheet-gallery {
   margin-top: 72px;
+  background: transparent;
 }
 
 .bim-sheet-list {
   display: grid;
-  gap: 24px;
+  gap: 18px;
 }
 
 .bim-sheet {
   width: 100%;
   margin: 0;
   overflow: hidden;
-  background: #ffffff;
-  border: 1px solid rgba(63, 96, 177, 0.16);
-  box-shadow: 0 18px 46px rgba(38, 58, 110, 0.13);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .bim-sheet img {
   display: block;
   width: 100%;
   height: auto;
-  background: #ffffff;
+  background: var(--paper);
 }
 
 @media (max-width: 760px) {
@@ -2009,6 +2010,7 @@ body {
 
 .bim-sheet-gallery {
   margin-top: 34px !important;
+  background: transparent !important;
 }
 
 .category-navigation {
