@@ -84,3 +84,45 @@ if (portfolioReader && portfolioPages.length && portfolioCurrentPage) {
   window.addEventListener('scroll', requestPortfolioUpdate, { passive: true });
   window.addEventListener('resize', requestPortfolioUpdate);
 }
+
+
+// Require an intentional click before the embedded IFC viewer captures the mouse wheel.
+document.querySelectorAll('[data-ifc-interaction]').forEach((frame) => {
+  const gate = frame.querySelector('.ifc-interaction-gate');
+  const iframe = frame.querySelector('iframe');
+
+  if (!gate || !iframe) return;
+
+  const activateViewer = () => {
+    frame.classList.add('is-active');
+    gate.hidden = true;
+    iframe.setAttribute('tabindex', '0');
+    iframe.focus();
+  };
+
+  const deactivateViewer = () => {
+    frame.classList.remove('is-active');
+    gate.hidden = false;
+    iframe.setAttribute('tabindex', '-1');
+  };
+
+  gate.addEventListener('click', activateViewer);
+
+  // Release the viewer as soon as the pointer leaves it, so page scrolling resumes.
+  frame.addEventListener('mouseleave', () => {
+    if (frame.classList.contains('is-active')) deactivateViewer();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && frame.classList.contains('is-active')) {
+      deactivateViewer();
+      gate.focus();
+    }
+  });
+
+  document.addEventListener('pointerdown', (event) => {
+    if (frame.classList.contains('is-active') && !frame.contains(event.target)) {
+      deactivateViewer();
+    }
+  });
+});
