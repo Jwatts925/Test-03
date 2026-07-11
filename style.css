@@ -2570,3 +2570,205 @@ body {
     margin-top: 18px !important;
   }
 }
+
+
+/* ===== Compact Education + simplified Experience ===== */
+
+/* EDUCATION: remove row lines and tighten the entire section. */
+#education.section {
+  padding-top: 58px !important;
+  padding-bottom: 58px !important;
+}
+
+#education .split-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto auto auto auto;
+  column-gap: 84px;
+  row-gap: 0;
+  align-items: start !important;
+}
+
+#education .section-heading,
+#education .education-card,
+#education .education-school {
+  display: contents;
+}
+
+#education .section-heading .eyebrow {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  margin: 0 0 26px;
+}
+
+#education .education-years {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+#education .education-school-line {
+  display: block;
+  color: #3f60b1;
+  font-size: clamp(3rem, 5.4vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1.06;
+}
+
+#education .education-school-line:first-child {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#education .education-school-line:last-child {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#education .education-card h3 {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+#education .education-card p:last-child {
+  grid-column: 2;
+  grid-row: 4;
+  margin: 22px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+#education .education-card > *,
+#education.section-light .education-card > * {
+  border: 0 !important;
+  background: transparent !important;
+}
+
+/* EXPERIENCE: remove the sentence and place jobs directly below the label. */
+#experience.section {
+  padding-top: 62px !important;
+}
+
+#experience .experience-heading {
+  margin: 0;
+}
+
+#experience .experience-heading .eyebrow {
+  margin-bottom: 0;
+}
+
+#experience .timeline {
+  margin-top: 14px !important;
+}
+
+#experience .timeline-item:first-child {
+  border-top: 0 !important;
+  padding-top: 18px !important;
+}
+
+/* Dates now occupy the far-right side of each job heading. */
+.timeline-item-company .timeline-side {
+  display: contents;
+}
+
+.timeline-item-company .role-heading {
+  display: flex !important;
+  grid-column: 2;
+  grid-row: 1;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  padding-bottom: 28px;
+}
+
+.timeline-item-company .role-heading > div:first-child {
+  min-width: 0;
+}
+
+.timeline-item-company .role-heading > .timeline-date {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: #ff8a5b !important;
+  white-space: nowrap;
+  text-align: right;
+  line-height: 1.25;
+}
+
+.timeline-item-company > .timeline-side > .timeline-date {
+  display: none !important;
+}
+
+@media (max-width: 980px) {
+  #education .split-layout {
+    column-gap: 48px;
+  }
+
+  .timeline-item-company .role-heading {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  #education.section {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+
+  #education .split-layout {
+    display: block !important;
+  }
+
+  #education .section-heading,
+  #education .education-card,
+  #education .education-school {
+    display: block;
+  }
+
+  #education .education-school-line {
+    font-size: clamp(2.7rem, 13vw, 4.4rem);
+  }
+
+  #education .education-years {
+    margin-top: 28px !important;
+  }
+
+  #education .education-card h3 {
+    margin-top: 24px !important;
+  }
+
+  #education .education-card p:last-child {
+    margin-top: 14px !important;
+  }
+
+  #experience.section {
+    padding-top: 46px !important;
+  }
+
+  #experience .timeline {
+    margin-top: 8px !important;
+  }
+
+  .timeline-item-company .role-heading {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 0;
+  }
+
+  .timeline-item-company .role-heading > .timeline-date {
+    order: -1;
+    align-self: flex-end;
+    margin-left: 0;
+    white-space: nowrap;
+  }
+}
