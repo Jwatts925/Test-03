@@ -2772,3 +2772,49 @@ body {
     white-space: nowrap;
   }
 }
+
+
+/* ===== Visualization capability-card image ===== */
+.visualization-capability-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.visualization-capability-card .capability-card-visual {
+  display: grid;
+  width: 100%;
+  min-height: 98px;
+  margin: 16px 0 15px;
+  place-items: center;
+}
+
+.visualization-capability-card .capability-card-visual img {
+  width: 100%;
+  height: 98px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.capability-grid-merged .visualization-capability-card h3 {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 980px) {
+  .visualization-capability-card .capability-card-visual,
+  .visualization-capability-card .capability-card-visual img {
+    height: 88px;
+    min-height: 88px;
+  }
+}
+
+@media (max-width: 760px) {
+  .visualization-capability-card .capability-card-visual {
+    margin-top: 18px;
+  }
+
+  .visualization-capability-card .capability-card-visual,
+  .visualization-capability-card .capability-card-visual img {
+    height: 120px;
+    min-height: 120px;
+  }
+}
