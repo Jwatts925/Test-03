@@ -86,30 +86,164 @@ if (portfolioReader && portfolioPages.length && portfolioCurrentPage) {
 }
 
 
-// Each IFC viewer captures orbit/zoom only after its top-left toggle is clicked.
+// Click the model itself to activate it. A second stationary click releases it.
 document.querySelectorAll('[data-ifc-interaction]').forEach((frame) => {
-  const toggle = frame.querySelector('.ifc-interaction-toggle');
+  const surface = frame.querySelector('.ifc-interaction-surface');
   const iframe = frame.querySelector('iframe');
 
-  if (!toggle || !iframe) return;
+  if (!surface || !iframe) return;
+
+  let iframeEventsAttached = false;
+  let pointerStart = null;
+  let fitTimer = null;
+
+  const clickFitButton = () => {
+    try {
+      const iframeDocument = iframe.contentDocument;
+      const fitButton = iframeDocument?.getElementById('fit-model');
+
+      if (fitButton) {
+        fitButton.click();
+        return true;
+      }
+    } catch (error) {
+      console.warn('Unable to access IFC fit control yet.', error);
+    }
+
+    return false;
+  };
+
+  const fitWhenReady = () => {
+    window.clearInterval(fitTimer);
+
+    let attempts = 0;
+    fitTimer = window.setInterval(() => {
+      attempts += 1;
+
+      try {
+        const iframeDocument = iframe.contentDocument;
+        const loadingPanel = iframeDocument?.getElementById('viewer-loading');
+        const modelIsReady =
+          loadingPanel &&
+          loadingPanel.classList.contains('is-hidden');
+
+        if (modelIsReady && clickFitButton()) {
+          window.clearInterval(fitTimer);
+        } else if (attempts >= 120) {
+          // Stop polling after roughly 30 seconds.
+          window.clearInterval(fitTimer);
+        }
+      } catch (error) {
+        if (attempts >= 120) {
+          window.clearInterval(fitTimer);
+        }
+      }
+    }, 250);
+  };
 
   const setActive = (active) => {
     frame.classList.toggle('is-active', active);
-    toggle.setAttribute('aria-pressed', String(active));
-    toggle.textContent = active ? 'Click to scroll' : 'Click to interact';
+    surface.setAttribute('aria-pressed', String(active));
     iframe.setAttribute('tabindex', active ? '0' : '-1');
 
-    if (active) iframe.focus();
+    if (active) {
+      iframe.focus();
+      window.setTimeout(clickFitButton, 80);
+    }
   };
 
-  toggle.addEventListener('click', () => {
-    setActive(!frame.classList.contains('is-active'));
+  const attachIframeEvents = () => {
+    if (iframeEventsAttached) return;
+
+    try {
+      const iframeDocument = iframe.contentDocument;
+      if (!iframeDocument) return;
+
+      iframeEventsAttached = true;
+
+      iframeDocument.addEventListener(
+        'pointerdown',
+        (event) => {
+          pointerStart = {
+            x: event.clientX,
+            y: event.clientY,
+            target: event.target,
+          };
+        },
+        true
+      );
+
+      iframeDocument.addEventListener(
+        'pointerup',
+        (event) => {
+          if (!frame.classList.contains('is-active') || !pointerStart) return;
+
+          const distance = Math.hypot(
+            event.clientX - pointerStart.x,
+            event.clientY - pointerStart.y
+          );
+
+          const target =
+            event.target instanceof Element ? event.target : null;
+          const clickedViewerControl = target?.closest('button');
+
+          // A normal click releases the viewer. Dragging still orbits normally.
+          if (distance < 6 && !clickedViewerControl) {
+            setActive(false);
+          }
+
+          pointerStart = null;
+        },
+        true
+      );
+
+      iframeDocument.addEventListener('fullscreenchange', () => {
+        window.setTimeout(clickFitButton, 250);
+      });
+    } catch (error) {
+      console.warn('Unable to attach IFC interaction events.', error);
+    }
+  };
+
+  surface.addEventListener('click', () => {
+    setActive(true);
+  });
+
+  iframe.addEventListener('load', () => {
+    attachIframeEvents();
+    fitWhenReady();
   });
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && frame.classList.contains('is-active')) {
       setActive(false);
-      toggle.focus();
+      surface.focus();
     }
   });
+
+  document.addEventListener('pointerdown', (event) => {
+    if (
+      frame.classList.contains('is-active') &&
+      !frame.contains(event.target)
+    ) {
+      setActive(false);
+    }
+  });
+
+  // Keep the model framed correctly when the page or device size changes.
+  let resizeTimeout = null;
+  window.addEventListener(
+    'resize',
+    () => {
+      window.clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(clickFitButton, 180);
+    },
+    { passive: true }
+  );
+
+  // Handle an iframe that may already be loaded from browser cache.
+  if (iframe.contentDocument?.readyState === 'complete') {
+    attachIframeEvents();
+    fitWhenReady();
+  }
 });
