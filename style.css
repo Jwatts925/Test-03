@@ -2515,3 +2515,17 @@ body {
     margin-bottom: 28px;
   }
 }
+
+
+/* ===== Skills naming + sticky-header anchor positioning ===== */
+#skills,
+#work {
+  scroll-margin-top: 76px;
+}
+
+@media (max-width: 760px) {
+  #skills,
+  #work {
+    scroll-margin-top: 76px;
+  }
+}
