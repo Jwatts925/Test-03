@@ -3282,3 +3282,18 @@ body {
     min-height: 480px;
   }
 }
+
+
+/* ===== Larger white embedded IFC viewer ===== */
+.ifc-demo-frame {
+  height: min(86vh, 980px) !important;
+  min-height: 720px !important;
+  background: #ffffff !important;
+}
+
+@media (max-width: 760px) {
+  .ifc-demo-frame {
+    height: 76vh !important;
+    min-height: 560px !important;
+  }
+}
