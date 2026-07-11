@@ -3451,3 +3451,32 @@ body {
     font-size: 0.7rem;
   }
 }
+
+
+/* ===== Click directly on model; no visible interaction label ===== */
+.ifc-interaction-toggle {
+  display: none !important;
+}
+
+.ifc-interaction-surface {
+  position: absolute;
+  inset: 0;
+  z-index: 35;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.ifc-interaction-lock.is-active .ifc-interaction-surface {
+  display: none;
+}
+
+.ifc-interaction-surface:focus-visible {
+  outline: 3px solid rgba(255, 138, 91, 0.7);
+  outline-offset: -3px;
+}
