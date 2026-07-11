@@ -13,18 +13,11 @@
 </head>
 <body>
   <main class="viewer-shell">
-    <header class="viewer-toolbar">
-      <div class="viewer-title-group">
-        <p class="viewer-kicker">Interactive IFC</p>
-        <h1>Test Model</h1>
-      </div>
-
-      <div class="viewer-actions" aria-label="Model viewer controls">
-        <button id="fit-model" type="button">Fit Model</button>
-        <button id="reset-view" type="button">Reset View</button>
-        <button id="fullscreen-view" type="button">Full Screen</button>
-      </div>
-    </header>
+    <div class="viewer-actions viewer-actions-floating" aria-label="Model viewer controls">
+      <button id="fit-model" type="button">Fit Model</button>
+      <button id="reset-view" type="button">Reset View</button>
+      <button id="fullscreen-view" type="button">Full Screen</button>
+    </div>
 
     <section class="viewer-stage" aria-label="Interactive 3D model">
       <div id="viewer-container" class="viewer-container"></div>
@@ -45,9 +38,6 @@
         <span id="viewer-error-message">Check that the IFC file and viewer assets were uploaded.</span>
       </div>
 
-      <div class="viewer-help">
-        Drag to orbit · Scroll to zoom · Right-drag to pan
-      </div>
     </section>
   </main>
 
