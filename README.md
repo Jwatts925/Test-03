@@ -79,7 +79,7 @@ layout, page counter, and Open PDF fallback button.
 
 The BIM & Coordination page now embeds `ifc-viewer.html`, which loads:
 
-- `assets/models/test-model.ifc`
+- `assets/models/TEST-IFC.ifc`
 - `assets/ifc-viewer-app.js`
 - `assets/ifc-viewer.css`
 - `assets/ifc/web-ifc.wasm`
@@ -92,6 +92,6 @@ The viewer uses That Open Components and Web IFC. Keep all of these files in the
 
 ## Current IFC model
 
-The interactive viewer now loads the uploaded MATHILDA model from:
+The interactive viewer now loads the uploaded TEST-IFC model from:
 
-`assets/models/test-model.ifc`
+`assets/models/TEST-IFC.ifc`
