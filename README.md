@@ -88,3 +88,10 @@ The BIM & Coordination page now embeds `ifc-viewer.html`, which loads:
 - `assets/worker.mjs`
 
 The viewer uses That Open Components and Web IFC. Keep all of these files in their exact paths when uploading to GitHub Pages.
+
+
+## Current IFC model
+
+The interactive viewer now loads the uploaded MATHILDA model from:
+
+`assets/models/test-model.ifc`
