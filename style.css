@@ -2529,3 +2529,44 @@ body {
     scroll-margin-top: 76px;
   }
 }
+
+
+/* ===== Raise and tighten Selected Work transition ===== */
+#experience.section-dark {
+  padding-bottom: 0 !important;
+}
+
+#experience .skills-wrap-dark {
+  margin-bottom: 0 !important;
+}
+
+#work.section-dark {
+  padding-top: 28px !important;
+}
+
+/* Keep the section label closer to the sticky orange ribbon. */
+#work {
+  scroll-margin-top: 68px !important;
+}
+
+#work .selected-work-heading {
+  margin: 0 !important;
+}
+
+#work .project-grid {
+  margin-top: 22px !important;
+}
+
+@media (max-width: 760px) {
+  #work.section-dark {
+    padding-top: 22px !important;
+  }
+
+  #work {
+    scroll-margin-top: 68px !important;
+  }
+
+  #work .project-grid {
+    margin-top: 18px !important;
+  }
+}
