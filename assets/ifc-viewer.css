@@ -104,3 +104,9 @@
     justify-content: flex-end;
   }
 }
+
+
+/* ===== Hide That Open branding ===== */
+[data-thatopen-logo] {
+  display: none !important;
+}

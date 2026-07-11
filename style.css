@@ -3307,3 +3307,16 @@ body {
 .ifc-demo-frame-minimal {
   margin-top: 0 !important;
 }
+
+
+/* ===== Borderless IFC embed ===== */
+.ifc-demo {
+  border-top: 0 !important;
+}
+
+.ifc-demo-frame,
+.ifc-demo-frame-minimal {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
