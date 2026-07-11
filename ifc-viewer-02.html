@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive IFC model viewer for James Watts' BIM portfolio." />
+  <title>Interactive IFC Model 02 | James Watts Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="./assets/ifc-viewer-app-02.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/ifc-viewer.css">
+</head>
+<body>
+  <main class="viewer-shell">
+    <div class="viewer-actions viewer-actions-floating" aria-label="Model viewer controls">
+      <button id="fit-model" type="button">Fit Model</button>
+      <button id="reset-view" type="button">Reset View</button>
+      <button id="fullscreen-view" type="button">Full Screen</button>
+    </div>
+
+    <section class="viewer-stage" aria-label="Interactive 3D model">
+      <div id="viewer-container" class="viewer-container"></div>
+
+      <div id="viewer-loading" class="viewer-loading" role="status" aria-live="polite">
+        <div class="loading-card">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <p id="loading-title">Preparing model viewer…</p>
+          <div class="loading-track" aria-hidden="true">
+            <span id="loading-progress"></span>
+          </div>
+          <small id="loading-detail">Loading IFC engine</small>
+        </div>
+      </div>
+
+      <div id="viewer-error" class="viewer-error" role="alert" hidden>
+        <strong>Model could not be loaded.</strong>
+        <span id="viewer-error-message">Check that the IFC file and viewer assets were uploaded.</span>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>

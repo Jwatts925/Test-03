@@ -3387,3 +3387,67 @@ body {
 .ifc-interaction-gate[hidden] {
   display: none !important;
 }
+
+
+/* ===== Two IFC viewers with compact interaction toggles ===== */
+.ifc-viewer-stack {
+  display: grid;
+  gap: 42px;
+}
+
+.ifc-interaction-lock {
+  position: relative;
+}
+
+.ifc-interaction-lock iframe {
+  pointer-events: none;
+}
+
+.ifc-interaction-lock.is-active iframe {
+  pointer-events: auto;
+}
+
+.ifc-interaction-gate {
+  display: none !important;
+}
+
+.ifc-interaction-toggle {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 40;
+  width: auto;
+  height: auto;
+  padding: 9px 12px;
+  color: #3f60b1;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(63, 96, 177, 0.22);
+  box-shadow: 0 9px 24px rgba(38, 58, 110, 0.12);
+}
+
+.ifc-interaction-toggle:hover,
+.ifc-interaction-toggle:focus-visible,
+.ifc-interaction-lock.is-active .ifc-interaction-toggle {
+  color: #ffffff;
+  background: #3f60b1;
+  border-color: #3f60b1;
+  outline: none;
+}
+
+@media (max-width: 760px) {
+  .ifc-viewer-stack {
+    gap: 28px;
+  }
+
+  .ifc-interaction-toggle {
+    top: 10px;
+    left: 10px;
+    padding: 8px 10px;
+    font-size: 0.7rem;
+  }
+}

@@ -80,20 +80,35 @@
         </div>
 
 
-        <section class="ifc-demo reveal" aria-label="Interactive IFC model viewer">
-          <div class="ifc-demo-frame ifc-demo-frame-minimal ifc-interaction-lock" data-ifc-interaction>
-            <iframe
-              src="ifc-viewer.html"
-              title="Interactive IFC model"
-              loading="lazy"
-              allowfullscreen
-              tabindex="-1"
-            ></iframe>
+        <section class="ifc-demo reveal" aria-label="Interactive IFC model viewers">
+          <div class="ifc-viewer-stack">
+            <div class="ifc-demo-frame ifc-demo-frame-minimal ifc-interaction-lock" data-ifc-interaction>
+              <iframe
+                src="ifc-viewer.html"
+                title="Interactive IFC model one"
+                loading="lazy"
+                allowfullscreen
+                tabindex="-1"
+              ></iframe>
 
-            <button class="ifc-interaction-gate" type="button" aria-label="Activate interactive 3D model">
-              <span>Click to interact with the 3D model</span>
-              <small>Scroll normally until activated</small>
-            </button>
+              <button class="ifc-interaction-toggle" type="button" aria-pressed="false">
+                Click to interact
+              </button>
+            </div>
+
+            <div class="ifc-demo-frame ifc-demo-frame-minimal ifc-interaction-lock" data-ifc-interaction>
+              <iframe
+                src="ifc-viewer-02.html"
+                title="Interactive IFC model two"
+                loading="lazy"
+                allowfullscreen
+                tabindex="-1"
+              ></iframe>
+
+              <button class="ifc-interaction-toggle" type="button" aria-pressed="false">
+                Click to interact
+              </button>
+            </div>
           </div>
         </section>
 

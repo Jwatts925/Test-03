@@ -86,43 +86,30 @@ if (portfolioReader && portfolioPages.length && portfolioCurrentPage) {
 }
 
 
-// Require an intentional click before the embedded IFC viewer captures the mouse wheel.
+// Each IFC viewer captures orbit/zoom only after its top-left toggle is clicked.
 document.querySelectorAll('[data-ifc-interaction]').forEach((frame) => {
-  const gate = frame.querySelector('.ifc-interaction-gate');
+  const toggle = frame.querySelector('.ifc-interaction-toggle');
   const iframe = frame.querySelector('iframe');
 
-  if (!gate || !iframe) return;
+  if (!toggle || !iframe) return;
 
-  const activateViewer = () => {
-    frame.classList.add('is-active');
-    gate.hidden = true;
-    iframe.setAttribute('tabindex', '0');
-    iframe.focus();
+  const setActive = (active) => {
+    frame.classList.toggle('is-active', active);
+    toggle.setAttribute('aria-pressed', String(active));
+    toggle.textContent = active ? 'Click to scroll' : 'Click to interact';
+    iframe.setAttribute('tabindex', active ? '0' : '-1');
+
+    if (active) iframe.focus();
   };
 
-  const deactivateViewer = () => {
-    frame.classList.remove('is-active');
-    gate.hidden = false;
-    iframe.setAttribute('tabindex', '-1');
-  };
-
-  gate.addEventListener('click', activateViewer);
-
-  // Release the viewer as soon as the pointer leaves it, so page scrolling resumes.
-  frame.addEventListener('mouseleave', () => {
-    if (frame.classList.contains('is-active')) deactivateViewer();
+  toggle.addEventListener('click', () => {
+    setActive(!frame.classList.contains('is-active'));
   });
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && frame.classList.contains('is-active')) {
-      deactivateViewer();
-      gate.focus();
-    }
-  });
-
-  document.addEventListener('pointerdown', (event) => {
-    if (frame.classList.contains('is-active') && !frame.contains(event.target)) {
-      deactivateViewer();
+      setActive(false);
+      toggle.focus();
     }
   });
 });
