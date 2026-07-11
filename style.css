@@ -2989,3 +2989,122 @@ body {
     grid-row: 4;
   }
 }
+
+
+/* ===== Compact Education alignment refinement ===== */
+#education.section {
+  padding-top: 42px !important;
+  padding-bottom: 42px !important;
+}
+
+#education .education-layout {
+  display: grid;
+  gap: 24px;
+}
+
+#education .education-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+#education .education-meta .eyebrow,
+#education .education-years {
+  margin: 0 !important;
+}
+
+#education .education-meta-dot,
+#education .education-years {
+  color: #ff8a5b;
+  font-weight: 700;
+}
+
+#education .education-meta-dot {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+#education .education-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  gap: 72px;
+  align-items: end;
+}
+
+#education .education-school {
+  margin: 0;
+}
+
+#education .education-school-line {
+  display: block;
+  color: #3f60b1;
+  font-size: clamp(3rem, 5.4vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1.06;
+}
+
+#education .education-card {
+  align-self: end;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#education .education-card h3 {
+  margin: 0 0 14px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+#education .education-card p {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* The minor's baseline now finishes level with the bottom of State University. */
+#education .education-card {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 980px) {
+  #education .education-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+  }
+}
+
+@media (max-width: 760px) {
+  #education.section {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  #education .education-layout {
+    gap: 20px;
+  }
+
+  #education .education-meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #education .education-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  #education .education-school-line {
+    font-size: clamp(2.7rem, 13vw, 4.4rem);
+  }
+
+  #education .education-card {
+    transform: none;
+  }
+
+  #education .education-card h3 {
+    margin-bottom: 10px !important;
+  }
+}
