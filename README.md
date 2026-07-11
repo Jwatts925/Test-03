@@ -73,3 +73,18 @@ The BIM & Coordination page now loads a single PDF:
 The viewer is rendered with `pdf-viewer.js` and does not require the former
 `assets/bim-portfolio-pages/` image folder. It includes a clean scrolling
 layout, page counter, and Open PDF fallback button.
+
+
+## Interactive IFC test viewer
+
+The BIM & Coordination page now embeds `ifc-viewer.html`, which loads:
+
+- `assets/models/test-model.ifc`
+- `assets/ifc-viewer-app.js`
+- `assets/ifc-viewer.css`
+- `assets/ifc/web-ifc.wasm`
+- `assets/ifc/web-ifc-mt.wasm`
+- `assets/ifc/fragments-worker.mjs`
+- `assets/worker.mjs`
+
+The viewer uses That Open Components and Web IFC. Keep all of these files in their exact paths when uploading to GitHub Pages.
