@@ -3297,3 +3297,13 @@ body {
     min-height: 560px !important;
   }
 }
+
+
+/* ===== Minimal embedded IFC section ===== */
+.ifc-demo {
+  padding-top: 6px !important;
+}
+
+.ifc-demo-frame-minimal {
+  margin-top: 0 !important;
+}
