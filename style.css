@@ -2875,3 +2875,117 @@ body {
     min-height: 136px;
   }
 }
+
+
+/* ===== Fully aligned Skills cards ===== */
+.capability-grid-merged {
+  align-items: stretch;
+}
+
+.capability-grid-merged .capability-card {
+  display: grid !important;
+  grid-template-rows: auto 128px auto 1fr;
+  align-content: start;
+  min-height: 390px;
+}
+
+.capability-grid-merged .capability-card .card-number {
+  grid-row: 1;
+  align-self: start;
+}
+
+.capability-grid-merged .capability-card .capability-card-visual {
+  grid-row: 2;
+  display: grid;
+  width: 100%;
+  height: 128px;
+  min-height: 128px;
+  margin: 8px 0 14px;
+  place-items: center;
+}
+
+.capability-grid-merged .capability-card .capability-card-visual img {
+  display: block;
+  width: 100%;
+  height: 118px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.capability-grid-merged .capability-card h3 {
+  grid-row: 3;
+  align-self: start;
+  min-height: 1.45em;
+  margin: 0 0 12px !important;
+}
+
+.capability-grid-merged .capability-card p {
+  grid-row: 4;
+  align-self: start;
+  margin: 0 !important;
+}
+
+/* Cards without graphics retain the same image row,
+   keeping every title and paragraph aligned. */
+.capability-grid-merged .capability-card:not(.documentation-capability-card):not(.visualization-capability-card) h3 {
+  grid-row: 3;
+}
+
+@media (max-width: 980px) {
+  .capability-grid-merged .capability-card {
+    grid-template-rows: auto 112px auto 1fr;
+    min-height: 360px;
+  }
+
+  .capability-grid-merged .capability-card .capability-card-visual {
+    height: 112px;
+    min-height: 112px;
+  }
+
+  .capability-grid-merged .capability-card .capability-card-visual img {
+    height: 102px;
+  }
+}
+
+@media (max-width: 760px) {
+  .capability-grid-merged .capability-card {
+    grid-template-rows: auto auto auto auto;
+    min-height: 0;
+  }
+
+  .capability-grid-merged .capability-card:not(.documentation-capability-card):not(.visualization-capability-card) {
+    grid-template-rows: auto auto auto;
+  }
+
+  .capability-grid-merged .capability-card:not(.documentation-capability-card):not(.visualization-capability-card) h3 {
+    grid-row: 2;
+    margin-top: 34px !important;
+  }
+
+  .capability-grid-merged .capability-card:not(.documentation-capability-card):not(.visualization-capability-card) p {
+    grid-row: 3;
+  }
+
+  .capability-grid-merged .capability-card .capability-card-visual {
+    grid-row: 2;
+    width: 100%;
+    height: 145px;
+    min-height: 145px;
+    margin: 16px 0 14px;
+  }
+
+  .capability-grid-merged .capability-card .capability-card-visual img {
+    height: 135px;
+  }
+
+  .capability-grid-merged .documentation-capability-card h3,
+  .capability-grid-merged .visualization-capability-card h3 {
+    grid-row: 3;
+  }
+
+  .capability-grid-merged .documentation-capability-card p,
+  .capability-grid-merged .visualization-capability-card p {
+    grid-row: 4;
+  }
+}
