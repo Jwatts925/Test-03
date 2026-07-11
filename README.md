@@ -95,3 +95,13 @@ The viewer uses That Open Components and Web IFC. Keep all of these files in the
 The interactive viewer now loads the uploaded TEST-IFC model from:
 
 `assets/models/TEST-IFC.ifc`
+
+
+## Interactive IFC models
+
+The BIM page now displays two models:
+
+- `assets/models/TEST-IFC.ifc`
+- `assets/models/IFC-02.ifc`
+
+Each model must be activated with its top-left button before it captures the mouse wheel. Click the same button again to return to normal page scrolling.
