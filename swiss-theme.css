@@ -160,15 +160,15 @@ summary:focus-visible {
   align-self: start;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: flex-start;
+  gap: clamp(2rem, 4vw, 4.5rem);
   width: 100%;
   margin: 0;
   font-family: var(--display);
   font-size: clamp(4rem, 10.8vw, 11.5rem);
   font-weight: 700;
   line-height: 0.72;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.055em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -1096,7 +1096,7 @@ summary:focus-visible {
   .site-nav { position: fixed; top: 64px; right: 0; left: 0; display: none; grid-template-columns: 1fr; padding: 0 var(--page-gutter) 1rem; background: var(--tech-blue) !important; border-bottom: 2px solid var(--coral); }
   .site-nav.is-open { display: grid; }
   .site-nav a { min-height: 52px; justify-content: flex-start; color: var(--white) !important; border-left: 0; border-bottom: 1px solid rgba(255,255,255,0.25); }
-  .hero-nameplate { grid-column: 1 / -1; gap: 0.5rem; font-size: clamp(3.1rem, 14vw, 6rem); }
+  .hero-nameplate { grid-column: 1 / -1; gap: clamp(0.75rem, 3vw, 1.25rem); font-size: clamp(3.1rem, 14vw, 6rem); }
   .hero-disciplines { grid-column: 1 / -1; grid-row: 2; margin-top: 1.5rem; }
   .hero-vertical-label { display: none; }
   .hero-message { grid-column: 1 / span 8; grid-row: 3; margin-top: 3rem; padding-left: 0; }
