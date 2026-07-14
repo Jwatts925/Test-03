@@ -138,6 +138,7 @@ summary:focus-visible {
 
 /* Editorial hero */
 .editorial-hero {
+  --hero-section-gap: clamp(1.5rem, 2.5vw, 2.5rem);
   position: relative;
   overflow: hidden;
   padding: clamp(2.5rem, 5vw, 5rem) 0 0;
@@ -209,7 +210,7 @@ summary:focus-visible {
   grid-row: 3;
   position: relative;
   align-self: end;
-  margin-top: clamp(2.75rem, 5vw, 5rem);
+  margin-top: var(--hero-section-gap);
   padding-left: 0;
 }
 
@@ -308,7 +309,7 @@ summary:focus-visible {
   align-self: start;
   justify-self: end;
   width: min(100%, 23rem);
-  margin: clamp(2.5rem, 5vw, 5rem) 0 0;
+  margin: var(--hero-section-gap) 0 0;
 }
 
 .hero-portrait img {
@@ -329,7 +330,7 @@ summary:focus-visible {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 0;
-  margin-top: 1.5rem;
+  margin-top: var(--hero-section-gap);
   border-top: 1px solid var(--tech-blue);
   border-bottom: 1px solid var(--tech-blue);
 }
