@@ -416,7 +416,7 @@ summary:focus-visible {
   gap: 1rem;
   align-items: end;
   min-height: clamp(7rem, 14vw, 13.5rem);
-  padding: 0 var(--page-gutter) 0.45rem;
+  padding: 0 var(--page-gutter);
   color: var(--tech-blue);
   background: var(--white);
   cursor: pointer;
@@ -446,6 +446,15 @@ summary:focus-visible {
   background: var(--pale-slate);
 }
 
+.portfolio-section:nth-child(even) > .portfolio-section-trigger {
+  color: var(--white);
+  background: var(--tech-blue);
+}
+
+.portfolio-section:nth-child(even) > .portfolio-section-trigger:hover {
+  background: var(--tech-blue);
+}
+
 .portfolio-section-trigger:hover::before,
 .portfolio-section-trigger:focus-visible::before {
   transform: scaleX(1);
@@ -456,9 +465,10 @@ summary:focus-visible {
   font-family: var(--display);
   font-size: clamp(5rem, 15vw, 15rem);
   font-weight: 700;
-  line-height: 0.68;
+  line-height: 0.64;
   letter-spacing: -0.07em;
   text-transform: uppercase;
+  transform: translateY(0.045em);
   transition: color 180ms ease, transform 220ms ease, letter-spacing 220ms ease;
 }
 
@@ -466,7 +476,7 @@ summary:focus-visible {
 .portfolio-section-trigger:focus-visible .portfolio-section-title {
   color: var(--coral);
   letter-spacing: -0.055em;
-  transform: translateX(0.018em);
+  transform: translate(0.018em, 0.045em);
 }
 
 .portfolio-section-number {
@@ -482,11 +492,6 @@ summary:focus-visible {
   justify-self: end;
   color: var(--coral);
   font-size: 0.84rem;
-}
-
-.portfolio-section[open] > .portfolio-section-trigger {
-  color: var(--white);
-  background: var(--tech-blue);
 }
 
 .portfolio-section[open] > .portfolio-section-trigger::before {
@@ -1005,7 +1010,7 @@ summary:focus-visible {
   .hero-metrics > div:not(.hero-actions) { grid-column: span 4; min-height: 9rem; }
   .hero-actions { grid-column: 1 / -1; border-top: 1px solid var(--tech-blue); border-left: 0; }
   .portfolio-section-trigger { grid-template-columns: minmax(0, 1fr) 2.5rem; min-height: clamp(5.25rem, 21vw, 9rem); padding-inline: var(--page-gutter); }
-  .portfolio-section-title { font-size: clamp(3.6rem, 17.5vw, 8rem); line-height: 0.7; }
+  .portfolio-section-title { font-size: clamp(3.6rem, 17.5vw, 8rem); line-height: 0.64; }
   .experience-brand { grid-column: 1 / span 3; }
   .experience-role { grid-column: 4 / -1; }
   .experience-copy { grid-column: 4 / -1; margin-top: 0.5rem; }
