@@ -493,9 +493,10 @@ summary:focus-visible {
   font-size: 0.84rem;
 }
 
-.portfolio-section[open] > .portfolio-section-trigger::before {
-  background: var(--coral);
-  transform: scaleX(1);
+.portfolio-section[open] > .portfolio-section-trigger::before,
+.portfolio-section[open] > .portfolio-section-trigger:hover::before,
+.portfolio-section[open] > .portfolio-section-trigger:focus-visible::before {
+  transform: scaleX(0);
 }
 
 .portfolio-section-panel {
