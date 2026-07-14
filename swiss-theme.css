@@ -462,6 +462,7 @@ summary:focus-visible {
 
 .portfolio-section-title {
   align-self: end;
+  padding-bottom: 0.02em;
   font-family: var(--display);
   font-size: clamp(5rem, 15vw, 15rem);
   font-weight: 700;
