@@ -330,7 +330,7 @@ summary:focus-visible {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 0;
-  margin-top: var(--hero-section-gap);
+  margin-top: clamp(0.75rem, 1.25vw, 1.25rem);
   border-top: 1px solid var(--tech-blue);
   border-bottom: 1px solid var(--tech-blue);
 }
@@ -378,7 +378,7 @@ summary:focus-visible {
   display: flex;
   justify-content: space-between;
   padding: 0.8rem 0;
-  color: var(--tech-blue);
+  color: var(--coral);
   border-bottom: 1px solid var(--tech-blue);
   font-family: var(--mono);
   font-size: 0.68rem;
@@ -388,7 +388,7 @@ summary:focus-visible {
 }
 
 .hero-actions a:hover {
-  color: var(--coral);
+  color: var(--tech-blue);
 }
 
 .hero-metrics-number {
