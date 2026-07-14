@@ -416,7 +416,7 @@ summary:focus-visible {
   grid-template-columns: minmax(0, 1fr) 4.5rem;
   gap: 1rem;
   align-items: end;
-  min-height: clamp(7rem, 14vw, 13.5rem);
+  min-height: max(clamp(7rem, 14vw, 13.5rem), calc((100svh - 5rem) / 4));
   padding: 0 var(--page-gutter);
   color: var(--tech-blue);
   background: var(--white);
