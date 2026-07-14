@@ -468,7 +468,6 @@ summary:focus-visible {
   line-height: 0.64;
   letter-spacing: -0.07em;
   text-transform: uppercase;
-  transform: translateY(0.045em);
   transition: color 180ms ease, transform 220ms ease, letter-spacing 220ms ease;
 }
 
@@ -476,7 +475,7 @@ summary:focus-visible {
 .portfolio-section-trigger:focus-visible .portfolio-section-title {
   color: var(--coral);
   letter-spacing: -0.055em;
-  transform: translate(0.018em, 0.045em);
+  transform: translateX(0.018em);
 }
 
 .portfolio-section-number {
