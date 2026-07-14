@@ -73,6 +73,14 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
+document.querySelectorAll('a[href="#top"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    window.scrollTo({ top: 0, left: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+  });
+});
+
 if (window.location.hash) {
   const initialSection = document.querySelector(window.location.hash);
   if (initialSection?.classList.contains('portfolio-section')) {
