@@ -438,6 +438,7 @@ summary:focus-visible {
 
 .portfolio-section-number {
   justify-self: end;
+  color: var(--coral);
   font-size: 0.84rem;
 }
 
