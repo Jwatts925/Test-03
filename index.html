@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="James Watts — BIM and preconstruction professional specializing in glazing, facade systems, automation, and technical visualization." />
-  <title>James Watts | BIM & Preconstruction Portfolio</title>
+  <meta name="theme-color" content="#ffffff" />
+  <title>James Watts | BIM &amp; Preconstruction Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;600;700&amp;family=Roboto+Mono:wght@400;500;600&amp;family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="swiss-theme.css" />
   <script defer src="script.js"></script>
@@ -34,371 +35,230 @@
   </header>
 
   <main id="main-content">
-    <section class="hero section section-dark">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">BIM · Preconstruction · Automation · Drafting Services</p>
-          <h1>Turning complex facade systems into clear, buildable information.</h1>
-          <p class="hero-intro">
-            I’m James Watts, a BIM and preconstruction professional specializing in glazing and facade systems. I build accurate models, technical graphics, and custom automation tools that support estimating, coordination, fabrication, and field installation.
-          </p>
+    <section class="editorial-hero" aria-labelledby="hero-title">
+      <div class="container editorial-hero-grid">
+        <div class="hero-nameplate reveal" aria-label="James Watts">
+          <span>James</span>
+          <span>Watts</span>
         </div>
 
-        <aside class="hero-panel reveal" aria-label="Professional focus">
-          <h2>Facade modeling and workflow development</h2>
-          <p class="hero-panel-copy">Creating connected systems for Revit, Dynamo, AutoCAD, Excel, and construction documentation.</p>
+        <p class="hero-disciplines reveal">BIM Coordination<br />Automation<br />Technical Communication</p>
+        <span class="hero-sheet-number" aria-hidden="true">01</span>
 
-          <div class="hero-panel-actions">
-            <a class="button button-primary" href="#work">Selected work</a>
-            <a class="button button-secondary" href="assets/James-Watts-Resume.pdf" target="_blank" rel="noopener">View résumé</a>
-          </div>
-
-          <ul class="hero-panel-meta" aria-label="Professional highlights">
-            <li><strong>50+</strong><span>Custom automation tools</span></li>
-            <li><strong>6+</strong><span>Years in BIM and VDC</span></li>
-            <li><strong>150+</strong><span>Revit Projects</span></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section section-light" id="about">
-      <div class="container split-layout about-layout">
-        <div class="section-heading about-portrait reveal">
-          <p class="eyebrow">About</p>
-          <div class="about-photo-shell">
-            <img
-              class="about-photo"
-              src="assets/james-portrait-clean.png"
-              alt="Hand-drawn portrait of James Watts"
-            />
-          </div>
+        <div class="hero-message reveal">
+          <p class="hero-vertical-label" aria-hidden="true">Preconstruction — Facade Systems</p>
+          <h1 id="hero-title">Turning complex facade systems into clear, buildable information<span aria-hidden="true">.</span></h1>
+          <p class="hero-intro">I’m James Watts, a BIM and preconstruction professional specializing in glazing and facade systems. I build accurate models, technical graphics, and custom automation tools that support estimating, coordination, fabrication, and field installation.</p>
         </div>
-        <div class="prose about-copy reveal">
-          <p>
-            My work sits between design, construction, and technology. I develop project-specific 3D models, coordinate changing design information, produce shop and proposal graphics, and create dependable workflows for teams working across preconstruction and operations.
-          </p>
-          <p>
-            With a background in industrial design and English literature, I bring equal attention to how information functions and how it is communicated. That combination helps me translate complicated facade conditions into models, diagrams, schedules, and presentations that are easier to understand and use.
-          </p>
+
+        <figure class="hero-portrait reveal">
+          <img src="assets/james-portrait-clean.png" alt="Hand-drawn portrait of James Watts" />
+        </figure>
+
+        <div class="hero-metrics reveal" aria-label="Professional highlights">
+          <div><strong>50<span>+</span></strong><small>Custom<br />automation tools</small></div>
+          <div><strong>6<span>+</span></strong><small>Years in BIM<br />and VDC</small></div>
+          <div><strong>150<span>+</span></strong><small>Revit<br />projects</small></div>
+          <div class="hero-actions">
+            <a href="#work">View selected work <span aria-hidden="true">↘</span></a>
+            <a href="assets/James-Watts-Resume.pdf" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span></a>
+          </div>
+          <span class="hero-metrics-number" aria-hidden="true">02</span>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="experience">
-      <div class="container">
-        <div class="section-heading experience-heading reveal">
-          <p class="eyebrow">Experience</p>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item timeline-item-company reveal">
-            <div class="timeline-side">
-              
-              <div class="timeline-logo-slot">
-
-                <img
-
-                class="timeline-company-logo"
-
-                src="assets/cs-erectors-logo.png"
-
-                alt="C/S Erectors logo"
-
-                />
-
-              </div>
+    <div class="portfolio-accordion" data-portfolio-accordion>
+      <details class="portfolio-section" id="about">
+        <summary class="portfolio-section-trigger">
+          <span class="portfolio-section-title" role="heading" aria-level="2">About</span>
+          <span class="portfolio-section-state" aria-hidden="true"></span>
+          <span class="portfolio-section-number" aria-hidden="true">03</span>
+        </summary>
+        <div class="portfolio-section-panel">
+          <div class="container portfolio-section-inner about-editorial">
+            <p class="about-lead reveal">My work sits between design, construction, and technology. I develop project-specific 3D models, coordinate changing design information, produce shop and proposal graphics, and create dependable workflows for teams working across preconstruction and operations.</p>
+            <div class="about-support reveal">
+              <p>With a background in industrial design and English literature, I bring equal attention to how information functions and how it is communicated.</p>
+              <p>That combination helps me translate complicated facade conditions into models, diagrams, schedules, and presentations that are easier to understand and use.</p>
             </div>
-            <div class="timeline-card">
-              <div class="role-heading">
-                <div>
-                  <h3>BIM Lead</h3>
-                  <p>CS Erectors <span class="company-location">• San Ramon, CA</span></p>
+            <dl class="about-index reveal">
+              <div><dt>Focus</dt><dd>BIM + Preconstruction</dd></div>
+              <div><dt>Systems</dt><dd>Glazing + Facades</dd></div>
+              <div><dt>Approach</dt><dd>Clear + Buildable</dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+
+      <details class="portfolio-section" id="experience">
+        <summary class="portfolio-section-trigger">
+          <span class="portfolio-section-title" role="heading" aria-level="2">Experience</span>
+          <span class="portfolio-section-state" aria-hidden="true"></span>
+          <span class="portfolio-section-number" aria-hidden="true">04</span>
+        </summary>
+        <div class="portfolio-section-panel">
+          <div class="container portfolio-section-inner">
+            <div class="timeline editorial-timeline">
+              <article class="timeline-item timeline-item-company reveal">
+                <div class="timeline-side">
+                  <div class="timeline-logo-slot"><img class="timeline-company-logo" src="assets/cs-erectors-logo.png" alt="C/S Erectors logo" /></div>
                 </div>
-                <div class="timeline-date">2023 — Present</div>
-              </div>
-              <div class="timeline-body">
-                <ul>
-                  <li>Introduced project-specific 3D modeling workflows for bids and carried those models through preconstruction, coordination, shop drawings, field planning, and quantity takeoffs.</li>
-                  <li>Produced company-wide technical and graphical content, including logistics plans, proposal presentations, waterproofing standards, and completed-project photography.</li>
-                  <li>Developed more than 50 Dynamo, AutoLISP, and VBA tools to improve Revit, AutoCAD, Excel, scheduling, documentation, and takeoff workflows.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="timeline-item timeline-item-company reveal">
-            <div class="timeline-side">
-              
-              <div class="timeline-logo-slot">
-
-                <img
-
-                class="timeline-company-logo timeline-company-logo--wide"
-
-                src="assets/walters-wolf-logo.png"
-
-                alt="Walters &amp; Wolf logo"
-
-                />
-
-              </div>
-            </div>
-            <div class="timeline-card">
-              <div class="role-heading">
-                <div>
-                  <h3>Virtual Design Modeler</h3>
-                  <p>Walters &amp; Wolf <span class="company-location">• Fremont, CA</span></p>
+                <div class="timeline-card">
+                  <div class="role-heading">
+                    <div><h3>BIM Lead</h3><p>CS Erectors <span class="company-location">• San Ramon, CA</span></p></div>
+                    <div class="timeline-date">2023 — Present</div>
+                  </div>
+                  <div class="timeline-body"><ul>
+                    <li>Introduced project-specific 3D modeling workflows for bids and carried those models through preconstruction, coordination, shop drawings, field planning, and quantity takeoffs.</li>
+                    <li>Produced company-wide technical and graphical content, including logistics plans, proposal presentations, waterproofing standards, and completed-project photography.</li>
+                    <li>Developed more than 50 Dynamo, AutoLISP, and VBA tools to improve Revit, AutoCAD, Excel, scheduling, documentation, and takeoff workflows.</li>
+                  </ul></div>
                 </div>
-                <div class="timeline-date">2020 — 2023</div>
-              </div>
-              <div class="timeline-body">
-                <ul>
-                  <li>Created accurate Revit models used to quantify labor and material for glass and metal panel facade estimates.</li>
-                  <li>Managed modeling scope, completed drawing packages, and coordinated design and engineering changes across active pursuits.</li>
-                  <li>Built a reusable library of adaptive generic models and modernized bid forms and sales presentation templates.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
+              </article>
 
-          <article class="timeline-item timeline-item-company reveal">
-            <div class="timeline-side">
-              
-              <div class="timeline-logo-slot">
-
-                <img
-
-                class="timeline-company-logo timeline-company-logo--arup"
-
-                src="assets/arup-logo.png"
-
-                alt="Arup logo"
-
-                />
-
-              </div>
-            </div>
-            <div class="timeline-card">
-              <div class="role-heading">
-                <div>
-                  <h3>BIM Intern</h3>
-                  <p>Arup <span class="company-location">• San Francisco, CA</span></p>
+              <article class="timeline-item timeline-item-company reveal">
+                <div class="timeline-side">
+                  <div class="timeline-logo-slot"><img class="timeline-company-logo timeline-company-logo--wide" src="assets/walters-wolf-logo.png" alt="Walters &amp; Wolf logo" /></div>
                 </div>
-                <div class="timeline-date">2018 — 2018</div>
-              </div>
-              <div class="timeline-body">
-                <ul>
-                  <li>Contributed to drawing production for the Texas High-Speed Rail project.</li>
-                  <li>Developed documentation to establish standardized drafting processes.</li>
-                  <li>Created schematic diagrams and report graphics for project reviews.</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="timeline-item timeline-item-company reveal">
-            <div class="timeline-side">
-              
-              <div class="timeline-logo-slot">
-
-                <img
-
-                class="timeline-company-logo timeline-company-logo--wide"
-
-                src="assets/walters-wolf-logo.png"
-
-                alt="Walters &amp; Wolf logo"
-
-                />
-
-              </div>
-            </div>
-            <div class="timeline-card">
-              <div class="role-heading">
-                <div>
-                  <h3>Drafting Intern</h3>
-                  <p>Walters &amp; Wolf <span class="company-location">• Fremont, CA</span></p>
+                <div class="timeline-card">
+                  <div class="role-heading">
+                    <div><h3>Virtual Design Modeler</h3><p>Walters &amp; Wolf <span class="company-location">• Fremont, CA</span></p></div>
+                    <div class="timeline-date">2020 — 2023</div>
+                  </div>
+                  <div class="timeline-body"><ul>
+                    <li>Created accurate Revit models used to quantify labor and material for glass and metal panel facade estimates.</li>
+                    <li>Managed modeling scope, completed drawing packages, and coordinated design and engineering changes across active pursuits.</li>
+                    <li>Built a reusable library of adaptive generic models and modernized bid forms and sales presentation templates.</li>
+                  </ul></div>
                 </div>
-                <div class="timeline-date">2017 — 2017</div>
-              </div>
-              <div class="timeline-body">
-                <ul>
-                  <li>Built a Revit model for Stanford Medical Center to support project estimating.</li>
-                  <li>Collaborated with company experts to develop an efficient workflow for converting 2D drawings into reusable 3D generic-model components.</li>
-                </ul>
-              </div>
+              </article>
+
+              <article class="timeline-item timeline-item-company reveal">
+                <div class="timeline-side">
+                  <div class="timeline-logo-slot"><img class="timeline-company-logo timeline-company-logo--arup" src="assets/arup-logo.png" alt="Arup logo" /></div>
+                </div>
+                <div class="timeline-card">
+                  <div class="role-heading">
+                    <div><h3>BIM Intern</h3><p>Arup <span class="company-location">• San Francisco, CA</span></p></div>
+                    <div class="timeline-date">2018</div>
+                  </div>
+                  <div class="timeline-body"><ul>
+                    <li>Contributed to drawing production for the Texas High-Speed Rail project.</li>
+                    <li>Developed documentation to establish standardized drafting processes.</li>
+                    <li>Created schematic diagrams and report graphics for project reviews.</li>
+                  </ul></div>
+                </div>
+              </article>
+
+              <article class="timeline-item timeline-item-company reveal">
+                <div class="timeline-side">
+                  <div class="timeline-logo-slot"><img class="timeline-company-logo timeline-company-logo--wide" src="assets/walters-wolf-logo.png" alt="Walters &amp; Wolf logo" /></div>
+                </div>
+                <div class="timeline-card">
+                  <div class="role-heading">
+                    <div><h3>Drafting Intern</h3><p>Walters &amp; Wolf <span class="company-location">• Fremont, CA</span></p></div>
+                    <div class="timeline-date">2017</div>
+                  </div>
+                  <div class="timeline-body"><ul>
+                    <li>Built a Revit model for Stanford Medical Center to support project estimating.</li>
+                    <li>Collaborated with company experts to develop an efficient workflow for converting 2D drawings into reusable 3D generic-model components.</li>
+                  </ul></div>
+                </div>
+              </article>
             </div>
-          </article>
-        </div>
 
-        <div class="experience-capabilities" id="skills">
-          <div class="section-heading capabilities-heading reveal">
-            <p class="eyebrow">Skills</p>
-          </div>
-
-          <div class="capability-grid capability-grid-merged">
-            <article class="capability-card reveal">
-              <span class="card-number">01</span>
-              <h3>BIM &amp; Coordination</h3>
-              <p>Revit modeling, model management, ACC/BIM 360, Navisworks, Revizto, supplier coordination, and design-assist support.</p>
-            </article>
-
-            <article class="capability-card reveal">
-              <span class="card-number">02</span>
-              <h3>Automation</h3>
-              <p>Dynamo, Python, AutoLISP, VBA, and custom workflows for repetitive modeling, drafting, scheduling, takeoff, and data tasks.</p>
-            </article>
-
-            <article class="capability-card documentation-capability-card reveal">
-              <span class="card-number">03</span>
-              <figure class="capability-card-visual">
-                <img
-                  src="assets/documentation-detail-view.png"
-                  alt="Technical documentation sheet with detailed facade sections"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <h3>Documentation</h3>
-              <p>Shop drawings, technical proposals, bid presentations, construction documents, quantity takeoffs, and waterproofing standards.</p>
-            </article>
-
-            <article class="capability-card visualization-capability-card reveal">
-              <span class="card-number">04</span>
-              <figure class="capability-card-visual">
-                <img
-                  src="assets/visualization-exploded-view.png"
-                  alt="Exploded technical drawing of a fabricated assembly"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <h3>Visualization</h3>
-              <p>Illustrator, InDesign, Photoshop, photography, Rhino, Inventor, SolidWorks, laser scans, 3D printing, and logistics planning.</p>
-            </article>
-          </div>
-
-          <div class="skills-wrap reveal skills-wrap-dark">
-            <div>
-              <h3>Primary software</h3>
-              <div class="tag-list">
-                <span>Revit</span><span>Dynamo</span><span>Python</span><span>AutoCAD</span><span>AutoLISP</span><span>Excel</span><span>VBA</span><span>Bluebeam</span><span>ACC</span><span>Navisworks</span><span>Revizto</span>
-              </div>
-            </div>
-            <div>
-              <h3>Design & fabrication</h3>
-              <div class="tag-list">
-                <span>Rhino</span><span>Inventor</span><span>SolidWorks</span><span>MicroStation</span><span>Illustrator</span><span>InDesign</span><span>Photoshop</span><span>3D Printing</span><span>Leica Scanning</span>
-              </div>
-            </div>
+            <section class="education-inline reveal" aria-labelledby="education-heading">
+              <p class="education-kicker">Education · 2013 — 2018</p>
+              <h3 id="education-heading">San Francisco<br />State University</h3>
+              <div><strong>B.S. Industrial Design</strong><span>Minor in English Literature</span></div>
+            </section>
           </div>
         </div>
-      </div>
-    </section>
+      </details>
 
-    <section class="section section-dark" id="work">
-      <div class="container">
-        <div class="section-heading selected-work-heading reveal">
-          <p class="eyebrow">Selected work</p>
-        </div>
-
-        <div class="project-grid">
-          <a class="project-card project-card-link reveal" href="bim-coordination.html" aria-label="Open BIM Coordination portfolio">
-            <div class="project-visual" role="img" aria-label="BIM coordination model image">
-              <img src="assets/bim-coordination.jpg" alt="3D facade coordination model showing structural framing and glazing systems" />
+      <details class="portfolio-section" id="skills">
+        <summary class="portfolio-section-trigger">
+          <span class="portfolio-section-title" role="heading" aria-level="2">Skills</span>
+          <span class="portfolio-section-state" aria-hidden="true"></span>
+          <span class="portfolio-section-number" aria-hidden="true">05</span>
+        </summary>
+        <div class="portfolio-section-panel">
+          <div class="container portfolio-section-inner">
+            <div class="capability-grid capability-grid-merged">
+              <article class="capability-card reveal"><span class="card-number">01</span><h3>BIM &amp; Coordination</h3><p>Revit modeling, model management, ACC/BIM 360, Navisworks, Revizto, supplier coordination, and design-assist support.</p></article>
+              <article class="capability-card reveal"><span class="card-number">02</span><h3>Automation</h3><p>Dynamo, Python, AutoLISP, VBA, and custom workflows for repetitive modeling, drafting, scheduling, takeoff, and data tasks.</p></article>
+              <article class="capability-card documentation-capability-card reveal">
+                <span class="card-number">03</span>
+                <figure class="capability-card-visual"><img src="assets/documentation-detail-view.png" alt="Technical documentation sheet with detailed facade sections" loading="lazy" decoding="async" /></figure>
+                <h3>Documentation</h3><p>Shop drawings, technical proposals, bid presentations, construction documents, quantity takeoffs, and waterproofing standards.</p>
+              </article>
+              <article class="capability-card visualization-capability-card reveal">
+                <span class="card-number">04</span>
+                <figure class="capability-card-visual"><img src="assets/visualization-exploded-view.png" alt="Exploded technical drawing of a fabricated assembly" loading="lazy" decoding="async" /></figure>
+                <h3>Visualization</h3><p>Illustrator, InDesign, Photoshop, photography, Rhino, Inventor, SolidWorks, laser scans, 3D printing, and logistics planning.</p>
+              </article>
             </div>
-            <div class="project-content">
-              <p class="project-type">BIM Coordination</p>
-              <h3>Facade Modeling &amp; Design Assist</h3>
-              <p>Show how a project model supported estimating, coordination, shop drawings, or field planning.</p>
-              <span class="project-link-label">View BIM portfolio <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
 
-          <a class="project-card project-card-link reveal" href="automation.html" aria-label="Open Automation portfolio">
-            <div class="project-visual" role="img" aria-label="Automation workflow image">
-              <img src="assets/automation.jpg" alt="Dynamo graph showing a custom automation workflow" />
+            <div class="skills-wrap reveal skills-wrap-dark">
+              <div><h3>Primary software</h3><div class="tag-list"><span>Revit</span><span>Dynamo</span><span>Python</span><span>AutoCAD</span><span>AutoLISP</span><span>Excel</span><span>VBA</span><span>Bluebeam</span><span>ACC</span><span>Navisworks</span><span>Revizto</span></div></div>
+              <div><h3>Design &amp; fabrication</h3><div class="tag-list"><span>Rhino</span><span>Inventor</span><span>SolidWorks</span><span>MicroStation</span><span>Illustrator</span><span>InDesign</span><span>Photoshop</span><span>3D Printing</span><span>Leica Scanning</span></div></div>
             </div>
-            <div class="project-content">
-              <p class="project-type">Automation</p>
-              <h3>Custom Revit &amp; Data Workflows</h3>
-              <p>Feature a Dynamo, Python, AutoLISP, or VBA tool and explain the time or quality improvements it created.</p>
-              <span class="project-link-label">View automation portfolio <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
-
-          <a class="project-card project-card-link reveal" href="documentation.html" aria-label="Open Documentation portfolio">
-            <div class="project-visual" role="img" aria-label="Technical communication project image">
-              <img src="assets/technical-communication.png" alt="3D building logistics model showing boom lifts and installation planning" />
-            </div>
-            <div class="project-content">
-              <p class="project-type">Technical Communication</p>
-              <h3>Logistics &amp; Proposal Graphics</h3>
-              <p>Present a proposal, installation sequence, reach study, or technical graphic that helped communicate a construction plan.</p>
-              <span class="project-link-label">View documentation portfolio <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light" id="education">
-      <div class="container education-layout">
-        <div class="education-meta reveal">
-          <p class="eyebrow">Education</p>
-          <span class="education-meta-dot" aria-hidden="true">•</span>
-          <p class="education-years">2013 — 2018</p>
-        </div>
-
-        <div class="education-content">
-          <h2 class="education-school reveal">
-            <span class="education-school-line">San Francisco</span>
-            <span class="education-school-line">State University</span>
-          </h2>
-
-          <div class="education-card reveal">
-            <h3>B.S. Industrial Design</h3>
-            <p>Minor in English Literature</p>
           </div>
         </div>
-      </div>
-    </section>
+      </details>
 
-    <section class="section contact-section" id="contact">
-      <div class="container contact-grid">
-        <div class="reveal">
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s build clearer project workflows.</h2>
-          <p>For BIM, preconstruction, facade coordination, technical documentation, or automation opportunities, reach out directly.</p>
+      <details class="portfolio-section" id="work">
+        <summary class="portfolio-section-trigger">
+          <span class="portfolio-section-title" role="heading" aria-level="2">Selected Work</span>
+          <span class="portfolio-section-state" aria-hidden="true"></span>
+          <span class="portfolio-section-number" aria-hidden="true">06</span>
+        </summary>
+        <div class="portfolio-section-panel">
+          <div class="container portfolio-section-inner">
+            <div class="project-grid editorial-project-grid">
+              <a class="project-card project-card-link reveal" href="bim-coordination.html" aria-label="Open BIM Coordination portfolio">
+                <div class="project-content"><p class="project-type">01 · BIM Coordination</p><h3>Facade Modeling &amp; Design Assist</h3><span class="project-link-label">View portfolio <span aria-hidden="true">↗</span></span></div>
+                <div class="project-visual"><img src="assets/bim-coordination.jpg" alt="3D facade coordination model showing structural framing and glazing systems" /></div>
+              </a>
+              <a class="project-card project-card-link reveal" href="automation.html" aria-label="Open Automation portfolio">
+                <div class="project-content"><p class="project-type">02 · Automation</p><h3>Custom Revit &amp; Data Workflows</h3><span class="project-link-label">View portfolio <span aria-hidden="true">↗</span></span></div>
+                <div class="project-visual"><img src="assets/automation.jpg" alt="Dynamo graph showing a custom automation workflow" /></div>
+              </a>
+              <a class="project-card project-card-link reveal" href="documentation.html" aria-label="Open Documentation portfolio">
+                <div class="project-content"><p class="project-type">03 · Technical Communication</p><h3>Logistics &amp; Proposal Graphics</h3><span class="project-link-label">View portfolio <span aria-hidden="true">↗</span></span></div>
+                <div class="project-visual"><img src="assets/technical-communication.png" alt="3D building logistics model showing boom lifts and installation planning" /></div>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="contact-links reveal">
-          <a href="mailto:james.watts@live.com">
-            <span>Email</span>
-            <strong>james.watts@live.com</strong>
-          </a>
-          <a href="tel:+19259181521">
-            <span>Phone</span>
-            <strong>925-918-1521</strong>
-          </a>
-          <a href="assets/James-Watts-Resume.pdf" target="_blank" rel="noopener">
-            <span>Résumé</span>
-            <strong>Open PDF ↗</strong>
-          </a>
-          <a href="https://www.linkedin.com/in/james-watts-935b4a135/" target="_blank" rel="noopener noreferrer">
-            <span>LinkedIn</span>
-            <strong>View Profile ↗</strong>
-          </a>
+      </details>
+
+      <details class="portfolio-section" id="contact">
+        <summary class="portfolio-section-trigger">
+          <span class="portfolio-section-title" role="heading" aria-level="2">Contact</span>
+          <span class="portfolio-section-state" aria-hidden="true"></span>
+          <span class="portfolio-section-number" aria-hidden="true">07</span>
+        </summary>
+        <div class="portfolio-section-panel">
+          <div class="contact-section">
+            <div class="container portfolio-section-inner contact-grid">
+              <div class="reveal"><p class="eyebrow">Available for collaboration</p><h2>Let’s build clearer project workflows.</h2><p>For BIM, preconstruction, facade coordination, technical documentation, or automation opportunities, reach out directly.</p></div>
+              <div class="contact-links reveal">
+                <a href="mailto:james.watts@live.com"><span>Email</span><strong>james.watts@live.com</strong></a>
+                <a href="tel:+19259181521"><span>Phone</span><strong>925-918-1521</strong></a>
+                <a href="assets/James-Watts-Resume.pdf" target="_blank" rel="noopener"><span>Résumé</span><strong>Open PDF ↗</strong></a>
+                <a href="https://www.linkedin.com/in/james-watts-935b4a135/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>View Profile ↗</strong></a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </details>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="year"></span> James Watts</p>
-      <a href="#top">Back to top ↑</a>
-    </div>
+    <div class="container footer-wrap"><p>© <span id="year"></span> James Watts</p><a href="#top">Back to top ↑</a></div>
   </footer>
 </body>
 </html>

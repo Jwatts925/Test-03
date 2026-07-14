@@ -44,6 +44,48 @@ const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
 
+// Open portfolio sections when their navigation link is used.
+const portfolioSections = Array.from(document.querySelectorAll('.portfolio-section'));
+
+const openPortfolioSection = (section, shouldScroll = false) => {
+  if (!section) return;
+
+  section.open = true;
+
+  if (shouldScroll) {
+    window.requestAnimationFrame(() => {
+      section.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+    });
+  }
+};
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const targetId = link.getAttribute('href')?.slice(1);
+    if (!targetId) return;
+
+    const targetSection = document.getElementById(targetId);
+    if (targetSection?.classList.contains('portfolio-section')) {
+      openPortfolioSection(targetSection);
+    }
+  });
+});
+
+if (window.location.hash) {
+  const initialSection = document.querySelector(window.location.hash);
+  if (initialSection?.classList.contains('portfolio-section')) {
+    openPortfolioSection(initialSection);
+  }
+}
+
+window.addEventListener('hashchange', () => {
+  const targetSection = document.querySelector(window.location.hash);
+  if (targetSection?.classList.contains('portfolio-section')) {
+    openPortfolioSection(targetSection, true);
+  }
+});
+
+
 // Update the portfolio page indicator as the reader scrolls.
 const portfolioReader = document.querySelector('[data-portfolio-reader]');
 const portfolioPages = Array.from(document.querySelectorAll('[data-portfolio-page]'));
