@@ -577,9 +577,9 @@ summary:focus-visible {
   align-self: center;
   justify-content: center;
   justify-self: center;
-  padding: 0.85rem;
-  background: var(--white);
-  border: 1px solid var(--tech-blue);
+  padding: 0;
+  background: transparent;
+  border: 0;
 }
 
 .experience-logo-wide {
@@ -598,6 +598,9 @@ summary:focus-visible {
 
 .experience-role {
   grid-column: 3 / span 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   align-self: start;
 }
 
@@ -678,18 +681,22 @@ summary:focus-visible {
   background: var(--coral);
 }
 
-.education-kicker {
-  grid-column: 1 / -1;
-  margin: 0;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--tech-blue);
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  text-transform: uppercase;
+.education-heading-group {
+  grid-column: 1 / span 8;
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2.5rem);
+  min-width: 0;
 }
 
-.education-inline h3 {
-  grid-column: 1 / span 8;
+.education-logo {
+  width: clamp(5.5rem, 10vw, 10rem);
+  height: auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.education-heading-group h3 {
   margin: 0;
   color: var(--tech-blue);
   font-family: var(--display);
@@ -698,12 +705,22 @@ summary:focus-visible {
   letter-spacing: -0.06em;
 }
 
-.education-inline > div {
+.education-details {
   grid-column: 9 / -1;
   display: grid;
   gap: 0.4rem;
   padding-top: 1rem;
   border-top: 2px solid var(--tech-blue);
+}
+
+.education-date {
+  margin-bottom: 0.35rem;
+  color: var(--tech-blue);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
 /* Skills */
@@ -1015,9 +1032,9 @@ summary:focus-visible {
   .experience-brand { grid-column: 1 / span 3; }
   .experience-role { grid-column: 4 / -1; }
   .experience-copy { grid-column: 4 / -1; margin-top: 0.5rem; }
-  .education-inline h3,
-  .education-inline > div { grid-column: 1 / -1; }
-  .education-inline > div { margin-top: 2rem; }
+  .education-heading-group,
+  .education-details { grid-column: 1 / -1; }
+  .education-details { margin-top: 2rem; }
   .editorial-project-grid .project-card { grid-template-columns: 1fr; }
   .editorial-project-grid .project-content { min-height: 15rem; border-right: 0; border-bottom: 1px solid var(--tech-blue); }
   .contact-grid > div:first-child,
@@ -1047,6 +1064,8 @@ summary:focus-visible {
   .experience-role h3 { max-width: none; }
   .experience-copy { margin-top: 0; }
   .education-inline { padding: 1.25rem; }
+  .education-heading-group { align-items: flex-start; gap: 0.85rem; }
+  .education-logo { width: 4.75rem; }
   .capability-grid-merged { grid-template-columns: 1fr; }
   .capability-grid-merged .capability-card { min-height: 0; border-right: 0 !important; border-bottom: 1px solid var(--tech-blue) !important; }
   .skills-wrap { grid-template-columns: 1fr; }
