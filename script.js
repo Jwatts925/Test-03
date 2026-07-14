@@ -76,6 +76,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 if (window.location.hash) {
   const initialSection = document.querySelector(window.location.hash);
   if (initialSection?.classList.contains('portfolio-section')) {
+    openPortfolioSection(initialSection, true);
     window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
   }
 }
