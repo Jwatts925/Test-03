@@ -550,13 +550,14 @@ summary:focus-visible {
 .experience-brand {
   grid-column: 1 / span 2;
   display: grid;
-  align-content: start;
-  gap: 1.5rem;
+  grid-template-rows: auto 1fr;
+  align-self: stretch;
+  gap: 0.75rem;
 }
 
 .experience-index,
 .experience-role p,
-.experience-role time {
+.experience-meta {
   font-family: var(--mono);
   font-size: 0.65rem;
   font-weight: 600;
@@ -570,17 +571,19 @@ summary:focus-visible {
 
 .experience-logo {
   display: flex;
-  width: min(100%, 7.5rem);
-  height: 5rem;
+  width: min(100%, 10rem);
+  height: 7rem;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0.65rem;
-  background: var(--tech-blue);
+  align-self: center;
+  justify-content: center;
+  justify-self: center;
+  padding: 0.85rem;
+  background: var(--white);
   border: 1px solid var(--tech-blue);
 }
 
 .experience-logo-wide {
-  width: min(100%, 9rem);
+  width: min(100%, 12rem);
 }
 
 .experience-logo img {
@@ -589,7 +592,8 @@ summary:focus-visible {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  object-position: left center;
+  object-position: center;
+  filter: brightness(0) saturate(100%) invert(36%) sepia(28%) saturate(1934%) hue-rotate(185deg) brightness(92%) contrast(87%);
 }
 
 .experience-role {
@@ -598,22 +602,8 @@ summary:focus-visible {
 }
 
 .experience-role p {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.75rem;
   margin: 0 0 1.15rem;
   color: var(--tech-blue);
-}
-
-.experience-role p span {
-  color: var(--deep-ink);
-  font-weight: 400;
-}
-
-.experience-role p span::before {
-  margin-right: 0.75rem;
-  color: var(--coral);
-  content: "·";
 }
 
 .experience-role h3 {
@@ -627,12 +617,22 @@ summary:focus-visible {
   letter-spacing: -0.035em;
 }
 
-.experience-role time {
-  display: inline-block;
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.85rem;
   margin-top: 1.4rem;
-  padding: 0.45rem 0.6rem;
-  color: var(--tech-blue);
-  background: var(--coral);
+}
+
+.experience-meta time {
+  color: var(--coral);
+}
+
+.experience-location {
+  padding-left: 0.85rem;
+  color: var(--deep-ink);
+  border-left: 1px solid var(--tech-blue);
 }
 
 .experience-copy {
