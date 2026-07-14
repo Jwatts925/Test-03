@@ -262,26 +262,29 @@ summary:focus-visible {
 }
 
 .hero-index {
+  grid-column: 7 / span 3;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: 43rem;
-  margin: 1.75rem 0 0;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  min-height: 11rem;
+  margin: 0;
   padding: 0;
-  border-top: 1px solid var(--tech-blue);
-  border-bottom: 1px solid var(--tech-blue);
+  background: rgba(210, 215, 223, 0.32);
+  border-left: 1px solid var(--grid-line);
 }
 
 .hero-index div {
-  padding: 0.85rem 1rem;
-  border-right: 1px solid var(--grid-line);
+  display: grid;
+  align-content: center;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--grid-line);
 }
 
 .hero-index div:first-child {
-  padding-left: 0;
+  padding-left: 1rem;
 }
 
 .hero-index div:last-child {
-  border-right: 0;
+  border-bottom: 0;
 }
 
 .hero-index dt {
@@ -361,11 +364,11 @@ summary:focus-visible {
 }
 
 .hero-actions {
-  grid-column: 8 / span 4;
+  grid-column: 10 / -1;
   display: grid;
   align-content: end;
   padding: 1.5rem;
-  border-left: 1px solid var(--grid-line);
+  border-left: 0;
 }
 
 .hero-actions a {
@@ -386,9 +389,10 @@ summary:focus-visible {
 }
 
 .hero-metrics-number {
-  grid-column: 12;
-  align-self: start;
-  padding: 1rem 0;
+  position: absolute;
+  top: 0.8rem;
+  right: 0;
+  padding: 0;
 }
 
 /* Interactive oversized editorial sections */
@@ -997,7 +1001,8 @@ summary:focus-visible {
   .hero-message { grid-column: 1 / span 8; grid-row: 3; margin-top: 3rem; padding-left: 0; }
   .hero-portrait { grid-column: 9 / -1; grid-row: 3; align-self: start; width: min(100%, 12rem); margin-top: 2rem; opacity: 0.9; }
   .hero-metrics > div:not(.hero-actions) { grid-column: span 4; min-height: 9rem; }
-  .hero-actions { grid-column: 1 / span 10; border-top: 1px solid var(--tech-blue); border-left: 0; }
+  .hero-index { grid-column: 1 / span 6; min-height: 10rem; }
+  .hero-actions { grid-column: 7 / -1; border-left: 0; }
   .portfolio-section-trigger { grid-template-columns: minmax(0, 1fr) 2.5rem; min-height: clamp(5.25rem, 21vw, 9rem); padding-inline: var(--page-gutter); }
   .portfolio-section-title { font-size: clamp(3.6rem, 17.5vw, 8rem); line-height: 0.7; }
   .experience-brand { grid-column: 1 / span 3; }
@@ -1018,14 +1023,12 @@ summary:focus-visible {
   .hero-message { grid-column: 1 / -1; grid-row: 4; margin-top: 1.5rem; }
   .hero-message h1 { font-size: clamp(3.2rem, 16vw, 5rem); }
   .hero-intro { font-size: 0.9rem; }
-  .hero-index { grid-template-columns: 1fr; }
-  .hero-index div,
-  .hero-index div:first-child { padding: 0.75rem 0; border-right: 0; border-bottom: 1px solid var(--grid-line); }
-  .hero-index div:last-child { border-bottom: 0; }
   .hero-portrait { grid-column: 7 / -1; grid-row: 3; justify-self: end; width: 9rem; margin-top: 0.5rem; }
   .hero-metrics > div:not(.hero-actions) { min-height: 8rem; padding: 1rem 0.65rem; }
   .hero-metrics strong { font-size: 2.8rem; }
   .hero-metrics small { font-size: 0.52rem; }
+  .hero-index { grid-column: 1 / -1; min-height: 9rem; }
+  .hero-actions { grid-column: 1 / -1; border-top: 1px solid var(--tech-blue); }
   .portfolio-section-trigger { grid-template-columns: minmax(0, 1fr) 2rem; }
   .portfolio-section-title { font-size: clamp(3.25rem, 16vw, 5rem); }
   .portfolio-section-number { grid-column: 2; }
