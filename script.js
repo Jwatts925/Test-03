@@ -47,9 +47,16 @@ if (year) year.textContent = new Date().getFullYear();
 // Open portfolio sections when their navigation link is used.
 const portfolioSections = Array.from(document.querySelectorAll('.portfolio-section'));
 
+const closeOtherPortfolioSections = (activeSection) => {
+  portfolioSections.forEach((section) => {
+    if (section !== activeSection && section.open) section.open = false;
+  });
+};
+
 const openPortfolioSection = (section, shouldScroll = false) => {
   if (!section) return;
 
+  closeOtherPortfolioSections(section);
   section.open = true;
 
   if (shouldScroll) {
@@ -58,6 +65,12 @@ const openPortfolioSection = (section, shouldScroll = false) => {
     });
   }
 };
+
+portfolioSections.forEach((section) => {
+  section.addEventListener('toggle', () => {
+    if (section.open) closeOtherPortfolioSections(section);
+  });
+});
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {
