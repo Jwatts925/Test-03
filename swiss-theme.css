@@ -156,17 +156,21 @@ summary:focus-visible {
 }
 
 .hero-nameplate {
-  grid-column: 1 / span 5;
+  grid-column: 1 / -1;
   align-self: start;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(4rem, 8vw, 8.4rem);
+  font-size: clamp(4rem, 10.8vw, 11.5rem);
   font-weight: 700;
   line-height: 0.72;
   letter-spacing: 0.015em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .hero-disciplines {
@@ -293,10 +297,10 @@ summary:focus-visible {
 }
 
 .hero-portrait {
-  grid-column: 9 / -1;
+  grid-column: 8 / -1;
   grid-row: 3;
-  align-self: start;
-  justify-self: end;
+  align-self: center;
+  justify-self: center;
   width: min(100%, 23rem);
   margin: var(--hero-section-gap) 0 0;
 }
@@ -1076,10 +1080,10 @@ summary:focus-visible {
 .reveal.is-visible { transform: translateY(0); }
 
 @media (max-width: 980px) {
-  .hero-nameplate { grid-column: 1 / span 6; }
+  .hero-nameplate { grid-column: 1 / -1; }
   .hero-disciplines { grid-column: 1 / span 8; grid-row: 2; }
   .hero-message { grid-column: 1 / span 8; grid-row: 3; }
-  .hero-portrait { grid-column: 9 / -1; grid-row: 3; width: min(100%, 18rem); margin-top: 2rem; }
+  .hero-portrait { grid-column: 8 / -1; grid-row: 3; width: min(100%, 18rem); margin-top: 2rem; }
   .capability-grid-merged { grid-template-columns: 1fr 1fr; }
   .capability-grid-merged .capability-card:nth-child(2) { border-right: 0 !important; }
   .capability-grid-merged .capability-card:nth-child(-n + 2) { border-bottom: 1px solid var(--tech-blue) !important; }
@@ -1092,7 +1096,7 @@ summary:focus-visible {
   .site-nav { position: fixed; top: 64px; right: 0; left: 0; display: none; grid-template-columns: 1fr; padding: 0 var(--page-gutter) 1rem; background: var(--tech-blue) !important; border-bottom: 2px solid var(--coral); }
   .site-nav.is-open { display: grid; }
   .site-nav a { min-height: 52px; justify-content: flex-start; color: var(--white) !important; border-left: 0; border-bottom: 1px solid rgba(255,255,255,0.25); }
-  .hero-nameplate { grid-column: 1 / span 10; font-size: clamp(3.8rem, 18vw, 7rem); }
+  .hero-nameplate { grid-column: 1 / -1; gap: 0.5rem; font-size: clamp(3.1rem, 14vw, 6rem); }
   .hero-disciplines { grid-column: 1 / -1; grid-row: 2; margin-top: 1.5rem; }
   .hero-vertical-label { display: none; }
   .hero-message { grid-column: 1 / span 8; grid-row: 3; margin-top: 3rem; padding-left: 0; }
