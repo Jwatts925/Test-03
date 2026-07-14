@@ -98,7 +98,7 @@ summary:focus-visible {
 .site-nav {
   grid-column: 6 / -1;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
 }
 
@@ -259,6 +259,43 @@ summary:focus-visible {
   border-top: 1px solid var(--tech-blue);
   font-size: clamp(0.95rem, 1.25vw, 1.14rem);
   line-height: 1.5;
+}
+
+.hero-index {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 43rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--tech-blue);
+  border-bottom: 1px solid var(--tech-blue);
+}
+
+.hero-index div {
+  padding: 0.85rem 1rem;
+  border-right: 1px solid var(--grid-line);
+}
+
+.hero-index div:first-child {
+  padding-left: 0;
+}
+
+.hero-index div:last-child {
+  border-right: 0;
+}
+
+.hero-index dt {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.hero-index dd {
+  margin: 0.4rem 0 0;
+  color: var(--deep-ink);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .hero-portrait {
@@ -460,65 +497,6 @@ summary:focus-visible {
 .portfolio-section-inner {
   padding-top: clamp(3.5rem, 7vw, 7rem);
   padding-bottom: clamp(4rem, 8vw, 8rem);
-}
-
-/* About */
-.about-editorial {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(1rem, 2vw, 2rem);
-}
-
-.about-lead {
-  grid-column: 1 / span 8;
-  margin: 0;
-  color: var(--tech-blue);
-  font-family: var(--display);
-  font-size: clamp(2.4rem, 5.2vw, 6rem);
-  font-weight: 600;
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-}
-
-.about-support {
-  grid-column: 9 / -1;
-  align-self: end;
-  color: var(--deep-ink);
-  border-top: 2px solid var(--tech-blue);
-}
-
-.about-support p {
-  padding-top: 1rem;
-}
-
-.about-index {
-  grid-column: 5 / -1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  margin: 3rem 0 0;
-  border-top: 1px solid var(--tech-blue);
-  border-bottom: 1px solid var(--tech-blue);
-}
-
-.about-index div {
-  padding: 1rem;
-  border-right: 1px solid var(--tech-blue);
-}
-
-.about-index div:last-child {
-  border-right: 0;
-}
-
-.about-index dt {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  text-transform: uppercase;
-}
-
-.about-index dd {
-  margin: 0.5rem 0 0;
-  font-weight: 600;
 }
 
 /* Experience */
@@ -1022,12 +1000,6 @@ summary:focus-visible {
   .hero-actions { grid-column: 1 / span 10; border-top: 1px solid var(--tech-blue); border-left: 0; }
   .portfolio-section-trigger { grid-template-columns: minmax(0, 1fr) 2.5rem; min-height: clamp(5.25rem, 21vw, 9rem); padding-inline: var(--page-gutter); }
   .portfolio-section-title { font-size: clamp(3.6rem, 17.5vw, 8rem); line-height: 0.7; }
-  .about-lead,
-  .about-support,
-  .about-index { grid-column: 1 / -1; }
-  .about-support { margin-top: 2rem; }
-  .about-index { grid-template-columns: 1fr; }
-  .about-index div { border-right: 0; border-bottom: 1px solid var(--tech-blue); }
   .experience-brand { grid-column: 1 / span 3; }
   .experience-role { grid-column: 4 / -1; }
   .experience-copy { grid-column: 4 / -1; margin-top: 0.5rem; }
@@ -1046,6 +1018,10 @@ summary:focus-visible {
   .hero-message { grid-column: 1 / -1; grid-row: 4; margin-top: 1.5rem; }
   .hero-message h1 { font-size: clamp(3.2rem, 16vw, 5rem); }
   .hero-intro { font-size: 0.9rem; }
+  .hero-index { grid-template-columns: 1fr; }
+  .hero-index div,
+  .hero-index div:first-child { padding: 0.75rem 0; border-right: 0; border-bottom: 1px solid var(--grid-line); }
+  .hero-index div:last-child { border-bottom: 0; }
   .hero-portrait { grid-column: 7 / -1; grid-row: 3; justify-self: end; width: 9rem; margin-top: 0.5rem; }
   .hero-metrics > div:not(.hero-actions) { min-height: 8rem; padding: 1rem 0.65rem; }
   .hero-metrics strong { font-size: 2.8rem; }
