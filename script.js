@@ -60,13 +60,15 @@ const openPortfolioSection = (section, shouldScroll = false) => {
 };
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener('click', () => {
+  link.addEventListener('click', (event) => {
     const targetId = link.getAttribute('href')?.slice(1);
     if (!targetId) return;
 
     const targetSection = document.getElementById(targetId);
     if (targetSection?.classList.contains('portfolio-section')) {
-      openPortfolioSection(targetSection);
+      event.preventDefault();
+      openPortfolioSection(targetSection, true);
+      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
     }
   });
 });
@@ -74,16 +76,9 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 if (window.location.hash) {
   const initialSection = document.querySelector(window.location.hash);
   if (initialSection?.classList.contains('portfolio-section')) {
-    openPortfolioSection(initialSection);
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
   }
 }
-
-window.addEventListener('hashchange', () => {
-  const targetSection = document.querySelector(window.location.hash);
-  if (targetSection?.classList.contains('portfolio-section')) {
-    openPortfolioSection(targetSection, true);
-  }
-});
 
 
 // Update the portfolio page indicator as the reader scrolls.
