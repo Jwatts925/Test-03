@@ -919,7 +919,7 @@ h1 {
 /* ===== Palette refresh based on provided swatches =====
    Tech Blue  : #3F60B1
    Coral Glow : #FF8A5B
-   Canary Yellow: #F2F230
+   Orange      : #FF8A5B
    Pale Slate : #D2D7DF
    Muted Teal : #94BFA7
    Text: white
@@ -931,7 +931,7 @@ h1 {
   --white: #ffffff;
   --line: rgba(255, 255, 255, 0.22);
   --accent: #ff8a5b;
-  --accent-dark: #f2f230;
+  --accent-dark: #ff8a5b;
   --hero-muted: rgba(255, 255, 255, 0.84);
   --dark: #3f60b1;
   --dark-soft: #94bfa7;
@@ -1261,7 +1261,7 @@ body {
 .site-nav a:focus-visible,
 .brand:hover,
 .brand:focus-visible {
-  color: #f2f230;
+  color: #ff8a5b;
 }
 
 /* Selected Work button is neutral until hover */
@@ -1597,7 +1597,7 @@ body {
 }
 
 .portfolio-page-status strong {
-  color: #f2f230;
+  color: #ff8a5b;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
 }
@@ -1763,8 +1763,8 @@ body {
 .bim-pdf-open:hover,
 .bim-pdf-open:focus-visible {
   color: #3f60b1;
-  background: #f2f230;
-  border-color: #f2f230;
+  background: #ff8a5b;
+  border-color: #ff8a5b;
 }
 
 .bim-pdf-viewer {
@@ -1798,7 +1798,7 @@ body {
 }
 
 .bim-pdf-status strong {
-  color: #f2f230;
+  color: #ff8a5b;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
 }
@@ -3242,8 +3242,8 @@ body {
 .ifc-demo-open:hover,
 .ifc-demo-open:focus-visible {
   color: #3f60b1;
-  background: #f2f230;
-  border-color: #f2f230;
+  background: #ff8a5b;
+  border-color: #ff8a5b;
 }
 
 .ifc-demo-frame {
