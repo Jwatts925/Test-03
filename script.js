@@ -46,6 +46,8 @@ if (year) year.textContent = new Date().getFullYear();
 
 // Open portfolio sections when their navigation link is used.
 const portfolioSections = Array.from(document.querySelectorAll('.portfolio-section'));
+const siteHeader = document.querySelector('.site-header');
+let portfolioScrollTimer;
 
 const closeOtherPortfolioSections = (activeSection) => {
   portfolioSections.forEach((section) => {
@@ -54,9 +56,20 @@ const closeOtherPortfolioSections = (activeSection) => {
 };
 
 const scrollPortfolioSectionToTop = (section) => {
+  window.clearTimeout(portfolioScrollTimer);
+
   window.requestAnimationFrame(() => {
     window.requestAnimationFrame(() => {
-      section.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+      portfolioScrollTimer = window.setTimeout(() => {
+        const headerHeight = siteHeader?.getBoundingClientRect().height || 0;
+        const sectionTop = window.scrollY + section.getBoundingClientRect().top;
+
+        window.scrollTo({
+          top: Math.max(0, sectionTop - headerHeight),
+          left: 0,
+          behavior: reducedMotion ? 'auto' : 'smooth',
+        });
+      }, 0);
     });
   });
 };
