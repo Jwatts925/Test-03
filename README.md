@@ -80,8 +80,8 @@ layout, page counter, and Open PDF fallback button.
 The two embedded viewers load prepared That Open Fragments files instead of
 parsing the full IFC files in every visitor's browser:
 
-- `assets/models/TEST-IFC.frag`
-- `assets/models/IFC-02.frag`
+- `assets/models/SFPUC_914-IFC.frag`
+- `assets/models/SFPUC_603-IFC.frag`
 
 The original `.ifc` files remain the editable source models and can still be
 offered as downloads. The prepared files provide the same interactive geometry
