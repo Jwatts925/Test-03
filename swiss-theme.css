@@ -260,7 +260,7 @@ summary:focus-visible {
   grid-row: 4;
   width: 100%;
   max-width: none;
-  margin-top: 0;
+  margin-top: var(--hero-section-gap);
 }
 
 .hero-index {
@@ -438,6 +438,7 @@ summary:focus-visible {
 .portfolio-section {
   overflow: clip;
   margin: 0;
+  scroll-margin-top: 72px;
   background: var(--white);
   border-bottom: 1px solid var(--tech-blue);
 }
