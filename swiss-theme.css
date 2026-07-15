@@ -433,6 +433,7 @@ summary:focus-visible {
 /* Interactive oversized editorial sections */
 .portfolio-accordion {
   border-top: 0;
+  overflow-anchor: none;
 }
 
 .portfolio-section {
