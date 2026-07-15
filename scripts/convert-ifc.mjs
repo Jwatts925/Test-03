@@ -8,8 +8,8 @@ const modelsDir = path.join(root, "assets", "models");
 const wasmDir = `${path.join(root, "node_modules", "web-ifc")}${path.sep}`;
 
 const models = [
-  { source: "TEST-IFC.ifc", output: "TEST-IFC.frag", id: "TEST-IFC" },
-  { source: "IFC-02.ifc", output: "IFC-02.frag", id: "IFC-02" },
+  { source: "SFPUC_914-IFC.ifc", output: "SFPUC_914-IFC.frag", id: "SFPUC-914" },
+  { source: "SFPUC_603-IFC.ifc", output: "SFPUC_603-IFC.frag", id: "SFPUC-603" },
 ];
 
 await mkdir(modelsDir, { recursive: true });
