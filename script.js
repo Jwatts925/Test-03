@@ -64,23 +64,21 @@ const scrollPortfolioSectionToTop = (section) => {
 const openPortfolioSection = (section, shouldScroll = false) => {
   if (!section) return;
 
+  const wasAlreadyOpen = section.open;
   closeOtherPortfolioSections(section);
   section.open = true;
 
-  if (shouldScroll) {
+  if (shouldScroll && wasAlreadyOpen) {
     scrollPortfolioSectionToTop(section);
   }
 };
 
 portfolioSections.forEach((section) => {
-  const trigger = section.querySelector(':scope > .portfolio-section-trigger');
-
-  trigger?.addEventListener('click', () => {
-    if (!section.open) scrollPortfolioSectionToTop(section);
-  });
-
   section.addEventListener('toggle', () => {
-    if (section.open) closeOtherPortfolioSections(section);
+    if (section.open) {
+      closeOtherPortfolioSections(section);
+      scrollPortfolioSectionToTop(section);
+    }
   });
 });
 
