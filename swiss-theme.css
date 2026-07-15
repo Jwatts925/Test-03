@@ -904,7 +904,7 @@ summary:focus-visible {
 /* Selected work */
 .editorial-project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   border: 1px solid var(--tech-blue);
 }
@@ -1032,7 +1032,7 @@ summary:focus-visible {
   margin: 1rem 0 0;
   color: var(--tech-blue) !important;
   font-family: var(--display);
-  font-size: clamp(2.25rem, 3vw, 3.85rem);
+  font-size: clamp(2rem, 2.5vw, 3.4rem);
   line-height: 0.94;
   letter-spacing: -0.045em;
 }
@@ -1065,6 +1065,7 @@ summary:focus-visible {
 
 .editorial-project-grid .project-card:nth-child(2) .project-visual { background-color: rgba(148, 191, 167, 0.45) !important; }
 .editorial-project-grid .project-card:nth-child(3) .project-visual { background-color: rgba(255, 138, 91, 0.18) !important; }
+.editorial-project-grid .project-card:nth-child(4) .project-visual { background-color: rgba(63, 96, 177, 0.12) !important; }
 
 .editorial-project-grid .project-visual img {
   width: 92%;
