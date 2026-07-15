@@ -1329,7 +1329,7 @@ summary:focus-visible {
   .capability-grid-merged .capability-card-visual { margin-bottom: 1.25rem !important; }
   .capability-grid-merged .automation-capability-card h3,
   .capability-grid-merged .documentation-capability-card h3,
-  .capability-grid-merged .visualization-capability-card h3 { margin-top: 1.25rem !important; }
+  .capability-grid-merged .visualization-capability-card h3 { padding-top: 0.9rem; }
   .capability-grid-merged .capability-card p { line-height: 1.55; }
   .skills-wrap { grid-template-columns: 1fr; }
   .skills-wrap > div + div { border-top: 0; border-left: 0; }
