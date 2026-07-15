@@ -8,10 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/ifc-viewer-app-02.js"></script>
+  <script type="module" crossorigin src="./assets/ifc-viewer-app.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/ifc-viewer.css">
 </head>
-<body>
+<body data-model-id="IFC-02" data-fragments-src="./assets/models/IFC-02.frag">
   <main class="viewer-shell">
     <div class="viewer-actions viewer-actions-floating" aria-label="Model viewer controls">
       <button id="fit-model" type="button">Fit Model</button>
@@ -29,7 +29,7 @@
           <div class="loading-track" aria-hidden="true">
             <span id="loading-progress"></span>
           </div>
-          <small id="loading-detail">Loading IFC engine</small>
+          <small id="loading-detail">Loading optimized model engine</small>
         </div>
       </div>
 

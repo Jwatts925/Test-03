@@ -75,33 +75,29 @@ The viewer is rendered with `pdf-viewer.js` and does not require the former
 layout, page counter, and Open PDF fallback button.
 
 
-## Interactive IFC test viewer
+## Optimized IFC model viewers
 
-The BIM & Coordination page now embeds `ifc-viewer.html`, which loads:
+The two embedded viewers load prepared That Open Fragments files instead of
+parsing the full IFC files in every visitor's browser:
 
-- `assets/models/TEST-IFC.ifc`
-- `assets/ifc-viewer-app.js`
-- `assets/ifc-viewer.css`
-- `assets/ifc/web-ifc.wasm`
-- `assets/ifc/web-ifc-mt.wasm`
-- `assets/ifc/fragments-worker.mjs`
-- `assets/worker.mjs`
+- `assets/models/TEST-IFC.frag`
+- `assets/models/IFC-02.frag`
 
-The viewer uses That Open Components and Web IFC. Keep all of these files in their exact paths when uploading to GitHub Pages.
+The original `.ifc` files remain the editable source models and can still be
+offered as downloads. The prepared files provide the same interactive geometry
+with much faster startup, especially on phones.
 
+When either source IFC changes, rebuild the prepared models and the shared
+viewer bundle from the repository root:
 
-## Current IFC model
+```text
+pnpm install
+pnpm run build:ifc
+```
 
-The interactive viewer now loads the uploaded TEST-IFC model from:
+`scripts/convert-ifc.mjs` controls which IFC files are converted. The viewer
+source is `src/ifc-viewer.js`; Vite publishes the shared browser bundle to
+`assets/ifc-viewer-app.js`. Keep `assets/ifc/fragments-worker.mjs` alongside it.
 
-`assets/models/TEST-IFC.ifc`
-
-
-## Interactive IFC models
-
-The BIM page now displays two models:
-
-- `assets/models/TEST-IFC.ifc`
-- `assets/models/IFC-02.ifc`
-
-Each model must be activated with its top-left button before it captures the mouse wheel. Click the same button again to return to normal page scrolling.
+Each model must be activated with its top-left button before it captures the
+mouse wheel. Click the same button again to return to normal page scrolling.

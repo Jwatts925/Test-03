@@ -11,7 +11,7 @@
   <script type="module" crossorigin src="./assets/ifc-viewer-app.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/ifc-viewer.css">
 </head>
-<body>
+<body data-model-id="TEST-IFC" data-fragments-src="./assets/models/TEST-IFC.frag">
   <main class="viewer-shell">
     <div class="viewer-actions viewer-actions-floating" aria-label="Model viewer controls">
       <button id="fit-model" type="button">Fit Model</button>
@@ -29,7 +29,7 @@
           <div class="loading-track" aria-hidden="true">
             <span id="loading-progress"></span>
           </div>
-          <small id="loading-detail">Loading IFC engine</small>
+          <small id="loading-detail">Loading optimized model engine</small>
         </div>
       </div>
 
