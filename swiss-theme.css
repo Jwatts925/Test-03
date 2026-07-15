@@ -1318,7 +1318,7 @@ summary:focus-visible {
   max-width: none;
   height: auto;
   opacity: 0.58;
-  filter: drop-shadow(0 0 0.01px rgba(255, 255, 255, 0.15));
+  filter: brightness(0) invert(1) drop-shadow(0 0 0.01px rgba(255, 255, 255, 0.15));
 }
 
 .contact-fastener-01 { left: 1%; bottom: 5%; width: clamp(5rem, 7vw, 9rem); transform: rotate(-22deg); }
@@ -1329,7 +1329,7 @@ summary:focus-visible {
 .contact-fastener-08 { left: 1.5%; top: 28%; width: clamp(2.2rem, 3vw, 3.75rem); transform: rotate(31deg); }
 .contact-fastener-09 { left: 61%; top: 5%; width: clamp(14rem, 21vw, 26rem); transform: rotate(2deg); }
 .contact-fastener-10 { left: 52%; bottom: 8%; width: clamp(2.2rem, 3vw, 3.75rem); transform: rotate(-8deg); }
-.contact-fastener-11 { right: 3%; bottom: 2%; width: clamp(5rem, 7vw, 9rem); transform: rotate(-47deg); }
+.contact-fastener-11 { right: 1%; bottom: 2%; width: clamp(3rem, 4.5vw, 5.5rem); transform: rotate(-47deg); }
 
 .contact-grid {
   position: relative;
