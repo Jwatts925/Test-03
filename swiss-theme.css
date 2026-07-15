@@ -1338,6 +1338,13 @@ summary:focus-visible {
   z-index: 1;
 }
 
+.contact-grid > div:first-child,
+.contact-grid .contact-links {
+  position: relative;
+  background: var(--coral) !important;
+  box-shadow: 0 0 0 clamp(0.7rem, 1.2vw, 1.25rem) var(--coral);
+}
+
 @media (max-width: 760px) {
   .contact-fastener { opacity: 0.32; }
   .contact-fastener-02 { left: -18%; top: 3%; width: 78vw; }
