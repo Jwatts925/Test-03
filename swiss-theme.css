@@ -1296,6 +1296,63 @@ summary:focus-visible {
   .education-heading-group { grid-template-columns: 3.5rem minmax(0, 1fr); gap: 0.6rem; }
 }
 
+/* Fixed randomized fastener collage for the contact drafting sheet */
+.contact-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.contact-fastener-collage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.contact-fastener {
+  position: absolute;
+  display: block;
+  width: auto;
+  max-width: none;
+  height: auto;
+  opacity: 0.58;
+  filter: drop-shadow(0 0 0.01px rgba(255, 255, 255, 0.15));
+}
+
+.contact-fastener-01 { left: 3%; top: 64%; width: clamp(9rem, 13vw, 16rem); transform: rotate(-18deg); }
+.contact-fastener-02 { left: 4%; top: 5%; width: clamp(17rem, 25vw, 31rem); transform: rotate(1deg); }
+.contact-fastener-03 { left: 48%; top: 31%; width: clamp(9rem, 12vw, 15rem); transform: rotate(-32deg); }
+.contact-fastener-04 { left: 35%; top: 7%; width: clamp(17rem, 24vw, 30rem); transform: rotate(5deg); }
+.contact-fastener-05 { right: 4%; top: 11%; width: clamp(3.2rem, 4.3vw, 5.5rem); transform: rotate(-4deg); }
+.contact-fastener-06 { right: 20%; top: 16%; width: clamp(9rem, 13vw, 16rem); transform: rotate(38deg); }
+.contact-fastener-07 { right: 18%; top: 48%; width: clamp(9rem, 12vw, 15rem); transform: rotate(17deg); }
+.contact-fastener-08 { left: 8%; top: 25%; width: clamp(3rem, 4.2vw, 5.25rem); transform: rotate(31deg); }
+.contact-fastener-09 { left: 42%; top: 57%; width: clamp(17rem, 24vw, 30rem); transform: rotate(2deg); }
+.contact-fastener-10 { left: 52%; bottom: 4%; width: clamp(3rem, 4vw, 5rem); transform: rotate(-8deg); }
+.contact-fastener-11 { right: 4%; bottom: 3%; width: clamp(8rem, 11vw, 14rem); transform: rotate(-47deg); }
+
+.contact-grid {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .contact-fastener { opacity: 0.32; }
+  .contact-fastener-02 { left: -18%; top: 3%; width: 78vw; }
+  .contact-fastener-04 { right: -25%; left: auto; top: 20%; width: 72vw; transform: rotate(13deg); }
+  .contact-fastener-05 { right: 3%; top: 2%; width: 11vw; }
+  .contact-fastener-08 { left: 4%; top: 38%; width: 12vw; }
+  .contact-fastener-09 { left: -20%; top: 58%; width: 82vw; transform: rotate(-7deg); }
+  .contact-fastener-11 { right: -8%; bottom: 3%; width: 28vw; transform: rotate(-38deg); }
+  .contact-fastener-01,
+  .contact-fastener-03,
+  .contact-fastener-06,
+  .contact-fastener-07,
+  .contact-fastener-10 { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
