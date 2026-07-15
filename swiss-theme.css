@@ -325,6 +325,42 @@ summary:focus-visible {
   backface-visibility: hidden;
 }
 
+.hero-portrait-stack {
+  position: relative;
+  display: block;
+  aspect-ratio: 800 / 1018;
+  overflow: hidden;
+}
+
+.hero-portrait-mono {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-portrait .hero-portrait-color {
+  position: absolute;
+  z-index: 2;
+  top: -19.8%;
+  left: -28%;
+  width: 176.05%;
+  max-height: none;
+  object-fit: initial;
+  filter: none;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.hero-portrait:hover .hero-portrait-color,
+.hero-portrait:focus .hero-portrait-color,
+.hero-portrait:active .hero-portrait-color {
+  opacity: 1;
+}
+
+.hero-portrait:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 0.35rem;
+}
+
 .hero-metrics {
   grid-column: 1 / -1;
   grid-row: 5;
