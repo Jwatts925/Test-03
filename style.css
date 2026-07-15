@@ -3475,10 +3475,33 @@ body {
 }
 
 .ifc-interaction-lock.is-active .ifc-interaction-surface {
-  display: none;
+  inset: auto 14px 14px auto;
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 10px 13px;
+  color: #ffffff;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #ff8257;
+  border: 1px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(26, 44, 92, 0.18);
 }
 
 .ifc-interaction-surface:focus-visible {
   outline: 3px solid rgba(255, 138, 91, 0.7);
   outline-offset: -3px;
+}
+
+@media (max-width: 760px) {
+  .ifc-interaction-lock.is-active .ifc-interaction-surface {
+    right: 10px;
+    bottom: 10px;
+    padding: 9px 11px;
+    font-size: 0.66rem;
+  }
 }

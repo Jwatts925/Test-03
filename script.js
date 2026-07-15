@@ -169,6 +169,8 @@ if (portfolioReader && portfolioPages.length && portfolioCurrentPage) {
 
 
 // Click the model itself to activate it. A second stationary click releases it.
+if (!window.ifcInteractionInitialized) {
+window.ifcInteractionInitialized = true;
 document.querySelectorAll('[data-ifc-interaction]').forEach((frame) => {
   const surface = frame.querySelector('.ifc-interaction-surface');
   const iframe = frame.querySelector('iframe');
@@ -177,6 +179,7 @@ document.querySelectorAll('[data-ifc-interaction]').forEach((frame) => {
 
   let iframeEventsAttached = false;
   let pointerStart = null;
+  let pointerDragged = false;
   let fitTimer = null;
 
   const clickFitButton = () => {
@@ -226,6 +229,13 @@ document.querySelectorAll('[data-ifc-interaction]').forEach((frame) => {
   const setActive = (active) => {
     frame.classList.toggle('is-active', active);
     surface.setAttribute('aria-pressed', String(active));
+    surface.setAttribute(
+      'aria-label',
+      active
+        ? 'Release model and resume page scrolling'
+        : 'Activate interactive 3D model'
+    );
+    surface.textContent = active ? 'Release Scroll' : '';
     iframe.setAttribute('tabindex', active ? '0' : '-1');
 
     if (active) {
@@ -249,32 +259,53 @@ document.querySelectorAll('[data-ifc-interaction]').forEach((frame) => {
           pointerStart = {
             x: event.clientX,
             y: event.clientY,
-            target: event.target,
           };
+          pointerDragged = false;
         },
         true
       );
 
       iframeDocument.addEventListener(
-        'pointerup',
+        'pointermove',
         (event) => {
-          if (!frame.classList.contains('is-active') || !pointerStart) return;
+          if (!pointerStart) return;
 
           const distance = Math.hypot(
             event.clientX - pointerStart.x,
             event.clientY - pointerStart.y
           );
 
+          if (distance >= 10) pointerDragged = true;
+        },
+        true
+      );
+
+      iframeDocument.addEventListener(
+        'click',
+        (event) => {
+          if (!frame.classList.contains('is-active')) return;
+
           const target =
             event.target instanceof Element ? event.target : null;
           const clickedViewerControl = target?.closest('button');
 
-          // A normal click releases the viewer. Dragging still orbits normally.
-          if (distance < 6 && !clickedViewerControl) {
+          // A second click releases page scrolling. Dragging still orbits normally.
+          if (!pointerDragged && !clickedViewerControl) {
             setActive(false);
+            surface.focus({ preventScroll: true });
           }
 
           pointerStart = null;
+          pointerDragged = false;
+        },
+        true
+      );
+
+      iframeDocument.addEventListener(
+        'pointercancel',
+        () => {
+          pointerStart = null;
+          pointerDragged = false;
         },
         true
       );
@@ -288,7 +319,7 @@ document.querySelectorAll('[data-ifc-interaction]').forEach((frame) => {
   };
 
   surface.addEventListener('click', () => {
-    setActive(true);
+    setActive(!frame.classList.contains('is-active'));
   });
 
   iframe.addEventListener('load', () => {
@@ -329,3 +360,4 @@ document.querySelectorAll('[data-ifc-interaction]').forEach((frame) => {
     fitWhenReady();
   }
 });
+}
