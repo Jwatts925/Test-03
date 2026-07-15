@@ -1,0 +1,19 @@
+{
+  "name": "james-watts-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:ifc": "pnpm run convert:ifc && pnpm run build:ifc-viewer",
+    "build:ifc-viewer": "vite build --config vite.ifc.config.js",
+    "convert:ifc": "node scripts/convert-ifc.mjs"
+  },
+  "dependencies": {
+    "@thatopen/components": "latest",
+    "@thatopen/fragments": "latest",
+    "three": "latest",
+    "web-ifc": "latest"
+  },
+  "devDependencies": {
+    "vite": "latest"
+  }
+}
