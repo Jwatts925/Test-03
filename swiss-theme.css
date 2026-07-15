@@ -574,6 +574,7 @@ summary:focus-visible {
   align-items: center;
   align-self: center;
   justify-content: center;
+  transform: translateX(clamp(-5rem, -4.5vw, -3rem));
 }
 
 .experience-index,
@@ -1209,6 +1210,7 @@ summary:focus-visible {
   .portfolio-section-number { align-self: end; padding-bottom: 0.8rem; font-size: 1rem; }
   .portfolio-section-inner { padding-top: clamp(2.5rem, 9vw, 4rem); padding-bottom: clamp(3rem, 11vw, 5rem); }
   .experience-entry { grid-template-areas: "role role role role role role role role logo logo logo logo" "copy copy copy copy copy copy copy copy copy copy copy copy"; }
+  .experience-brand { transform: none; }
   .experience-copy { margin-top: 0.5rem; }
   .education-heading-group,
   .education-details { grid-column: 1 / -1; }
