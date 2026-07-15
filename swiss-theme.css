@@ -997,7 +997,7 @@ summary:focus-visible {
   grid-row: 2;
   display: flex;
   flex-direction: column;
-  min-height: 19rem;
+  min-height: 14.5rem;
   padding: clamp(1.5rem, 2.25vw, 2.5rem);
   border-right: 0;
   border-bottom: 0;
@@ -1029,7 +1029,7 @@ summary:focus-visible {
 }
 
 .editorial-project-grid .project-content h3 {
-  margin: 1rem 0;
+  margin: 1rem 0 0;
   color: var(--tech-blue) !important;
   font-family: var(--display);
   font-size: clamp(2.25rem, 3vw, 3.85rem);
@@ -1038,13 +1038,19 @@ summary:focus-visible {
 }
 
 .editorial-project-grid .project-link-label {
-  margin-top: auto;
+  width: max-content;
+  align-self: flex-end;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin: 1rem 0 0 auto;
+  padding-top: 0;
+  text-align: right;
 }
 
 .editorial-project-grid .project-visual {
   grid-row: 1;
   min-height: 0;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9 !important;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -1226,7 +1232,7 @@ summary:focus-visible {
   .education-details { grid-column: 1 / -1; }
   .education-details { margin-top: 2rem; }
   .editorial-project-grid .project-card { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-  .editorial-project-grid .project-content { min-height: 17rem; border-right: 0; border-bottom: 0; }
+  .editorial-project-grid .project-content { min-height: 15.5rem; border-right: 0; border-bottom: 0; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 20rem; border-right: 0; border-bottom: 1px solid var(--tech-blue); }
   .service-card:last-child { border-bottom: 0; }
