@@ -87,11 +87,11 @@ summary:focus-visible {
 .category-page .site-header .brand {
   grid-column: 1 / span 4;
   width: max-content;
-  color: var(--tech-blue) !important;
+  color: var(--coral) !important;
   font-family: var(--mono);
-  font-size: 0.78rem !important;
-  font-weight: 600;
-  letter-spacing: 0.20em !important;
+  font-size: 0.94rem !important;
+  font-weight: 700;
+  letter-spacing: 0.16em !important;
   text-transform: uppercase;
 }
 
@@ -255,6 +255,14 @@ summary:focus-visible {
   line-height: 1.5;
 }
 
+.hero-intro-wide {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  width: 100%;
+  max-width: none;
+  margin-top: 0;
+}
+
 .hero-index {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -302,7 +310,7 @@ summary:focus-visible {
   align-self: center;
   justify-self: center;
   width: min(100%, 23rem);
-  margin: var(--hero-section-gap) 0 0;
+  margin: -2rem 0 0;
 }
 
 .hero-portrait img {
@@ -319,6 +327,7 @@ summary:focus-visible {
 
 .hero-metrics {
   grid-column: 1 / -1;
+  grid-row: 5;
   position: relative;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -701,12 +710,13 @@ summary:focus-visible {
   grid-column: 9 / -1;
   display: grid;
   gap: 0.4rem;
-  padding-top: 1rem;
-  border-top: 2px solid var(--tech-blue);
+  padding-top: 0;
+  border-top: 0;
 }
 
 .education-date {
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 1rem;
   color: var(--white);
   font-family: var(--display);
   font-size: clamp(2.75rem, 4.2vw, 5rem);
@@ -714,6 +724,7 @@ summary:focus-visible {
   line-height: 0.85;
   letter-spacing: -0.045em;
   text-transform: uppercase;
+  border-bottom: 2px solid var(--tech-blue);
 }
 
 /* Skills merged into Experience */
@@ -721,23 +732,47 @@ summary:focus-visible {
   margin-top: 5rem;
 }
 
+.experience-resume-download {
+  display: flex;
+  width: min(100%, 28rem);
+  min-height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0 0 auto;
+  padding: 0.9rem 0;
+  color: var(--coral);
+  border-top: 1px solid var(--tech-blue);
+  border-bottom: 1px solid var(--tech-blue);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.experience-resume-download:hover {
+  color: var(--tech-blue);
+}
+
 .merged-section-label {
   margin: 0;
   padding: 1rem 0;
   color: var(--tech-blue);
   border-top: 2px solid var(--tech-blue);
+  border-bottom: 2px solid var(--tech-blue);
   font-family: var(--mono);
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .capability-grid-merged {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
-  border-top: 2px solid var(--tech-blue);
+  border-top: 0;
   border-bottom: 2px solid var(--tech-blue);
 }
 
@@ -746,10 +781,10 @@ summary:focus-visible {
   display: grid !important;
   grid-template-rows: auto 7rem auto 1fr !important;
   padding: 1.5rem !important;
-  color: var(--tech-blue);
-  background: var(--white) !important;
+  color: var(--white);
+  background: var(--tech-blue) !important;
   border: 0 !important;
-  border-right: 1px solid var(--tech-blue) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.35) !important;
   box-shadow: none !important;
 }
 
@@ -757,12 +792,12 @@ summary:focus-visible {
   border-right: 0 !important;
 }
 
-.capability-grid-merged .capability-card:nth-child(2) { background: var(--muted-teal) !important; }
-.capability-grid-merged .capability-card:nth-child(3) { background: var(--pale-slate) !important; }
-.capability-grid-merged .capability-card:nth-child(4) { background: var(--coral) !important; }
+.capability-grid-merged .capability-card:nth-child(2),
+.capability-grid-merged .capability-card:nth-child(3),
+.capability-grid-merged .capability-card:nth-child(4) { background: var(--tech-blue) !important; }
 
 .capability-grid-merged .card-number {
-  color: var(--tech-blue) !important;
+  color: var(--coral) !important;
   font-family: var(--mono);
 }
 
@@ -775,20 +810,20 @@ summary:focus-visible {
 .capability-grid-merged .capability-card-visual img {
   height: 6.5rem !important;
   object-fit: contain;
-  filter: grayscale(1) contrast(1.05);
+  filter: grayscale(1) brightness(0) invert(1);
 }
 
 .capability-grid-merged .capability-card h3 {
   min-height: 0 !important;
   margin: 0 0 1rem !important;
-  color: var(--tech-blue) !important;
+  color: var(--white) !important;
   font-family: var(--display);
   font-size: clamp(2rem, 3vw, 3.4rem);
   line-height: 0.9;
 }
 
 .capability-grid-merged .capability-card p {
-  color: var(--deep-ink) !important;
+  color: var(--white) !important;
 }
 
 .skills-wrap {
@@ -999,7 +1034,7 @@ summary:focus-visible {
   letter-spacing: -0.055em;
 }
 
-.contact-grid > div:first-child > p:last-child { color: var(--deep-ink) !important; }
+.contact-grid > div:first-child > p:last-child { color: var(--white) !important; }
 
 .contact-links {
   grid-column: 8 / -1;
@@ -1083,10 +1118,10 @@ summary:focus-visible {
   .hero-nameplate { grid-column: 1 / -1; }
   .hero-disciplines { grid-column: 1 / span 8; grid-row: 2; }
   .hero-message { grid-column: 1 / span 8; grid-row: 3; }
-  .hero-portrait { grid-column: 8 / -1; grid-row: 3; width: min(100%, 18rem); margin-top: 2rem; }
+  .hero-portrait { grid-column: 8 / -1; grid-row: 3; width: min(100%, 18rem); margin-top: -1.25rem; }
   .capability-grid-merged { grid-template-columns: 1fr 1fr; }
   .capability-grid-merged .capability-card:nth-child(2) { border-right: 0 !important; }
-  .capability-grid-merged .capability-card:nth-child(-n + 2) { border-bottom: 1px solid var(--tech-blue) !important; }
+  .capability-grid-merged .capability-card:nth-child(-n + 2) { border-bottom: 1px solid rgba(255, 255, 255, 0.35) !important; }
 }
 
 @media (max-width: 760px) {
@@ -1101,7 +1136,9 @@ summary:focus-visible {
   .hero-disciplines { grid-column: 1 / -1; grid-row: 2; margin-top: 1.5rem; }
   .hero-vertical-label { display: none; }
   .hero-message { grid-column: 1 / span 8; grid-row: 3; margin-top: 3rem; padding-left: 0; }
-  .hero-portrait { grid-column: 9 / -1; grid-row: 3; align-self: start; width: min(100%, 12rem); margin-top: 2rem; opacity: 0.9; }
+  .hero-portrait { grid-column: 9 / -1; grid-row: 3; align-self: start; width: min(100%, 12rem); margin-top: -0.75rem; opacity: 0.9; }
+  .hero-intro-wide { grid-row: 4; }
+  .hero-metrics { grid-row: 5; }
   .hero-metrics > div:not(.hero-actions) { grid-column: span 4; min-height: 9rem; }
   .hero-actions { grid-column: 1 / -1; border-top: 1px solid var(--tech-blue); border-left: 0; }
   .portfolio-section { scroll-margin-top: 64px; }
@@ -1130,8 +1167,10 @@ summary:focus-visible {
   .hero-disciplines { gap: 0.35rem 0.6rem; margin-top: 1.15rem; font-size: 0.55rem; }
   .hero-message { grid-column: 1 / -1; grid-row: 4; margin-top: 1.5rem; }
   .hero-message h1 { font-size: clamp(3rem, 14vw, 4.5rem); line-height: 0.9; }
-  .hero-intro { margin-top: 1.5rem; padding-top: 0.9rem; font-size: 1rem; line-height: 1.55; }
-  .hero-portrait { grid-column: 7 / -1; grid-row: 3; justify-self: center; width: min(9rem, 42vw); margin-top: 0.5rem; }
+  .hero-intro { margin-top: 0; padding-top: 0.9rem; font-size: 1rem; line-height: 1.55; }
+  .hero-intro-wide { grid-row: 5; }
+  .hero-portrait { grid-column: 7 / -1; grid-row: 3; justify-self: center; width: min(9rem, 42vw); margin-top: -0.5rem; }
+  .hero-metrics { grid-row: 6; }
   .hero-metrics > div:not(.hero-actions) { min-height: 8rem; padding: 1rem 0.65rem; }
   .hero-metrics strong { font-size: clamp(2.25rem, 11vw, 2.8rem); }
   .hero-metrics small { font-size: 0.55rem; line-height: 1.35; }
@@ -1159,8 +1198,9 @@ summary:focus-visible {
   .education-logo { width: 100%; }
   .education-heading-group h3 { font-size: clamp(1.85rem, 9.4vw, 2.8rem); line-height: 0.84; }
   .education-date { font-size: clamp(2.5rem, 13vw, 3.7rem); }
+  .experience-resume-download { width: 100%; margin-top: 1.5rem; }
   .capability-grid-merged { grid-template-columns: 1fr; }
-  .capability-grid-merged .capability-card { min-height: 0; border-right: 0 !important; border-bottom: 1px solid var(--tech-blue) !important; }
+  .capability-grid-merged .capability-card { min-height: 0; border-right: 0 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.35) !important; }
   .skills-wrap { grid-template-columns: 1fr; }
   .skills-wrap > div + div { border-top: 0; border-left: 0; }
   .contact-grid h2 { font-size: clamp(3.25rem, 17vw, 5rem); }
