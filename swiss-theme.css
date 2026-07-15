@@ -576,7 +576,7 @@ summary:focus-visible {
   position: relative;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-areas: "role role role logo logo . copy copy copy copy copy copy";
+  grid-template-areas: "role role role logo logo logo copy copy copy copy copy copy";
   gap: clamp(1rem, 2vw, 2rem);
   align-items: center;
   padding: clamp(2rem, 4vw, 3.5rem) 0;
@@ -613,7 +613,6 @@ summary:focus-visible {
   align-items: center;
   align-self: center;
   justify-content: center;
-  transform: translateX(clamp(-5rem, -4.5vw, -3rem));
 }
 
 .experience-index,
