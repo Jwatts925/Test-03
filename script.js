@@ -53,6 +53,14 @@ const closeOtherPortfolioSections = (activeSection) => {
   });
 };
 
+const scrollPortfolioSectionToTop = (section) => {
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      section.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+};
+
 const openPortfolioSection = (section, shouldScroll = false) => {
   if (!section) return;
 
@@ -60,13 +68,17 @@ const openPortfolioSection = (section, shouldScroll = false) => {
   section.open = true;
 
   if (shouldScroll) {
-    window.requestAnimationFrame(() => {
-      section.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
-    });
+    scrollPortfolioSectionToTop(section);
   }
 };
 
 portfolioSections.forEach((section) => {
+  const trigger = section.querySelector(':scope > .portfolio-section-trigger');
+
+  trigger?.addEventListener('click', () => {
+    if (!section.open) scrollPortfolioSectionToTop(section);
+  });
+
   section.addEventListener('toggle', () => {
     if (section.open) closeOtherPortfolioSections(section);
   });
