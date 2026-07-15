@@ -2928,7 +2928,7 @@ body {
 
 /* Cards without graphics retain the same image row,
    keeping every title and paragraph aligned. */
-.capability-grid-merged .capability-card:not(.documentation-capability-card):not(.visualization-capability-card) h3 {
+.capability-grid-merged .capability-card:not(.automation-capability-card):not(.documentation-capability-card):not(.visualization-capability-card) h3 {
   grid-row: 3;
 }
 
@@ -2954,16 +2954,16 @@ body {
     min-height: 0;
   }
 
-  .capability-grid-merged .capability-card:not(.documentation-capability-card):not(.visualization-capability-card) {
+  .capability-grid-merged .capability-card:not(.automation-capability-card):not(.documentation-capability-card):not(.visualization-capability-card) {
     grid-template-rows: auto auto auto;
   }
 
-  .capability-grid-merged .capability-card:not(.documentation-capability-card):not(.visualization-capability-card) h3 {
+  .capability-grid-merged .capability-card:not(.automation-capability-card):not(.documentation-capability-card):not(.visualization-capability-card) h3 {
     grid-row: 2;
     margin-top: 34px !important;
   }
 
-  .capability-grid-merged .capability-card:not(.documentation-capability-card):not(.visualization-capability-card) p {
+  .capability-grid-merged .capability-card:not(.automation-capability-card):not(.documentation-capability-card):not(.visualization-capability-card) p {
     grid-row: 3;
   }
 
@@ -2979,11 +2979,13 @@ body {
     height: 135px;
   }
 
+  .capability-grid-merged .automation-capability-card h3,
   .capability-grid-merged .documentation-capability-card h3,
   .capability-grid-merged .visualization-capability-card h3 {
     grid-row: 3;
   }
 
+  .capability-grid-merged .automation-capability-card p,
   .capability-grid-merged .documentation-capability-card p,
   .capability-grid-merged .visualization-capability-card p {
     grid-row: 4;
