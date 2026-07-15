@@ -343,6 +343,7 @@ summary:focus-visible {
   top: -19.8%;
   left: -28%;
   width: 176.05%;
+  max-width: none;
   max-height: none;
   object-fit: initial;
   filter: none;
