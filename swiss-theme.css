@@ -1091,20 +1091,24 @@ summary:focus-visible {
 
 @media (max-width: 760px) {
   .nav-wrap { display: flex; min-height: 64px; }
-  .menu-toggle { display: inline-grid; width: 44px; height: 44px; place-content: center; gap: 5px; padding: 0; background: var(--tech-blue); border: 0; border-radius: 0; }
+  .menu-toggle { display: inline-grid; width: 48px; height: 48px; place-content: center; gap: 5px; padding: 0; background: var(--tech-blue); border: 0; border-radius: 0; }
   .menu-toggle span { width: 20px; height: 2px; background: var(--white) !important; }
-  .site-nav { position: fixed; top: 64px; right: 0; left: 0; display: none; grid-template-columns: 1fr; padding: 0 var(--page-gutter) 1rem; background: var(--tech-blue) !important; border-bottom: 2px solid var(--coral); }
+  .site-nav { position: fixed; top: 64px; right: 0; left: 0; display: none; grid-template-columns: 1fr; max-height: calc(100svh - 64px); overflow-y: auto; padding: 0 var(--page-gutter) 1rem; background: var(--tech-blue) !important; border-bottom: 2px solid var(--coral); box-shadow: 0 0.75rem 1.5rem rgba(22, 34, 40, 0.16); }
   .site-nav.is-open { display: grid; }
-  .site-nav a { min-height: 52px; justify-content: flex-start; color: var(--white) !important; border-left: 0; border-bottom: 1px solid rgba(255,255,255,0.25); }
-  .hero-nameplate { grid-column: 1 / -1; gap: clamp(0.75rem, 3vw, 1.25rem); font-size: clamp(3.1rem, 14vw, 6rem); }
+  .site-nav a { min-height: 58px; justify-content: flex-start; color: var(--white) !important; border-left: 0; border-bottom: 1px solid rgba(255,255,255,0.25); }
+  .editorial-hero { padding-top: clamp(1.75rem, 6vw, 2.5rem); }
+  .hero-nameplate { grid-column: 1 / -1; gap: clamp(0.45rem, 2vw, 0.8rem); font-size: clamp(2.3rem, 11.5vw, 5rem); letter-spacing: 0.04em; }
   .hero-disciplines { grid-column: 1 / -1; grid-row: 2; margin-top: 1.5rem; }
   .hero-vertical-label { display: none; }
   .hero-message { grid-column: 1 / span 8; grid-row: 3; margin-top: 3rem; padding-left: 0; }
   .hero-portrait { grid-column: 9 / -1; grid-row: 3; align-self: start; width: min(100%, 12rem); margin-top: 2rem; opacity: 0.9; }
   .hero-metrics > div:not(.hero-actions) { grid-column: span 4; min-height: 9rem; }
   .hero-actions { grid-column: 1 / -1; border-top: 1px solid var(--tech-blue); border-left: 0; }
-  .portfolio-section-trigger { grid-template-columns: minmax(0, 1fr) 2.5rem; min-height: clamp(5.25rem, 21vw, 9rem); padding-inline: var(--page-gutter); }
-  .portfolio-section-title { font-size: clamp(3.6rem, 17.5vw, 8rem); line-height: 0.64; }
+  .portfolio-section { scroll-margin-top: 64px; }
+  .portfolio-section-trigger { grid-template-columns: minmax(0, 1fr) 2.5rem; min-height: clamp(6.75rem, 28vw, 9rem); padding-inline: var(--page-gutter); }
+  .portfolio-section-title { padding: 0.15em 0 0.04em; font-size: clamp(3.15rem, 15vw, 7rem); line-height: 0.78; }
+  .portfolio-section-number { align-self: end; padding-bottom: 0.8rem; font-size: 1rem; }
+  .portfolio-section-inner { padding-top: clamp(2.5rem, 9vw, 4rem); padding-bottom: clamp(3rem, 11vw, 5rem); }
   .experience-brand { grid-column: 1 / span 3; }
   .experience-role { grid-column: 4 / -1; }
   .experience-copy { grid-column: 4 / -1; margin-top: 0.5rem; }
@@ -1123,35 +1127,56 @@ summary:focus-visible {
 
 @media (max-width: 520px) {
   :root { --page-gutter: 1rem; }
+  .hero-disciplines { gap: 0.35rem 0.6rem; margin-top: 1.15rem; font-size: 0.55rem; }
   .hero-message { grid-column: 1 / -1; grid-row: 4; margin-top: 1.5rem; }
-  .hero-message h1 { font-size: clamp(3.2rem, 16vw, 5rem); }
-  .hero-intro { font-size: 0.9rem; }
-  .hero-portrait { grid-column: 7 / -1; grid-row: 3; justify-self: end; width: 9rem; margin-top: 0.5rem; }
+  .hero-message h1 { font-size: clamp(3rem, 14vw, 4.5rem); line-height: 0.9; }
+  .hero-intro { margin-top: 1.5rem; padding-top: 0.9rem; font-size: 1rem; line-height: 1.55; }
+  .hero-portrait { grid-column: 7 / -1; grid-row: 3; justify-self: center; width: min(9rem, 42vw); margin-top: 0.5rem; }
   .hero-metrics > div:not(.hero-actions) { min-height: 8rem; padding: 1rem 0.65rem; }
-  .hero-metrics strong { font-size: 2.8rem; }
-  .hero-metrics small { font-size: 0.52rem; }
-  .hero-index dd { font-size: 0.72rem; }
+  .hero-metrics strong { font-size: clamp(2.25rem, 11vw, 2.8rem); }
+  .hero-metrics small { font-size: 0.55rem; line-height: 1.35; }
+  .hero-index { width: calc(100% + 2rem); margin-inline: -1rem; }
+  .hero-index div { min-height: 4.8rem; padding: 0.7rem 0.55rem; }
+  .hero-index div:last-child { padding-right: 0.55rem; }
+  .hero-index dt { font-size: 0.5rem; }
+  .hero-index dd { font-size: 0.68rem; line-height: 1.25; }
   .portfolio-section-trigger { grid-template-columns: minmax(0, 1fr) 2rem; }
-  .portfolio-section-title { font-size: clamp(3.25rem, 16vw, 5rem); }
+  .portfolio-section-title { font-size: clamp(3rem, 15vw, 4.8rem); }
   .portfolio-section-number { grid-column: 2; }
-  .experience-entry { grid-template-columns: 1fr; gap: 1.5rem; }
+  .experience-entry { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 2.25rem; }
   .experience-brand,
   .experience-role,
   .experience-copy { grid-column: 1; }
-  .experience-brand { grid-template-columns: auto minmax(0, 1fr); align-items: start; }
-  .experience-logo { width: 8rem; }
-  .experience-role h3 { max-width: none; }
-  .experience-copy { margin-top: 0; }
+  .experience-brand { grid-template-columns: 1fr; align-items: start; }
+  .experience-logo,
+  .experience-logo-wide { width: min(7rem, 42vw); height: 5.5rem; justify-self: start; }
+  .experience-role h3 { max-width: none; font-size: clamp(2.65rem, 14vw, 4rem); line-height: 0.88; }
+  .experience-meta { gap: 0.45rem 0.65rem; margin-top: 1rem; line-height: 1.4; }
+  .experience-copy { margin-top: 0; padding-top: 1.25rem; }
+  .experience-copy li { font-size: 0.96rem; line-height: 1.6; }
   .education-inline { padding: 1.25rem; }
-  .education-heading-group { align-items: center; gap: 0.85rem; }
-  .education-logo { width: 4.75rem; }
-  .education-heading-group h3 { font-size: clamp(2.2rem, 11vw, 3.2rem); }
-  .education-date { font-size: clamp(2.6rem, 14vw, 4rem); }
+  .education-heading-group { display: grid; grid-template-columns: minmax(3.75rem, 4.25rem) minmax(0, 1fr); align-items: center; gap: 0.75rem; }
+  .education-logo { width: 100%; }
+  .education-heading-group h3 { font-size: clamp(1.85rem, 9.4vw, 2.8rem); line-height: 0.84; }
+  .education-date { font-size: clamp(2.5rem, 13vw, 3.7rem); }
   .capability-grid-merged { grid-template-columns: 1fr; }
   .capability-grid-merged .capability-card { min-height: 0; border-right: 0 !important; border-bottom: 1px solid var(--tech-blue) !important; }
   .skills-wrap { grid-template-columns: 1fr; }
   .skills-wrap > div + div { border-top: 0; border-left: 0; }
-  .contact-links a { grid-template-columns: 5rem minmax(0,1fr) auto; }
+  .contact-grid h2 { font-size: clamp(3.25rem, 17vw, 5rem); }
+  .contact-links a { grid-template-columns: 1fr auto; gap: 0.35rem 0.75rem; min-height: 4.5rem; align-content: center; }
+  .contact-links a span { grid-column: 1 / -1; }
+  .footer-wrap { gap: 1rem; align-items: center; font-size: 0.58rem; line-height: 1.4; }
+}
+
+@media (max-width: 360px) {
+  .hero-nameplate { gap: 0.35rem; font-size: 10.8vw; letter-spacing: 0.025em; }
+  .hero-disciplines { font-size: 0.5rem; }
+  .hero-message h1 { font-size: 13.2vw; }
+  .portfolio-section-title { font-size: 14.2vw; }
+  .portfolio-section-trigger { min-height: 6rem; }
+  .education-inline { padding-inline: 1rem; }
+  .education-heading-group { grid-template-columns: 3.5rem minmax(0, 1fr); gap: 0.6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
