@@ -537,7 +537,9 @@ summary:focus-visible {
   position: relative;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-areas: "role role role role logo logo copy copy copy copy copy copy";
   gap: clamp(1rem, 2vw, 2rem);
+  align-items: center;
   padding: clamp(2rem, 4vw, 3.5rem) 0;
   border-bottom: 1px solid var(--tech-blue);
   transition: background 180ms ease;
@@ -565,12 +567,13 @@ summary:focus-visible {
 }
 
 .experience-brand {
-  grid-column: 5 / span 2;
-  display: grid;
-  grid-template-rows: 1fr;
+  grid-area: logo;
+  display: flex;
+  height: 100%;
+  min-height: 12rem;
   align-items: center;
-  align-self: stretch;
-  justify-items: center;
+  align-self: center;
+  justify-content: center;
 }
 
 .experience-index,
@@ -627,11 +630,11 @@ summary:focus-visible {
 }
 
 .experience-role {
-  grid-column: 1 / span 4;
+  grid-area: role;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  align-self: start;
+  align-self: center;
 }
 
 .experience-role p {
@@ -669,8 +672,8 @@ summary:focus-visible {
 }
 
 .experience-copy {
-  grid-column: 7 / -1;
-  align-self: start;
+  grid-area: copy;
+  align-self: center;
   padding-top: 1.7rem;
   border-top: 1px solid var(--grid-line);
 }
@@ -1205,9 +1208,8 @@ summary:focus-visible {
   .portfolio-section-title { padding: 0.15em 0 0.04em; font-size: clamp(3.15rem, 15vw, 7rem); line-height: 0.78; }
   .portfolio-section-number { align-self: end; padding-bottom: 0.8rem; font-size: 1rem; }
   .portfolio-section-inner { padding-top: clamp(2.5rem, 9vw, 4rem); padding-bottom: clamp(3rem, 11vw, 5rem); }
-  .experience-role { grid-column: 1 / span 8; }
-  .experience-brand { grid-column: 9 / -1; }
-  .experience-copy { grid-column: 1 / -1; margin-top: 0.5rem; }
+  .experience-entry { grid-template-areas: "role role role role role role role role logo logo logo logo" "copy copy copy copy copy copy copy copy copy copy copy copy"; }
+  .experience-copy { margin-top: 0.5rem; }
   .education-heading-group,
   .education-details { grid-column: 1 / -1; }
   .education-details { margin-top: 2rem; }
@@ -1241,13 +1243,8 @@ summary:focus-visible {
   .portfolio-section-trigger { grid-template-columns: minmax(0, 1fr) 2rem; }
   .portfolio-section-title { font-size: clamp(3rem, 15vw, 4.8rem); }
   .portfolio-section-number { grid-column: 2; }
-  .experience-entry { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 2.25rem; }
-  .experience-brand,
-  .experience-role,
-  .experience-copy { grid-column: 1; }
-  .experience-role { order: 1; }
-  .experience-brand { grid-template-columns: 1fr; order: 2; align-items: start; justify-self: end; }
-  .experience-copy { order: 3; }
+  .experience-entry { grid-template-columns: 1fr; grid-template-areas: "role" "logo" "copy"; gap: 1.25rem; padding-block: 2.25rem; }
+  .experience-brand { min-height: 8rem; justify-self: stretch; }
   .experience-logo,
   .experience-logo-wide { width: min(7rem, 42vw); height: 5.5rem; justify-self: end; }
   .experience-role h3 { max-width: none; font-size: clamp(2.65rem, 14vw, 4rem); line-height: 0.88; }
