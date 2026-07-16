@@ -46,8 +46,6 @@ const projectIndexData = [
 const projectIndexList = document.querySelector("[data-project-index]");
 
 if (projectIndexList) {
-  const originalOrder = new Map();
-
   const imageMarkup = (project) => {
     if (!project.slug || !project.images) return "";
 
@@ -64,7 +62,6 @@ if (projectIndexList) {
     const article = document.createElement("article");
     article.className = "project-index-item";
     article.dataset.projectOrder = String(index);
-    originalOrder.set(article, index);
 
     const panelId = `project-panel-${index + 1}`;
     const buttonId = `project-trigger-${index + 1}`;
@@ -91,12 +88,6 @@ if (projectIndexList) {
     projectIndexList.appendChild(article);
   });
 
-  const sortToOriginalOrder = () => {
-    [...projectIndexList.children]
-      .sort((a, b) => originalOrder.get(a) - originalOrder.get(b))
-      .forEach((item) => projectIndexList.appendChild(item));
-  };
-
   const closeItem = (item) => {
     if (!item) return;
     item.classList.remove("is-open");
@@ -117,11 +108,9 @@ if (projectIndexList) {
     const selectedItem = trigger.closest(".project-index-item");
     const wasOpen = selectedItem.classList.contains("is-open");
     closeItem(projectIndexList.querySelector(".project-index-item.is-open"));
-    sortToOriginalOrder();
 
     if (wasOpen) return;
 
-    projectIndexList.prepend(selectedItem);
     selectedItem.classList.add("is-open");
     trigger.setAttribute("aria-expanded", "true");
     selectedItem.querySelector(".project-index-panel").hidden = false;
