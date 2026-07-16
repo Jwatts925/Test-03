@@ -633,10 +633,6 @@ summary:focus-visible {
   color: var(--coral);
 }
 
-.experience-entry:first-child .experience-index {
-  top: -2rem;
-}
-
 .experience-index,
 .service-number,
 .capability-grid-merged .card-number,
@@ -1275,7 +1271,6 @@ summary:focus-visible {
   .portfolio-section-number { align-self: end; padding-bottom: 0.8rem; font-size: 1rem; }
   .portfolio-section-inner { padding-top: clamp(2.5rem, 9vw, 4rem); padding-bottom: clamp(3rem, 11vw, 5rem); }
   .experience-entry { grid-template-areas: "role role role role role role role role logo logo logo logo" "copy copy copy copy copy copy copy copy copy copy copy copy"; }
-  .experience-entry:first-child .experience-index { top: 2.25rem; }
   .experience-brand { transform: none; }
   .experience-copy { margin-top: 0.5rem; }
   .education-heading-group,
