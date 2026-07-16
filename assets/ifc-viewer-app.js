@@ -15165,7 +15165,7 @@ var Gd = document.querySelector("#viewer-container"), Kd = document.querySelecto
 if (!(Gd instanceof HTMLElement)) throw Error("Viewer container was not found.");
 var lf = document.body.dataset.modelId, uf = document.body.dataset.fragmentsSrc;
 if (!lf || !uf) throw Error("The prepared model source was not configured.");
-var df = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches, ff = document.body.dataset.viewMode === "hidden-line-spin", pf = new A("#ff8a5b"), mf, hf, gf, _f = null, vf = null, yf = null, bf = null, xf = {}, Sf = !1, Cf = 0, wf = null, Tf = !1, Ef = 0, Df = new A("#e4e5e2"), Of = new A("#26343a");
+var df = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches, ff = document.body.dataset.viewMode === "hidden-line-spin", pf = new A("#ff8a5b"), mf, hf, gf, _f = null, vf = null, yf = null, bf = null, xf = {}, Sf = !1, Cf = 0, wf = null, Tf = !1, Ef = 0, Df = new A("#faf9f5"), Of = new A("#4164b3");
 function kf(e) {
 	if (!(qd instanceof HTMLElement)) return;
 	let t = Number.isFinite(e) ? Math.max(0, Math.min(1, e > 1 ? e / 100 : e)) : .08;
@@ -15362,7 +15362,11 @@ Xd?.addEventListener("click", () => Vf(!0).catch(Af)), Zd?.addEventListener("cli
 			let n = t > 1 ? t / 100 : t;
 			kf(.78 + Math.min(1, n) * .16);
 		}
-	}), kf(.95), await hf.core.update(!0), _f = Bf(), _f && (await mf.camera.controls.fitToSphere(_f, !1), await hf.core.update(!0)), ff) {
+	}), kf(.95), await hf.core.update(!0), _f = Bf(), _f) {
+		let e = _f.clone();
+		ff && (e.radius *= 1.3), await mf.camera.controls.fitToSphere(e, !1), await hf.core.update(!0);
+	}
+	if (ff) {
 		for (let [, e] of hf.core.models.materials.list) jf(e);
 		await hf.core.update(!0), Mf();
 	}
