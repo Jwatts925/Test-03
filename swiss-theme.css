@@ -598,7 +598,7 @@ summary:focus-visible {
   line-height: 1.5;
 }
 
-.about-portrait {
+.about-copy-wrap .about-portrait {
   float: left;
   width: clamp(9.5rem, 17vw, 17rem);
   margin: -0.35rem clamp(1.75rem, 3vw, 3rem) 1.25rem 0;
@@ -1874,6 +1874,15 @@ summary:focus-visible {
   grid-row: 4;
 }
 
+@media (min-width: 761px) {
+  .hero-message h1 {
+    max-width: 40rem;
+    font-size: clamp(2.65rem, 3.75vw, 3.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+}
+
 @media (max-width: 980px) {
   .hero-message {
     grid-column: 1 / span 7;
@@ -1910,7 +1919,7 @@ summary:focus-visible {
   }
 
   .about-copy { font-size: 1rem; line-height: 1.55; }
-  .about-portrait { width: clamp(7.5rem, 30vw, 10rem); margin-right: 1rem; shape-margin: 0.6rem; }
+  .about-copy-wrap .about-portrait { width: clamp(7.5rem, 30vw, 10rem); margin-right: 1rem; shape-margin: 0.6rem; }
 }
 
 @media (max-width: 520px) {
@@ -1918,5 +1927,5 @@ summary:focus-visible {
   .hero-message h1 { font-size: clamp(2rem, 7.8vw, 2.5rem); line-height: 0.98; }
   .hero-ifc-grid { grid-row: 4; margin-top: 1.25rem; }
   .hero-metrics { grid-row: 5; }
-  .about-portrait { width: 7rem; }
+  .about-copy-wrap .about-portrait { width: 7rem; }
 }
