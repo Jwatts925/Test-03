@@ -633,6 +633,10 @@ summary:focus-visible {
   color: var(--coral);
 }
 
+.experience-entry:first-child .experience-index {
+  top: -2rem;
+}
+
 .experience-index,
 .service-number,
 .capability-grid-merged .card-number,
@@ -813,7 +817,8 @@ summary:focus-visible {
   width: min(100%, 28rem);
   min-height: 3.5rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 1rem;
   margin: 2rem 0 0 auto;
   padding: 0.9rem 0;
   color: var(--coral);
@@ -864,6 +869,7 @@ summary:focus-visible {
   min-height: 25rem;
   display: grid !important;
   grid-template-rows: auto 7rem auto 1fr !important;
+  row-gap: 1.75rem;
   padding: 1.5rem !important;
   color: var(--white);
   background: var(--tech-blue) !important;
@@ -886,9 +892,10 @@ summary:focus-visible {
 }
 
 .capability-grid-merged .capability-card-visual {
+  grid-row: 2;
   height: 7rem !important;
   min-height: 7rem !important;
-  margin: 0.5rem 0 1rem !important;
+  margin: 0.5rem 0 0 !important;
 }
 
 .capability-grid-merged .capability-card-visual img {
@@ -898,8 +905,9 @@ summary:focus-visible {
 }
 
 .capability-grid-merged .capability-card h3 {
+  grid-row: 3;
   min-height: 0 !important;
-  margin: 0.7rem 0 1rem !important;
+  margin: 0 0 1rem !important;
   color: var(--white) !important;
   font-family: var(--display);
   font-size: clamp(2rem, 3vw, 3.4rem);
@@ -907,6 +915,8 @@ summary:focus-visible {
 }
 
 .capability-grid-merged .capability-card p {
+  grid-row: 4;
+  align-self: end;
   color: var(--white) !important;
 }
 
@@ -962,11 +972,7 @@ summary:focus-visible {
   grid-template-rows: auto 1fr;
   min-height: 0;
   color: var(--tech-blue);
-  background:
-    linear-gradient(90deg, transparent calc(50% - 0.5px), rgba(63, 96, 177, 0.08) 50%, transparent calc(50% + 0.5px)),
-    linear-gradient(rgba(63, 96, 177, 0.045) 1px, transparent 1px),
-    var(--white) !important;
-  background-size: auto, 100% 2rem, auto !important;
+  background: var(--white) !important;
   border: 0 !important;
   border-right: 1px solid var(--tech-blue) !important;
   box-shadow: none !important;
@@ -1088,7 +1094,7 @@ summary:focus-visible {
   align-self: flex-end;
   justify-content: flex-end;
   gap: 0.8rem;
-  margin: 1rem 0 0 auto;
+  margin: auto 0 0 auto;
   padding-top: 0;
   text-align: right;
 }
@@ -1101,17 +1107,13 @@ summary:focus-visible {
   place-items: center;
   overflow: hidden;
   padding: clamp(1rem, 1.8vw, 1.75rem) !important;
-  background:
-    linear-gradient(rgba(63, 96, 177, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(63, 96, 177, 0.08) 1px, transparent 1px),
-    var(--pale-slate) !important;
-  background-size: 1.5rem 1.5rem !important;
+  background: var(--white) !important;
   border: 0 !important;
 }
 
-.editorial-project-grid .project-card:nth-child(2) .project-visual { background-color: rgba(148, 191, 167, 0.45) !important; }
-.editorial-project-grid .project-card:nth-child(3) .project-visual { background-color: rgba(255, 138, 91, 0.18) !important; }
-.editorial-project-grid .project-card:nth-child(4) .project-visual { background-color: rgba(63, 96, 177, 0.12) !important; }
+.editorial-project-grid .project-card:nth-child(2) .project-visual,
+.editorial-project-grid .project-card:nth-child(3) .project-visual,
+.editorial-project-grid .project-card:nth-child(4) .project-visual { background-color: var(--white) !important; }
 
 .editorial-project-grid .project-visual img {
   width: 92%;
@@ -1273,6 +1275,7 @@ summary:focus-visible {
   .portfolio-section-number { align-self: end; padding-bottom: 0.8rem; font-size: 1rem; }
   .portfolio-section-inner { padding-top: clamp(2.5rem, 9vw, 4rem); padding-bottom: clamp(3rem, 11vw, 5rem); }
   .experience-entry { grid-template-areas: "role role role role role role role role logo logo logo logo" "copy copy copy copy copy copy copy copy copy copy copy copy"; }
+  .experience-entry:first-child .experience-index { top: 2.25rem; }
   .experience-brand { transform: none; }
   .experience-copy { margin-top: 0.5rem; }
   .education-heading-group,
@@ -1416,8 +1419,8 @@ summary:focus-visible {
 }
 
 .contact-fastener-01 { left: 1.5%; top: 3%; width: clamp(5rem, 7.5vw, 9rem); transform: rotate(76deg); }
-.contact-fastener-02 { left: 22%; top: 5%; width: clamp(7rem, 10vw, 12rem); transform: rotate(2deg); }
-.contact-fastener-03 { left: 46%; top: 7%; width: clamp(15rem, 24vw, 30rem); transform: rotate(1deg); }
+.contact-fastener-02 { left: 22%; top: 5%; width: clamp(7rem, 10vw, 12rem); transform: rotate(0deg); }
+.contact-fastener-03 { left: 46%; top: 7%; width: clamp(15rem, 24vw, 30rem); transform: rotate(0deg); }
 .contact-fastener-04 { left: 72%; top: 7%; width: clamp(12rem, 19vw, 24rem); transform: rotate(44deg); }
 .contact-fastener-05 { right: 2%; top: 10%; width: clamp(5rem, 8vw, 10rem); transform: rotate(35deg); }
 .contact-fastener-06 { left: 4%; top: 40%; width: clamp(4rem, 6vw, 7.5rem); transform: rotate(55deg); }
@@ -1427,7 +1430,8 @@ summary:focus-visible {
 .contact-fastener-10 { left: 77%; top: 26%; width: clamp(2.4rem, 3.5vw, 4.25rem); transform: rotate(-15deg); }
 .contact-fastener-11 { left: 1%; bottom: -7%; width: auto; height: clamp(14rem, 22vw, 27rem); transform: rotate(-76deg); }
 .contact-fastener-12 { left: 43%; bottom: 2%; width: clamp(3rem, 4.5vw, 5.5rem); transform: rotate(0deg); }
-.contact-fastener-13 { left: 58%; bottom: 5%; width: clamp(19rem, 29vw, 36rem); transform: rotate(1deg); }
+.contact-fastener-13 { left: 58%; bottom: 5%; width: clamp(19rem, 29vw, 36rem); transform: rotate(0deg); }
+.contact-fastener-14 { right: 1%; bottom: 19%; width: auto; height: clamp(8rem, 10vw, 12rem); transform: rotate(0deg); }
 
 .contact-grid {
   position: relative;
@@ -1453,7 +1457,8 @@ summary:focus-visible {
   .contact-fastener-08,
   .contact-fastener-09,
   .contact-fastener-10,
-  .contact-fastener-12 { display: none; }
+  .contact-fastener-12,
+  .contact-fastener-14 { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
