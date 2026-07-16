@@ -230,11 +230,11 @@ summary:focus-visible {
 }
 
 .hero-message h1 {
-  max-width: 45rem;
+  max-width: 40rem;
   margin: 0;
   color: var(--deep-ink);
   font-family: var(--display);
-  font-size: clamp(3rem, 4.65vw, 5.25rem);
+  font-size: clamp(2.65rem, 3.75vw, 3.8rem);
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.04em;
@@ -601,9 +601,9 @@ summary:focus-visible {
 .about-portrait {
   float: left;
   width: clamp(9.5rem, 17vw, 17rem);
-  margin: -0.35rem clamp(1.25rem, 2.5vw, 2.5rem) 1rem 0;
-  shape-outside: ellipse(48% 48% at 50% 48%);
-  shape-margin: 1rem;
+  margin: -0.35rem clamp(1.75rem, 3vw, 3rem) 1.25rem 0;
+  shape-outside: margin-box;
+  shape-margin: 0;
 }
 
 /* Experience */
@@ -1891,6 +1891,10 @@ summary:focus-visible {
     grid-row: 3;
   }
 
+  .hero-message h1 {
+    font-size: clamp(2.35rem, 7vw, 3.2rem);
+  }
+
   .hero-ifc-grid {
     grid-column: 1 / -1;
     grid-row: 4;
@@ -1911,7 +1915,7 @@ summary:focus-visible {
 
 @media (max-width: 520px) {
   .hero-message { grid-row: 3; }
-  .hero-message h1 { font-size: clamp(2.45rem, 11vw, 3.5rem); line-height: 0.98; }
+  .hero-message h1 { font-size: clamp(2rem, 7.8vw, 2.5rem); line-height: 0.98; }
   .hero-ifc-grid { grid-row: 4; margin-top: 1.25rem; }
   .hero-metrics { grid-row: 5; }
   .about-portrait { width: 7rem; }
