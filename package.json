@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@thatopen/components": "latest",
+    "@thatopen/components-front": "^3.4.3",
     "@thatopen/fragments": "latest",
     "three": "latest",
     "web-ifc": "latest"

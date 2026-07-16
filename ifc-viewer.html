@@ -8,38 +8,44 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/ifc-viewer-app.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/ifc-viewer.css">
+  <script type="module" crossorigin src="./assets/ifc-viewer-app.js?v=viewer-tools-1"></script>
+  <link rel="stylesheet" crossorigin href="./assets/ifc-viewer.css?v=viewer-tools-1" />
 </head>
 <body data-model-id="SFPUC-914" data-fragments-src="./assets/models/SFPUC_914-IFC.frag">
   <main class="viewer-shell">
     <div class="viewer-actions viewer-actions-floating" aria-label="Model viewer controls">
       <button id="fit-model" type="button">Fit Model</button>
       <button id="reset-view" type="button">Reset View</button>
+      <button id="hide-selected" class="viewer-desktop-only" type="button" disabled>Hide</button>
+      <button id="isolate-selected" class="viewer-desktop-only" type="button" disabled>Isolate</button>
+      <button id="show-all" class="viewer-desktop-only" type="button">Show All</button>
+      <button id="place-section" class="viewer-desktop-only" type="button">Section</button>
+      <button id="clear-section" class="viewer-desktop-only" type="button" disabled>Clear Section</button>
       <button id="fullscreen-view" type="button">Full Screen</button>
     </div>
 
     <section class="viewer-stage" aria-label="Interactive 3D model">
       <div id="viewer-container" class="viewer-container"></div>
 
-      <div id="viewer-loading" class="viewer-loading" role="status" aria-live="polite">
+      <div id="viewer-loading" class="viewer-loading" role="status" aria-label="Loading model">
         <div class="loading-card">
-          <span class="loading-spinner" aria-hidden="true"></span>
-          <p id="loading-title">Preparing model viewer…</p>
-          <div class="loading-track" aria-hidden="true">
-            <span id="loading-progress"></span>
-          </div>
-          <small id="loading-detail">Loading optimized model engine</small>
+          <img class="loading-face" src="./assets/james-portrait-smooth.png" alt="" aria-hidden="true" />
         </div>
       </div>
 
+      <aside id="properties-panel" class="viewer-properties viewer-desktop-only is-collapsed" aria-label="Selected element properties">
+        <header>
+          <div><small>Model Data</small><strong id="properties-title">Selected Element</strong></div>
+          <button id="close-properties" type="button" aria-label="Close properties">×</button>
+        </header>
+        <div id="properties-content" class="properties-content"></div>
+      </aside>
+
       <div id="viewer-error" class="viewer-error" role="alert" hidden>
         <strong>Model could not be loaded.</strong>
-        <span id="viewer-error-message">Check that the IFC file and viewer assets were uploaded.</span>
+        <span id="viewer-error-message">Check that the model and viewer assets were uploaded.</span>
       </div>
-
     </section>
   </main>
-
 </body>
 </html>
