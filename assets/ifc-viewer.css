@@ -119,10 +119,12 @@
 .viewer-loading { padding: 0; }
 .loading-card { width: auto; padding: 0; background: transparent; border: 0; box-shadow: none; }
 .loading-face {
-  width: clamp(92px,12vw,132px); aspect-ratio: 1; display: block; object-fit: cover; object-position: 50% 43%;
-  border: 2px solid #3f60b1; border-radius: 50%; background: #fff; animation: portrait-spin 1.35s linear infinite;
-  box-shadow: 0 16px 40px rgba(38,58,110,.18);
+  width: clamp(92px,12vw,132px); height: auto; display: block; object-fit: contain; object-position: center;
+  border: 0; border-radius: 0; background: transparent; animation: portrait-spin 1.35s linear infinite;
+  box-shadow: none; transform-origin: center;
 }
+.loading-card { display: grid; justify-items: center; gap: .55rem; overflow: visible; }
+.loading-label { color: #3f60b1; font-family: "Roboto Mono", monospace; font-size: .62rem; font-weight: 600; letter-spacing: .08em; line-height: 1; }
 .viewer-properties {
   position: absolute; z-index: 18; left: 16px; bottom: 16px; width: min(360px,calc(100% - 32px));
   max-height: calc(100% - 104px); overflow: auto; color: #243044; background: rgba(255,255,255,.97);
@@ -166,5 +168,5 @@ body[data-view-mode="hidden-line-spin"] .loading-card {
 }
 @media (max-width:680px),(pointer:coarse) {
   .viewer-desktop-only { display: none !important; }
-  .loading-face { width: 94px; }
+  .loading-face { width: 88px; }
 }
