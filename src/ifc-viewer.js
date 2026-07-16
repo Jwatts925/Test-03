@@ -27,6 +27,8 @@ if (!modelId || !fragmentsSource) throw new Error("The prepared model source was
 
 const isMobile = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches;
 const isHiddenLinePresentation = document.body.dataset.viewMode === "hidden-line-spin";
+const presentationSpinOffset = THREE.MathUtils.degToRad(Number(document.body.dataset.spinOffset || 0));
+const presentationSpinDirection = Number(document.body.dataset.spinDirection || 1) < 0 ? -1 : 1;
 const ORANGE = new THREE.Color("#ff8a5b");
 let world;
 let fragments;
@@ -82,7 +84,8 @@ function styleHiddenLineMaterial(material) {
 function startPresentationSpin() {
   if (!world?.camera?.controls || presentationFrame) return;
   const controls = world.camera.controls;
-  const rotationSpeed = (Math.PI * 2) / 24;
+  if (presentationSpinOffset) controls.rotate(presentationSpinOffset, 0, false);
+  const rotationSpeed = presentationSpinDirection * (Math.PI * 2) / 24;
   let previousTime = performance.now();
 
   const rotate = (time) => {

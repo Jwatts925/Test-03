@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;600;700&amp;family=Roboto+Mono:wght@400;500;600&amp;family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="swiss-theme.css?v=website-edits-2" />
+  <link rel="stylesheet" href="swiss-theme.css?v=home-ifc-grid-1" />
   <script defer src="script.js"></script>
 </head>
 <body class="home-page">
@@ -50,14 +50,22 @@
           <h1 id="hero-title">Modeling architectural façade systems from preconstruction through completion<span aria-hidden="true">.</span></h1>
         </div>
 
-        <figure class="hero-portrait reveal" tabindex="0" aria-label="Hand-drawn portrait of James Watts; hover or focus to reveal the colorized version">
-          <span class="hero-portrait-stack">
-            <img class="hero-portrait-mono" src="assets/james-portrait-smooth.png" alt="Hand-drawn portrait of James Watts" />
-            <img class="hero-portrait-color" src="assets/james-portrait-color.png" alt="" aria-hidden="true" />
-          </span>
-        </figure>
+        <div class="hero-ifc-grid reveal" aria-label="Four continuously rotating façade models">
+          <div class="hero-ifc-tile"><iframe src="ifc-home-01.html" title="Rotating façade model one" loading="lazy" tabindex="-1"></iframe></div>
+          <div class="hero-ifc-tile"><iframe src="ifc-home-02.html" title="Rotating façade model two" loading="lazy" tabindex="-1"></iframe></div>
+          <div class="hero-ifc-tile"><iframe src="ifc-home-03.html" title="Rotating façade model three" loading="lazy" tabindex="-1"></iframe></div>
+          <div class="hero-ifc-tile"><iframe src="ifc-home-04.html" title="Rotating façade model four" loading="lazy" tabindex="-1"></iframe></div>
+        </div>
 
-        <p class="hero-intro hero-intro-wide reveal">I’m James Watts, a BIM and preconstruction professional specializing in glazing and facade systems. My work sits between design, construction, and technology: I develop project-specific 3D models, coordinate changing design information, produce shop and proposal graphics, and create dependable workflows that support estimating, preconstruction, coordination, fabrication, field installation, and operations. With a background in industrial design and English literature, I bring equal attention to how information functions and how it is communicated—translating complicated facade conditions into clear models, diagrams, schedules, and presentations.</p>
+        <div class="hero-intro-wrap reveal">
+          <figure class="hero-portrait hero-intro-portrait" tabindex="0" aria-label="Hand-drawn portrait of James Watts; hover or focus to reveal the colorized version">
+            <span class="hero-portrait-stack">
+              <img class="hero-portrait-mono" src="assets/james-portrait-smooth.png" alt="Hand-drawn portrait of James Watts" />
+              <img class="hero-portrait-color" src="assets/james-portrait-color.png" alt="" aria-hidden="true" />
+            </span>
+          </figure>
+          <p class="hero-intro hero-intro-wide">I’m James Watts, a BIM and preconstruction professional specializing in glazing and facade systems. My work sits between design, construction, and technology: I develop project-specific 3D models, coordinate changing design information, produce shop and proposal graphics, and create dependable workflows that support estimating, preconstruction, coordination, fabrication, field installation, and operations. With a background in industrial design and English literature, I bring equal attention to how information functions and how it is communicated—translating complicated facade conditions into clear models, diagrams, schedules, and presentations.</p>
+        </div>
 
         <div class="hero-metrics reveal" aria-label="Professional highlights">
           <div><strong>50<span>+</span></strong><small>Custom<br />automation tools</small></div>
