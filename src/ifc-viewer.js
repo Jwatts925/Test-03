@@ -26,6 +26,7 @@ const fragmentsSource = document.body.dataset.fragmentsSrc;
 if (!modelId || !fragmentsSource) throw new Error("The prepared model source was not configured.");
 
 const isMobile = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches;
+const isHiddenLinePresentation = document.body.dataset.viewMode === "hidden-line-spin";
 const ORANGE = new THREE.Color("#ff8a5b");
 let world;
 let fragments;
@@ -39,6 +40,10 @@ let sectionPlacementArmed = false;
 let propertyRequest = 0;
 let hoverTimer = null;
 let hoverInFlight = false;
+let presentationFrame = 0;
+
+const HIDDEN_LINE_SURFACE = new THREE.Color("#e4e5e2");
+const HIDDEN_LINE_INK = new THREE.Color("#26343a");
 
 function setProgress(value) {
   if (!(loadingProgress instanceof HTMLElement)) return;
@@ -57,6 +62,37 @@ function showError(error) {
       ? error.message
       : "An unknown viewer error occurred.";
   }
+}
+
+function styleHiddenLineMaterial(material) {
+  if (!isHiddenLinePresentation || !material) return;
+  if ("isLodMaterial" in material && material.isLodMaterial) {
+    material.lodColor = HIDDEN_LINE_INK.clone();
+    material.lodOpacity = 0.82;
+  } else if (material.color?.copy) {
+    material.color.copy(HIDDEN_LINE_SURFACE);
+    material.opacity = 1;
+    material.transparent = false;
+    material.side = THREE.DoubleSide;
+    material.depthWrite = true;
+  }
+  material.needsUpdate = true;
+}
+
+function startPresentationSpin() {
+  if (!world?.camera?.controls || presentationFrame) return;
+  const controls = world.camera.controls;
+  const rotationSpeed = (Math.PI * 2) / 24;
+  let previousTime = performance.now();
+
+  const rotate = (time) => {
+    const elapsed = Math.min(0.05, Math.max(0, (time - previousTime) / 1000));
+    previousTime = time;
+    controls.rotate(rotationSpeed * elapsed, 0, false);
+    presentationFrame = window.requestAnimationFrame(rotate);
+  };
+
+  presentationFrame = window.requestAnimationFrame(rotate);
 }
 
 function cloneModelIdMap(map) {
@@ -312,7 +348,7 @@ document.addEventListener("fullscreenchange", () => {
   world = components.get(OBC.Worlds).create();
   world.scene = new OBC.SimpleScene(components);
   world.scene.setup();
-  world.scene.three.background = new THREE.Color("#ffffff");
+  world.scene.three.background = new THREE.Color(isHiddenLinePresentation ? "#f7f6f2" : "#ffffff");
   world.renderer = new OBC.SimpleRenderer(components, container);
   world.renderer.showLogo = false;
   world.renderer.three.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 2));
@@ -341,6 +377,7 @@ document.addEventListener("fullscreenchange", () => {
     await fragments.core.update(true);
   });
   fragments.core.models.materials.list.onItemSet.add(({ value: material }) => {
+    styleHiddenLineMaterial(material);
     if (!("isLodMaterial" in material) || !material.isLodMaterial) {
       material.polygonOffset = true;
       material.polygonOffsetUnits = 1;
@@ -349,7 +386,7 @@ document.addEventListener("fullscreenchange", () => {
   });
 
   bounds = components.get(OBC.BoundingBoxer);
-  if (!isMobile) await initializeDesktopTools(components);
+  if (!isMobile && !isHiddenLinePresentation) await initializeDesktopTools(components);
   setProgress(0.18);
   const bytes = await downloadPreparedModel(fragmentsSource);
   setProgress(0.78);
@@ -370,6 +407,11 @@ document.addEventListener("fullscreenchange", () => {
   if (homeSphere) {
     await world.camera.controls.fitToSphere(homeSphere, false);
     await fragments.core.update(true);
+  }
+  if (isHiddenLinePresentation) {
+    for (const [, material] of fragments.core.models.materials.list) styleHiddenLineMaterial(material);
+    await fragments.core.update(true);
+    startPresentationSpin();
   }
   setProgress(1);
   window.setTimeout(() => loading?.classList.add("is-hidden"), 220);
