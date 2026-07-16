@@ -96,9 +96,16 @@ if (projectIndexList) {
   };
 
   const scrollItemToTop = (item) => {
-    const headerHeight = document.querySelector(".site-header")?.getBoundingClientRect().height || 0;
-    const top = item.getBoundingClientRect().top + window.scrollY - headerHeight;
-    window.scrollTo({ top, behavior: "smooth" });
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        window.setTimeout(() => {
+          const headerHeight = document.querySelector(".site-header")?.getBoundingClientRect().height || 0;
+          const top = item.getBoundingClientRect().top + window.scrollY - headerHeight;
+          const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          window.scrollTo({ top: Math.max(0, top), behavior: reducedMotion ? "auto" : "smooth" });
+        }, 0);
+      });
+    });
   };
 
   projectIndexList.addEventListener("click", (event) => {
@@ -114,6 +121,6 @@ if (projectIndexList) {
     selectedItem.classList.add("is-open");
     trigger.setAttribute("aria-expanded", "true");
     selectedItem.querySelector(".project-index-panel").hidden = false;
-    requestAnimationFrame(() => scrollItemToTop(selectedItem));
+    scrollItemToTop(selectedItem);
   });
 }
