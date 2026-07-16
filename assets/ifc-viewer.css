@@ -148,7 +148,7 @@
 body[data-view-mode="hidden-line-spin"],
 body[data-view-mode="hidden-line-spin"] .viewer-shell,
 body[data-view-mode="hidden-line-spin"] .viewer-stage {
-  background: #f7f6f2 !important;
+  background: #fff !important;
 }
 
 body[data-view-mode="hidden-line-spin"] .viewer-container {
@@ -156,7 +156,7 @@ body[data-view-mode="hidden-line-spin"] .viewer-container {
 }
 
 body[data-view-mode="hidden-line-spin"] .viewer-loading {
-  background: rgba(247, 246, 242, 0.98) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
 }
 
 body[data-view-mode="hidden-line-spin"] .loading-card {

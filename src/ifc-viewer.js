@@ -42,7 +42,7 @@ let hoverTimer = null;
 let hoverInFlight = false;
 let presentationFrame = 0;
 
-const HIDDEN_LINE_SURFACE = new THREE.Color("#faf9f5");
+const HIDDEN_LINE_SURFACE = new THREE.Color("#ffffff");
 const HIDDEN_LINE_INK = new THREE.Color("#4164b3");
 
 function setProgress(value) {
@@ -68,7 +68,7 @@ function styleHiddenLineMaterial(material) {
   if (!isHiddenLinePresentation || !material) return;
   if ("isLodMaterial" in material && material.isLodMaterial) {
     material.lodColor = HIDDEN_LINE_INK.clone();
-    material.lodOpacity = 0.82;
+    material.lodOpacity = 0.58;
   } else if (material.color?.copy) {
     material.color.copy(HIDDEN_LINE_SURFACE);
     material.opacity = 1;
@@ -348,7 +348,7 @@ document.addEventListener("fullscreenchange", () => {
   world = components.get(OBC.Worlds).create();
   world.scene = new OBC.SimpleScene(components);
   world.scene.setup();
-  world.scene.three.background = new THREE.Color(isHiddenLinePresentation ? "#f7f6f2" : "#ffffff");
+  world.scene.three.background = new THREE.Color("#ffffff");
   world.renderer = new OBC.SimpleRenderer(components, container);
   world.renderer.showLogo = false;
   world.renderer.three.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 2));
