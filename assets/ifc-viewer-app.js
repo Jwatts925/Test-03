@@ -15165,42 +15165,44 @@ var Gd = document.querySelector("#viewer-container"), Kd = document.querySelecto
 if (!(Gd instanceof HTMLElement)) throw Error("Viewer container was not found.");
 var lf = document.body.dataset.modelId, uf = document.body.dataset.fragmentsSrc;
 if (!lf || !uf) throw Error("The prepared model source was not configured.");
-var df = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches, ff = document.body.dataset.viewMode === "hidden-line-spin", pf = new A("#ff8a5b"), mf, hf, gf, _f = null, vf = null, yf = null, bf = null, xf = {}, Sf = !1, Cf = 0, wf = null, Tf = !1, Ef = 0, Df = new A("#ffffff"), Of = new A("#4164b3");
-function kf(e) {
+var df = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches, ff = document.body.dataset.viewMode === "hidden-line-spin", pf = we.degToRad(Number(document.body.dataset.spinOffset || 0)), mf = Number(document.body.dataset.spinDirection || 1) < 0 ? -1 : 1, hf = new A("#ff8a5b"), gf, _f, vf, yf = null, bf = null, xf = null, Sf = null, Cf = {}, wf = !1, Tf = 0, Ef = null, Df = !1, Of = 0, kf = new A("#ffffff"), Af = new A("#4164b3");
+function jf(e) {
 	if (!(qd instanceof HTMLElement)) return;
 	let t = Number.isFinite(e) ? Math.max(0, Math.min(1, e > 1 ? e / 100 : e)) : .08;
 	qd.style.width = `${Math.max(8, t * 100)}%`;
 }
-function Af(e) {
+function Mf(e) {
 	console.error(e), Kd?.classList.add("is-hidden"), Jd instanceof HTMLElement && (Jd.hidden = !1), Yd instanceof HTMLElement && (Yd.textContent = e instanceof Error ? e.message : "An unknown viewer error occurred.");
 }
-function jf(e) {
-	!ff || !e || ("isLodMaterial" in e && e.isLodMaterial ? (e.lodColor = Of.clone(), e.lodOpacity = .58) : e.color?.copy && (e.color.copy(Df), e.opacity = 1, e.transparent = !1, e.side = 2, e.depthWrite = !0), e.needsUpdate = !0);
-}
-function Mf() {
-	if (!mf?.camera?.controls || Ef) return;
-	let e = mf.camera.controls, t = Math.PI * 2 / 24, n = performance.now(), r = (i) => {
-		let a = Math.min(.05, Math.max(0, (i - n) / 1e3));
-		n = i, e.rotate(t * a, 0, !1), Ef = window.requestAnimationFrame(r);
-	};
-	Ef = window.requestAnimationFrame(r);
-}
 function Nf(e) {
-	return Object.fromEntries(Object.entries(e || {}).map(([e, t]) => [e, new Set(t)]));
+	!ff || !e || ("isLodMaterial" in e && e.isLodMaterial ? (e.lodColor = Af.clone(), e.lodOpacity = .58) : e.color?.copy && (e.color.copy(kf), e.opacity = 1, e.transparent = !1, e.side = 2, e.depthWrite = !0), e.needsUpdate = !0);
 }
-function Pf(e = xf) {
-	return Object.values(e).reduce((e, t) => e + t.size, 0);
+function Pf() {
+	if (!gf?.camera?.controls || Of) return;
+	let e = gf.camera.controls;
+	pf && e.rotate(pf, 0, !1);
+	let t = Math.PI * 2 * mf / 24, n = performance.now(), r = (i) => {
+		let a = Math.min(.05, Math.max(0, (i - n) / 1e3));
+		n = i, e.rotate(t * a, 0, !1), Of = window.requestAnimationFrame(r);
+	};
+	Of = window.requestAnimationFrame(r);
 }
 function Ff(e) {
-	$d instanceof HTMLButtonElement && ($d.disabled = !e), ef instanceof HTMLButtonElement && (ef.disabled = !e);
+	return Object.fromEntries(Object.entries(e || {}).map(([e, t]) => [e, new Set(t)]));
 }
-function If() {
-	xf = {}, Ff(!1), af?.classList.add("is-collapsed");
+function If(e = Cf) {
+	return Object.values(e).reduce((e, t) => e + t.size, 0);
 }
 function Lf(e) {
+	$d instanceof HTMLButtonElement && ($d.disabled = !e), ef instanceof HTMLButtonElement && (ef.disabled = !e);
+}
+function Rf() {
+	Cf = {}, Lf(!1), af?.classList.add("is-collapsed");
+}
+function zf(e) {
 	return e && typeof e == "object" && "value" in e ? e.value : e;
 }
-function Rf(e, t) {
+function Bf(e, t) {
 	if (!(sf instanceof HTMLElement) || t == null || t === "") return;
 	let n = document.createElement("div");
 	n.className = "property-row";
@@ -15209,16 +15211,16 @@ function Rf(e, t) {
 	let i = document.createElement("strong");
 	i.textContent = String(t), n.append(r, i), sf.append(n);
 }
-async function zf(e) {
+async function Vf(e) {
 	if (df || !(sf instanceof HTMLElement)) return;
-	let t = ++Cf, n = Object.entries(e);
+	let t = ++Tf, n = Object.entries(e);
 	if (!n.length) return;
-	let [r, i] = n[0], a = [...i][0], o = hf?.list?.get(r);
+	let [r, i] = n[0], a = [...i][0], o = _f?.list?.get(r);
 	if (!(!o || a === void 0)) {
-		af?.classList.remove("is-collapsed"), sf.replaceChildren(), of instanceof HTMLElement && (of.textContent = Pf(e) > 1 ? `${Pf(e)} Elements` : "Selected Element"), Rf("Model", r), Rf("Local ID", a);
+		af?.classList.remove("is-collapsed"), sf.replaceChildren(), of instanceof HTMLElement && (of.textContent = If(e) > 1 ? `${If(e)} Elements` : "Selected Element"), Bf("Model", r), Bf("Local ID", a);
 		try {
 			let [e] = await o.getItemsData([a], { attributesDefault: !0 });
-			if (t !== Cf || !e) return;
+			if (t !== Tf || !e) return;
 			for (let [t, n] of [
 				["Name", "Name"],
 				["Object Type", "ObjectType"],
@@ -15226,28 +15228,28 @@ async function zf(e) {
 				["Tag", "Tag"],
 				["Global ID", "GlobalId"],
 				["Description", "Description"]
-			]) Rf(t, Lf(e[n]));
+			]) Bf(t, zf(e[n]));
 		} catch (e) {
 			console.warn("Selected element properties were unavailable.", e);
 		}
 	}
 }
-function Bf() {
-	gf.list.clear(), gf.addFromModels();
-	let e = gf.get();
-	if (gf.list.clear(), e.isEmpty()) return null;
+function Hf() {
+	vf.list.clear(), vf.addFromModels();
+	let e = vf.get();
+	if (vf.list.clear(), e.isEmpty()) return null;
 	let t = new v();
 	return e.getBoundingSphere(t), t.radius *= .84, t;
 }
-async function Vf(e = !0) {
-	if (!mf?.camera?.controls) return;
-	let t = Bf();
-	t && (await mf.camera.controls.fitToSphere(t, e), await hf.core.update(!0));
+async function Uf(e = !0) {
+	if (!gf?.camera?.controls) return;
+	let t = Hf();
+	t && (await gf.camera.controls.fitToSphere(t, e), await _f.core.update(!0));
 }
-async function Hf() {
-	!mf?.camera?.controls || !_f || (await mf.camera.controls.fitToSphere(_f, !0), await hf.core.update(!0));
+async function Wf() {
+	!gf?.camera?.controls || !yf || (await gf.camera.controls.fitToSphere(yf, !0), await _f.core.update(!0));
 }
-async function Uf(e) {
+async function Gf(e) {
 	let t = await fetch(e);
 	if (!t.ok) throw Error(`Prepared model request failed (${t.status}).`);
 	let n = Number(t.headers.get("content-length"));
@@ -15256,120 +15258,120 @@ async function Uf(e) {
 	for (;;) {
 		let { done: e, value: t } = await r.read();
 		if (e) break;
-		i.push(t), a += t.byteLength, kf(.18 + a / n * .58);
+		i.push(t), a += t.byteLength, jf(.18 + a / n * .58);
 	}
 	let o = new Uint8Array(a), s = 0;
 	for (let e of i) o.set(e, s), s += e.byteLength;
 	return o;
 }
-function Wf(e) {
-	Sf = e, Gd.classList.toggle("is-placing-section", e), nf?.classList.toggle("is-active", e), nf instanceof HTMLButtonElement && (nf.textContent = e ? "Click Model" : "Section"), vf && (e && vf.clear("hover").catch(() => {}), vf.enabled = !e);
+function Kf(e) {
+	wf = e, Gd.classList.toggle("is-placing-section", e), nf?.classList.toggle("is-active", e), nf instanceof HTMLButtonElement && (nf.textContent = e ? "Click Model" : "Section"), bf && (e && bf.clear("hover").catch(() => {}), bf.enabled = !e);
 }
-function Gf(e) {
-	!vf || Sf || e.buttons !== 0 || (wf !== null && window.clearTimeout(wf), wf = window.setTimeout(async () => {
-		if (wf = null, !(Tf || !vf?.enabled)) {
-			Tf = !0;
+function qf(e) {
+	!bf || wf || e.buttons !== 0 || (Ef !== null && window.clearTimeout(Ef), Ef = window.setTimeout(async () => {
+		if (Ef = null, !(Df || !bf?.enabled)) {
+			Df = !0;
 			try {
-				await vf.highlight("hover", !0, !1);
+				await bf.highlight("hover", !0, !1);
 			} catch (e) {
 				console.warn("Hover preview was unavailable.", e);
 			} finally {
-				Tf = !1;
+				Df = !1;
 			}
 		}
 	}, 70));
 }
-async function Kf(e) {
+async function Jf(e) {
 	let t = await import("./dist-O1W19x2T.js");
-	e.get(Sl).get(mf), vf = e.get(t.Highlighter), vf.setup({
-		world: mf,
+	e.get(Sl).get(gf), bf = e.get(t.Highlighter), bf.setup({
+		world: gf,
 		selectMaterialDefinition: {
-			color: pf,
+			color: hf,
 			opacity: 1,
 			transparent: !1,
 			renderedFaces: 0
 		}
-	}), vf.multiple = "none", vf.styles.set("hover", {
-		color: pf,
+	}), bf.multiple = "none", bf.styles.set("hover", {
+		color: hf,
 		opacity: .42,
 		transparent: !0,
 		renderedFaces: 0
-	}), vf.events.select.onHighlight.add((e) => {
-		xf = Nf(e), Ff(Pf() > 0), zf(xf);
-	}), vf.events.select.onClear.add(If), yf = e.get(Uc), bf = e.get(su), bf.setup({
-		color: pf,
+	}), bf.events.select.onHighlight.add((e) => {
+		Cf = Ff(e), Lf(If() > 0), Vf(Cf);
+	}), bf.events.select.onClear.add(Rf), xf = e.get(Uc), Sf = e.get(su), Sf.setup({
+		color: hf,
 		opacity: .24,
 		size: 1.5
 	});
 }
-Xd?.addEventListener("click", () => Vf(!0).catch(Af)), Zd?.addEventListener("click", () => Hf().catch(Af)), Qd?.addEventListener("click", async () => {
+Xd?.addEventListener("click", () => Uf(!0).catch(Mf)), Zd?.addEventListener("click", () => Wf().catch(Mf)), Qd?.addEventListener("click", async () => {
 	try {
 		document.fullscreenElement ? (await document.exitFullscreen(), Qd.textContent = "Full Screen") : (await document.documentElement.requestFullscreen(), Qd.textContent = "Exit Full Screen");
 	} catch (e) {
-		Af(e);
+		Mf(e);
 	}
 }), $d?.addEventListener("click", async () => {
-	!yf || !Pf() || (await yf.set(!1, xf), await vf?.clear("select"));
+	!xf || !If() || (await xf.set(!1, Cf), await bf?.clear("select"));
 }), ef?.addEventListener("click", async () => {
-	yf && Pf() && await yf.isolate(xf);
+	xf && If() && await xf.isolate(Cf);
 }), tf?.addEventListener("click", async () => {
-	yf && (await yf.set(!0), await hf?.core?.update(!0));
+	xf && (await xf.set(!0), await _f?.core?.update(!0));
 }), nf?.addEventListener("click", () => {
-	bf && Wf(!Sf);
+	Sf && Kf(!wf);
 }), rf?.addEventListener("click", () => {
-	bf && (bf.deleteAll(), Wf(!1), rf instanceof HTMLButtonElement && (rf.disabled = !0));
+	Sf && (Sf.deleteAll(), Kf(!1), rf instanceof HTMLButtonElement && (rf.disabled = !0));
 }), Gd.addEventListener("pointerup", (e) => {
-	!Sf || e.button !== 0 || !bf || window.setTimeout(async () => {
+	!wf || e.button !== 0 || !Sf || window.setTimeout(async () => {
 		try {
-			bf.deleteAll(), await bf.create(mf) && rf instanceof HTMLButtonElement && (rf.disabled = !1);
+			Sf.deleteAll(), await Sf.create(gf) && rf instanceof HTMLButtonElement && (rf.disabled = !1);
 		} catch (e) {
 			console.warn("A section plane could not be placed at that point.", e);
 		} finally {
-			Wf(!1);
+			Kf(!1);
 		}
 	}, 0);
-}), Gd.addEventListener("pointermove", Gf), Gd.addEventListener("pointerleave", () => {
-	wf !== null && window.clearTimeout(wf), wf = null, vf?.clear("hover").catch(() => {});
+}), Gd.addEventListener("pointermove", qf), Gd.addEventListener("pointerleave", () => {
+	Ef !== null && window.clearTimeout(Ef), Ef = null, bf?.clear("hover").catch(() => {});
 }), cf?.addEventListener("click", () => af?.classList.add("is-collapsed")), document.addEventListener("fullscreenchange", () => {
 	!document.fullscreenElement && Qd instanceof HTMLButtonElement && (Qd.textContent = "Full Screen");
 }), (async () => {
-	kf(.08);
+	jf(.08);
 	let e = new zl();
-	mf = e.get(Nl).create(), mf.scene = new Dl(e), mf.scene.setup(), mf.scene.three.background = new A("#ffffff"), mf.renderer = new Al(e, Gd), mf.renderer.showLogo = !1, mf.renderer.three.setPixelRatio(Math.min(window.devicePixelRatio || 1, df ? 1.25 : 2)), mf.camera = new Wl(e), await mf.camera.controls.setLookAt(12, 10, 12, 0, 0, 0), e.init();
-	let t = e.get(Ll).create(mf);
+	gf = e.get(Nl).create(), gf.scene = new Dl(e), gf.scene.setup(), gf.scene.three.background = new A("#ffffff"), gf.renderer = new Al(e, Gd), gf.renderer.showLogo = !1, gf.renderer.three.setPixelRatio(Math.min(window.devicePixelRatio || 1, df ? 1.25 : 2)), gf.camera = new Wl(e), await gf.camera.controls.setLookAt(12, 10, 12, 0, 0, 0), e.init();
+	let t = e.get(Ll).create(gf);
 	t?.three && (t.three.visible = !1);
 	let n = () => {
-		mf.renderer?.resize(), mf.camera?.updateAspect();
+		gf.renderer?.resize(), gf.camera?.updateAspect();
 	};
-	new ResizeObserver(n).observe(Gd), window.addEventListener("resize", n, { passive: !0 }), kf(.14), hf = e.get(Q);
+	new ResizeObserver(n).observe(Gd), window.addEventListener("resize", n, { passive: !0 }), jf(.14), _f = e.get(Q);
 	let r = new URL(
 		/* @vite-ignore */
 		"./ifc/fragments-worker.mjs",
 		import.meta.url
 	).href;
-	hf.init(r, df ? { maxWorkers: 2 } : void 0), hf.core.settings.graphicsQuality = +!df, mf.camera.controls.addEventListener("update", () => hf.core.update()), hf.list.onItemSet.add(async ({ value: e }) => {
-		e.useCamera(mf.camera.three), mf.scene.three.add(e.object), await hf.core.update(!0);
-	}), hf.core.models.materials.list.onItemSet.add(({ value: e }) => {
-		jf(e), (!("isLodMaterial" in e) || !e.isLodMaterial) && (e.polygonOffset = !0, e.polygonOffsetUnits = 1, e.polygonOffsetFactor = Math.random());
-	}), gf = e.get(Gc), !df && !ff && await Kf(e), kf(.18);
-	let i = await Uf(uf);
-	if (kf(.78), await hf.core.load(i, {
+	_f.init(r, df ? { maxWorkers: 2 } : void 0), _f.core.settings.graphicsQuality = +!df, gf.camera.controls.addEventListener("update", () => _f.core.update()), _f.list.onItemSet.add(async ({ value: e }) => {
+		e.useCamera(gf.camera.three), gf.scene.three.add(e.object), await _f.core.update(!0);
+	}), _f.core.models.materials.list.onItemSet.add(({ value: e }) => {
+		Nf(e), (!("isLodMaterial" in e) || !e.isLodMaterial) && (e.polygonOffset = !0, e.polygonOffsetUnits = 1, e.polygonOffsetFactor = Math.random());
+	}), vf = e.get(Gc), !df && !ff && await Jf(e), jf(.18);
+	let i = await Gf(uf);
+	if (jf(.78), await _f.core.load(i, {
 		modelId: lf,
-		camera: mf.camera.three,
+		camera: gf.camera.three,
 		onProgress(e) {
 			let t = Number(e?.progress ?? e);
 			if (!Number.isFinite(t)) return;
 			let n = t > 1 ? t / 100 : t;
-			kf(.78 + Math.min(1, n) * .16);
+			jf(.78 + Math.min(1, n) * .16);
 		}
-	}), kf(.95), await hf.core.update(!0), _f = Bf(), _f) {
-		let e = _f.clone();
-		ff && (e.radius *= 1.3), await mf.camera.controls.fitToSphere(e, !1), await hf.core.update(!0);
+	}), jf(.95), await _f.core.update(!0), yf = Hf(), yf) {
+		let e = yf.clone();
+		ff && (e.radius *= 1.3), await gf.camera.controls.fitToSphere(e, !1), await _f.core.update(!0);
 	}
 	if (ff) {
-		for (let [, e] of hf.core.models.materials.list) jf(e);
-		await hf.core.update(!0), Mf();
+		for (let [, e] of _f.core.models.materials.list) Nf(e);
+		await _f.core.update(!0), Pf();
 	}
-	kf(1), window.setTimeout(() => Kd?.classList.add("is-hidden"), 220);
-})().catch(Af);
+	jf(1), window.setTimeout(() => Kd?.classList.add("is-hidden"), 220);
+})().catch(Mf);
 //#endregion
