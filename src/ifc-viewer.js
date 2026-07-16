@@ -42,8 +42,8 @@ let hoverTimer = null;
 let hoverInFlight = false;
 let presentationFrame = 0;
 
-const HIDDEN_LINE_SURFACE = new THREE.Color("#e4e5e2");
-const HIDDEN_LINE_INK = new THREE.Color("#26343a");
+const HIDDEN_LINE_SURFACE = new THREE.Color("#faf9f5");
+const HIDDEN_LINE_INK = new THREE.Color("#4164b3");
 
 function setProgress(value) {
   if (!(loadingProgress instanceof HTMLElement)) return;
@@ -405,7 +405,9 @@ document.addEventListener("fullscreenchange", () => {
   await fragments.core.update(true);
   homeSphere = getModelSphere();
   if (homeSphere) {
-    await world.camera.controls.fitToSphere(homeSphere, false);
+    const framingSphere = homeSphere.clone();
+    if (isHiddenLinePresentation) framingSphere.radius *= 1.3;
+    await world.camera.controls.fitToSphere(framingSphere, false);
     await fragments.core.update(true);
   }
   if (isHiddenLinePresentation) {
