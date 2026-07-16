@@ -1349,6 +1349,76 @@ summary:focus-visible {
   .education-heading-group { grid-template-columns: 3.5rem minmax(0, 1fr); gap: 0.6rem; }
 }
 
+/* Desktop hero refinement: one measured title-and-portrait drawing bay. */
+@media (min-width: 761px) {
+  .editorial-hero {
+    --hero-section-gap: clamp(1.25rem, 1.8vw, 2rem);
+  }
+
+  .hero-message {
+    grid-column: 1 / span 8;
+    display: flex;
+    align-self: stretch;
+    align-items: center;
+    min-height: 0;
+    margin-top: var(--hero-section-gap);
+    padding: clamp(1.5rem, 2.4vw, 2.75rem) clamp(1.5rem, 2.2vw, 2.5rem) clamp(1.5rem, 2.4vw, 2.75rem) 0;
+    border-top: 1px solid var(--tech-blue);
+    border-bottom: 1px solid var(--tech-blue);
+  }
+
+  .hero-message h1 {
+    max-width: 47rem;
+    font-size: clamp(3.6rem, 5.8vw, 6.6rem);
+    line-height: 0.91;
+    letter-spacing: -0.045em;
+  }
+
+  .hero-portrait {
+    grid-column: 9 / -1;
+    grid-row: 3;
+    align-self: start;
+    justify-self: stretch;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 1;
+    margin: var(--hero-section-gap) 0 0;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--tech-blue);
+  }
+
+  .hero-portrait-stack {
+    width: min(100%, 24rem);
+    height: auto;
+    aspect-ratio: 800 / 1018;
+    margin-inline: auto;
+  }
+
+  .hero-portrait img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  .hero-intro-wide {
+    position: relative;
+    margin-top: clamp(1.35rem, 2vw, 2rem);
+    padding: clamp(1.1rem, 1.8vw, 1.55rem) clamp(1.2rem, 2vw, 1.8rem);
+    color: var(--tech-blue) !important;
+    background:
+      linear-gradient(90deg, rgba(var(--blue-rgb), 0.055), rgba(var(--blue-rgb), 0.015));
+    border-top: 1px solid var(--tech-blue);
+    border-left: 4px solid var(--coral);
+    font-family: var(--display);
+    font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+    font-weight: 500;
+    line-height: 1.55;
+    letter-spacing: 0.008em;
+  }
+}
+
 /* Fixed randomized fastener collage for the contact drafting sheet */
 .contact-section {
   position: relative;
