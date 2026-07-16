@@ -3397,6 +3397,16 @@ body {
   gap: 42px;
 }
 
+.ifc-presentation-frame {
+  height: min(76vh, 820px) !important;
+  min-height: 620px !important;
+  background: #f7f6f2 !important;
+}
+
+.ifc-presentation-frame iframe {
+  pointer-events: none;
+}
+
 .ifc-interaction-lock {
   position: relative;
 }
@@ -3444,6 +3454,11 @@ body {
 @media (max-width: 760px) {
   .ifc-viewer-stack {
     gap: 28px;
+  }
+
+  .ifc-presentation-frame {
+    height: 64vh !important;
+    min-height: 460px !important;
   }
 
   .ifc-interaction-toggle {

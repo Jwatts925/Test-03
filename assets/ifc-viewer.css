@@ -143,6 +143,27 @@
 .property-row span { color: #ff7f50; font-size: .64rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .property-row strong { overflow-wrap: anywhere; font-size: .76rem; font-weight: 600; line-height: 1.35; }
 @keyframes portrait-spin { to { transform: rotate(360deg); } }
+
+/* ===== Hidden-line rotating presentation ===== */
+body[data-view-mode="hidden-line-spin"],
+body[data-view-mode="hidden-line-spin"] .viewer-shell,
+body[data-view-mode="hidden-line-spin"] .viewer-stage {
+  background: #f7f6f2 !important;
+}
+
+body[data-view-mode="hidden-line-spin"] .viewer-container {
+  pointer-events: none;
+}
+
+body[data-view-mode="hidden-line-spin"] .viewer-loading {
+  background: rgba(247, 246, 242, 0.98) !important;
+}
+
+body[data-view-mode="hidden-line-spin"] .loading-card {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
 @media (max-width:680px),(pointer:coarse) {
   .viewer-desktop-only { display: none !important; }
   .loading-face { width: 94px; }
