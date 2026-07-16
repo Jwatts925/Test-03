@@ -1799,9 +1799,9 @@ summary:focus-visible {
 }
 
 .hero-intro-portrait {
-  float: right;
-  width: clamp(7.5rem, 10vw, 10rem);
-  margin: -0.35rem 0 0.55rem 1.25rem;
+  float: left;
+  width: clamp(8.5rem, 11vw, 11rem);
+  margin: -0.3rem 1.35rem 0.55rem 0;
   shape-outside: ellipse(48% 48% at 50% 48%);
   shape-margin: 0.8rem;
 }
@@ -1847,8 +1847,8 @@ summary:focus-visible {
   }
 
   .hero-intro-portrait {
-    width: clamp(6.5rem, 28vw, 8.5rem);
-    margin-left: 0.9rem;
+    width: clamp(6.75rem, 29vw, 8.75rem);
+    margin-right: 0.9rem;
     shape-margin: 0.55rem;
   }
 
