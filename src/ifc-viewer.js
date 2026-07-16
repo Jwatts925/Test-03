@@ -37,6 +37,8 @@ let clipper = null;
 let selectedMap = {};
 let sectionPlacementArmed = false;
 let propertyRequest = 0;
+let hoverTimer = null;
+let hoverInFlight = false;
 
 function setProgress(value) {
   if (!(loadingProgress instanceof HTMLElement)) return;
@@ -188,7 +190,27 @@ function armSectionPlacement(armed) {
   container.classList.toggle("is-placing-section", armed);
   sectionButton?.classList.toggle("is-active", armed);
   if (sectionButton instanceof HTMLButtonElement) sectionButton.textContent = armed ? "Click Model" : "Section";
-  if (highlighter) highlighter.enabled = !armed;
+  if (highlighter) {
+    if (armed) highlighter.clear("hover").catch(() => {});
+    highlighter.enabled = !armed;
+  }
+}
+
+function scheduleHover(event) {
+  if (!highlighter || sectionPlacementArmed || event.buttons !== 0) return;
+  if (hoverTimer !== null) window.clearTimeout(hoverTimer);
+  hoverTimer = window.setTimeout(async () => {
+    hoverTimer = null;
+    if (hoverInFlight || !highlighter?.enabled) return;
+    hoverInFlight = true;
+    try {
+      await highlighter.highlight("hover", true, false);
+    } catch (error) {
+      console.warn("Hover preview was unavailable.", error);
+    } finally {
+      hoverInFlight = false;
+    }
+  }, 70);
 }
 
 async function initializeDesktopTools(components) {
@@ -201,20 +223,18 @@ async function initializeDesktopTools(components) {
     selectMaterialDefinition: { color: ORANGE, opacity: 1, transparent: false, renderedFaces: 0 },
   });
   highlighter.multiple = "none";
+  highlighter.styles.set("hover", {
+    color: ORANGE,
+    opacity: 0.42,
+    transparent: true,
+    renderedFaces: 0,
+  });
   highlighter.events.select.onHighlight.add((map) => {
     selectedMap = cloneModelIdMap(map);
     setSelectionControls(selectionCount() > 0);
     renderProperties(selectedMap);
   });
   highlighter.events.select.onClear.add(clearSelectionState);
-
-  const hoverer = components.get(OBF.Hoverer);
-  hoverer.world = world;
-  hoverer.material.color.copy(ORANGE);
-  hoverer.material.opacity = 0.42;
-  hoverer.material.userData._maxHoverOpacity = 0.42;
-  hoverer.fade = true;
-  hoverer.fadeDuration = 110;
 
   hider = components.get(OBC.Hider);
   clipper = components.get(OBC.Clipper);
@@ -273,6 +293,12 @@ container.addEventListener("pointerup", (event) => {
       armSectionPlacement(false);
     }
   }, 0);
+});
+container.addEventListener("pointermove", scheduleHover);
+container.addEventListener("pointerleave", () => {
+  if (hoverTimer !== null) window.clearTimeout(hoverTimer);
+  hoverTimer = null;
+  highlighter?.clear("hover").catch(() => {});
 });
 
 closePropertiesButton?.addEventListener("click", () => propertiesPanel?.classList.add("is-collapsed"));

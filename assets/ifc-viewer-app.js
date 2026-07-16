@@ -15165,31 +15165,31 @@ var Gd = document.querySelector("#viewer-container"), Kd = document.querySelecto
 if (!(Gd instanceof HTMLElement)) throw Error("Viewer container was not found.");
 var lf = document.body.dataset.modelId, uf = document.body.dataset.fragmentsSrc;
 if (!lf || !uf) throw Error("The prepared model source was not configured.");
-var df = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches, ff = new A("#ff8a5b"), pf, mf, hf, gf = null, _f = null, vf = null, yf = null, bf = {}, xf = !1, Sf = 0;
-function Cf(e) {
+var df = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches, ff = new A("#ff8a5b"), pf, mf, hf, gf = null, _f = null, vf = null, yf = null, bf = {}, xf = !1, Sf = 0, Cf = null, wf = !1;
+function Tf(e) {
 	if (!(qd instanceof HTMLElement)) return;
 	let t = Number.isFinite(e) ? Math.max(0, Math.min(1, e > 1 ? e / 100 : e)) : .08;
 	qd.style.width = `${Math.max(8, t * 100)}%`;
 }
-function wf(e) {
+function Ef(e) {
 	console.error(e), Kd?.classList.add("is-hidden"), Jd instanceof HTMLElement && (Jd.hidden = !1), Yd instanceof HTMLElement && (Yd.textContent = e instanceof Error ? e.message : "An unknown viewer error occurred.");
 }
-function Tf(e) {
+function Df(e) {
 	return Object.fromEntries(Object.entries(e || {}).map(([e, t]) => [e, new Set(t)]));
 }
-function Ef(e = bf) {
+function Of(e = bf) {
 	return Object.values(e).reduce((e, t) => e + t.size, 0);
 }
-function Df(e) {
+function kf(e) {
 	$d instanceof HTMLButtonElement && ($d.disabled = !e), ef instanceof HTMLButtonElement && (ef.disabled = !e);
 }
-function Of() {
-	bf = {}, Df(!1), af?.classList.add("is-collapsed");
+function Af() {
+	bf = {}, kf(!1), af?.classList.add("is-collapsed");
 }
-function kf(e) {
+function jf(e) {
 	return e && typeof e == "object" && "value" in e ? e.value : e;
 }
-function Af(e, t) {
+function Mf(e, t) {
 	if (!(sf instanceof HTMLElement) || t == null || t === "") return;
 	let n = document.createElement("div");
 	n.className = "property-row";
@@ -15198,13 +15198,13 @@ function Af(e, t) {
 	let i = document.createElement("strong");
 	i.textContent = String(t), n.append(r, i), sf.append(n);
 }
-async function jf(e) {
+async function Nf(e) {
 	if (df || !(sf instanceof HTMLElement)) return;
 	let t = ++Sf, n = Object.entries(e);
 	if (!n.length) return;
 	let [r, i] = n[0], a = [...i][0], o = mf?.list?.get(r);
 	if (!(!o || a === void 0)) {
-		af?.classList.remove("is-collapsed"), sf.replaceChildren(), of instanceof HTMLElement && (of.textContent = Ef(e) > 1 ? `${Ef(e)} Elements` : "Selected Element"), Af("Model", r), Af("Local ID", a);
+		af?.classList.remove("is-collapsed"), sf.replaceChildren(), of instanceof HTMLElement && (of.textContent = Of(e) > 1 ? `${Of(e)} Elements` : "Selected Element"), Mf("Model", r), Mf("Local ID", a);
 		try {
 			let [e] = await o.getItemsData([a], { attributesDefault: !0 });
 			if (t !== Sf || !e) return;
@@ -15215,28 +15215,28 @@ async function jf(e) {
 				["Tag", "Tag"],
 				["Global ID", "GlobalId"],
 				["Description", "Description"]
-			]) Af(t, kf(e[n]));
+			]) Mf(t, jf(e[n]));
 		} catch (e) {
 			console.warn("Selected element properties were unavailable.", e);
 		}
 	}
 }
-function Mf() {
+function Pf() {
 	hf.list.clear(), hf.addFromModels();
 	let e = hf.get();
 	if (hf.list.clear(), e.isEmpty()) return null;
 	let t = new v();
 	return e.getBoundingSphere(t), t.radius *= .84, t;
 }
-async function Nf(e = !0) {
+async function Ff(e = !0) {
 	if (!pf?.camera?.controls) return;
-	let t = Mf();
+	let t = Pf();
 	t && (await pf.camera.controls.fitToSphere(t, e), await mf.core.update(!0));
 }
-async function Pf() {
+async function If() {
 	!pf?.camera?.controls || !gf || (await pf.camera.controls.fitToSphere(gf, !0), await mf.core.update(!0));
 }
-async function Ff(e) {
+async function Lf(e) {
 	let t = await fetch(e);
 	if (!t.ok) throw Error(`Prepared model request failed (${t.status}).`);
 	let n = Number(t.headers.get("content-length"));
@@ -15245,17 +15245,31 @@ async function Ff(e) {
 	for (;;) {
 		let { done: e, value: t } = await r.read();
 		if (e) break;
-		i.push(t), a += t.byteLength, Cf(.18 + a / n * .58);
+		i.push(t), a += t.byteLength, Tf(.18 + a / n * .58);
 	}
 	let o = new Uint8Array(a), s = 0;
 	for (let e of i) o.set(e, s), s += e.byteLength;
 	return o;
 }
-function If(e) {
-	xf = e, Gd.classList.toggle("is-placing-section", e), nf?.classList.toggle("is-active", e), nf instanceof HTMLButtonElement && (nf.textContent = e ? "Click Model" : "Section"), _f && (_f.enabled = !e);
+function Rf(e) {
+	xf = e, Gd.classList.toggle("is-placing-section", e), nf?.classList.toggle("is-active", e), nf instanceof HTMLButtonElement && (nf.textContent = e ? "Click Model" : "Section"), _f && (e && _f.clear("hover").catch(() => {}), _f.enabled = !e);
 }
-async function Lf(e) {
-	let t = await import("./dist-BobF0VSm.js");
+function zf(e) {
+	!_f || xf || e.buttons !== 0 || (Cf !== null && window.clearTimeout(Cf), Cf = window.setTimeout(async () => {
+		if (Cf = null, !(wf || !_f?.enabled)) {
+			wf = !0;
+			try {
+				await _f.highlight("hover", !0, !1);
+			} catch (e) {
+				console.warn("Hover preview was unavailable.", e);
+			} finally {
+				wf = !1;
+			}
+		}
+	}, 70));
+}
+async function Bf(e) {
+	let t = await import("./dist-O1W19x2T.js");
 	e.get(Sl).get(pf), _f = e.get(t.Highlighter), _f.setup({
 		world: pf,
 		selectMaterialDefinition: {
@@ -15264,32 +15278,35 @@ async function Lf(e) {
 			transparent: !1,
 			renderedFaces: 0
 		}
-	}), _f.multiple = "none", _f.events.select.onHighlight.add((e) => {
-		bf = Tf(e), Df(Ef() > 0), jf(bf);
-	}), _f.events.select.onClear.add(Of);
-	let n = e.get(t.Hoverer);
-	n.world = pf, n.material.color.copy(ff), n.material.opacity = .42, n.material.userData._maxHoverOpacity = .42, n.fade = !0, n.fadeDuration = 110, vf = e.get(Uc), yf = e.get(su), yf.setup({
+	}), _f.multiple = "none", _f.styles.set("hover", {
+		color: ff,
+		opacity: .42,
+		transparent: !0,
+		renderedFaces: 0
+	}), _f.events.select.onHighlight.add((e) => {
+		bf = Df(e), kf(Of() > 0), Nf(bf);
+	}), _f.events.select.onClear.add(Af), vf = e.get(Uc), yf = e.get(su), yf.setup({
 		color: ff,
 		opacity: .24,
 		size: 1.5
 	});
 }
-Xd?.addEventListener("click", () => Nf(!0).catch(wf)), Zd?.addEventListener("click", () => Pf().catch(wf)), Qd?.addEventListener("click", async () => {
+Xd?.addEventListener("click", () => Ff(!0).catch(Ef)), Zd?.addEventListener("click", () => If().catch(Ef)), Qd?.addEventListener("click", async () => {
 	try {
 		document.fullscreenElement ? (await document.exitFullscreen(), Qd.textContent = "Full Screen") : (await document.documentElement.requestFullscreen(), Qd.textContent = "Exit Full Screen");
 	} catch (e) {
-		wf(e);
+		Ef(e);
 	}
 }), $d?.addEventListener("click", async () => {
-	!vf || !Ef() || (await vf.set(!1, bf), await _f?.clear("select"));
+	!vf || !Of() || (await vf.set(!1, bf), await _f?.clear("select"));
 }), ef?.addEventListener("click", async () => {
-	vf && Ef() && await vf.isolate(bf);
+	vf && Of() && await vf.isolate(bf);
 }), tf?.addEventListener("click", async () => {
 	vf && (await vf.set(!0), await mf?.core?.update(!0));
 }), nf?.addEventListener("click", () => {
-	yf && If(!xf);
+	yf && Rf(!xf);
 }), rf?.addEventListener("click", () => {
-	yf && (yf.deleteAll(), If(!1), rf instanceof HTMLButtonElement && (rf.disabled = !0));
+	yf && (yf.deleteAll(), Rf(!1), rf instanceof HTMLButtonElement && (rf.disabled = !0));
 }), Gd.addEventListener("pointerup", (e) => {
 	!xf || e.button !== 0 || !yf || window.setTimeout(async () => {
 		try {
@@ -15297,13 +15314,15 @@ Xd?.addEventListener("click", () => Nf(!0).catch(wf)), Zd?.addEventListener("cli
 		} catch (e) {
 			console.warn("A section plane could not be placed at that point.", e);
 		} finally {
-			If(!1);
+			Rf(!1);
 		}
 	}, 0);
+}), Gd.addEventListener("pointermove", zf), Gd.addEventListener("pointerleave", () => {
+	Cf !== null && window.clearTimeout(Cf), Cf = null, _f?.clear("hover").catch(() => {});
 }), cf?.addEventListener("click", () => af?.classList.add("is-collapsed")), document.addEventListener("fullscreenchange", () => {
 	!document.fullscreenElement && Qd instanceof HTMLButtonElement && (Qd.textContent = "Full Screen");
 }), (async () => {
-	Cf(.08);
+	Tf(.08);
 	let e = new zl();
 	pf = e.get(Nl).create(), pf.scene = new Dl(e), pf.scene.setup(), pf.scene.three.background = new A("#ffffff"), pf.renderer = new Al(e, Gd), pf.renderer.showLogo = !1, pf.renderer.three.setPixelRatio(Math.min(window.devicePixelRatio || 1, df ? 1.25 : 2)), pf.camera = new Wl(e), await pf.camera.controls.setLookAt(12, 10, 12, 0, 0, 0), e.init();
 	let t = e.get(Ll).create(pf);
@@ -15311,7 +15330,7 @@ Xd?.addEventListener("click", () => Nf(!0).catch(wf)), Zd?.addEventListener("cli
 	let n = () => {
 		pf.renderer?.resize(), pf.camera?.updateAspect();
 	};
-	new ResizeObserver(n).observe(Gd), window.addEventListener("resize", n, { passive: !0 }), Cf(.14), mf = e.get(Q);
+	new ResizeObserver(n).observe(Gd), window.addEventListener("resize", n, { passive: !0 }), Tf(.14), mf = e.get(Q);
 	let r = new URL(
 		/* @vite-ignore */
 		"./ifc/fragments-worker.mjs",
@@ -15321,17 +15340,17 @@ Xd?.addEventListener("click", () => Nf(!0).catch(wf)), Zd?.addEventListener("cli
 		e.useCamera(pf.camera.three), pf.scene.three.add(e.object), await mf.core.update(!0);
 	}), mf.core.models.materials.list.onItemSet.add(({ value: e }) => {
 		(!("isLodMaterial" in e) || !e.isLodMaterial) && (e.polygonOffset = !0, e.polygonOffsetUnits = 1, e.polygonOffsetFactor = Math.random());
-	}), hf = e.get(Gc), df || await Lf(e), Cf(.18);
-	let i = await Ff(uf);
-	Cf(.78), await mf.core.load(i, {
+	}), hf = e.get(Gc), df || await Bf(e), Tf(.18);
+	let i = await Lf(uf);
+	Tf(.78), await mf.core.load(i, {
 		modelId: lf,
 		camera: pf.camera.three,
 		onProgress(e) {
 			let t = Number(e?.progress ?? e);
 			if (!Number.isFinite(t)) return;
 			let n = t > 1 ? t / 100 : t;
-			Cf(.78 + Math.min(1, n) * .16);
+			Tf(.78 + Math.min(1, n) * .16);
 		}
-	}), Cf(.95), await mf.core.update(!0), gf = Mf(), gf && (await pf.camera.controls.fitToSphere(gf, !1), await mf.core.update(!0)), Cf(1), window.setTimeout(() => Kd?.classList.add("is-hidden"), 220);
-})().catch(wf);
+	}), Tf(.95), await mf.core.update(!0), gf = Pf(), gf && (await pf.camera.controls.fitToSphere(gf, !1), await mf.core.update(!0)), Tf(1), window.setTimeout(() => Kd?.classList.add("is-hidden"), 220);
+})().catch(Ef);
 //#endregion
