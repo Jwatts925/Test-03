@@ -66,6 +66,7 @@ if (projectIndexList) {
     const panelId = `project-panel-${index + 1}`;
     const buttonId = `project-trigger-${index + 1}`;
     const gallery = imageMarkup(project);
+    const galleryLayout = ["gallery-major-left", "gallery-row", "gallery-major-right"][index % 3];
 
     article.innerHTML = `
       <button class="project-index-trigger" id="${buttonId}" type="button" aria-expanded="false" aria-controls="${panelId}">
@@ -75,7 +76,7 @@ if (projectIndexList) {
       </button>
       <div class="project-index-panel" id="${panelId}" role="region" aria-labelledby="${buttonId}" hidden>
         <div class="project-index-panel-inner ${gallery ? "has-images" : "no-images"}">
-          ${gallery ? `<div class="project-index-gallery">${gallery}</div>` : ""}
+          ${gallery ? `<div class="project-index-gallery ${galleryLayout}">${gallery}</div>` : ""}
           <div class="project-index-details">
             <div><span>Project</span><strong>${project.name}</strong></div>
             <div><span>Location</span><strong>${project.address}</strong></div>
