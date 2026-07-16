@@ -1876,10 +1876,10 @@ summary:focus-visible {
 
 @media (min-width: 761px) {
   .hero-message h1 {
-    max-width: 40rem;
-    font-size: clamp(2.65rem, 3.75vw, 3.8rem);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
+    max-width: 47rem;
+    font-size: clamp(3.6rem, 5.8vw, 6.6rem);
+    line-height: 0.91;
+    letter-spacing: -0.045em;
   }
 }
 
