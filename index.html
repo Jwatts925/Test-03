@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;600;700&amp;family=Roboto+Mono:wght@400;500;600&amp;family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="swiss-theme.css?v=home-ifc-grid-2" />
+  <link rel="stylesheet" href="swiss-theme.css?v=about-section-1" />
   <script defer src="script.js"></script>
 </head>
 <body class="home-page">
@@ -25,6 +25,7 @@
       </button>
 
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#work">Portfolio</a>
         <a href="#services">Services</a>
@@ -47,7 +48,7 @@
 
         <div class="hero-message reveal">
           <p class="hero-vertical-label" aria-hidden="true">Preconstruction — Facade Systems</p>
-          <h1 id="hero-title">Modeling architectural façade systems from preconstruction through completion<span aria-hidden="true">.</span></h1>
+          <h1 id="hero-title"><span class="hero-title-line">Modeling architectural</span><span class="hero-title-line">façade systems from</span><span class="hero-title-line">preconstruction</span><span class="hero-title-line">through completion<span class="hero-terminal" aria-hidden="true">.</span></span></h1>
         </div>
 
         <div class="hero-ifc-grid reveal" aria-label="Four continuously rotating façade models">
@@ -55,16 +56,6 @@
           <div class="hero-ifc-tile"><iframe src="ifc-home-02.html?model-set=1" title="Rotating SFPUC 914 façade model" loading="lazy" tabindex="-1"></iframe></div>
           <div class="hero-ifc-tile"><iframe src="ifc-home-03.html?model-set=1" title="Rotating SLAC façade model" loading="lazy" tabindex="-1"></iframe></div>
           <div class="hero-ifc-tile"><iframe src="ifc-home-04.html?model-set=1" title="Rotating STEM façade model" loading="lazy" tabindex="-1"></iframe></div>
-        </div>
-
-        <div class="hero-intro-wrap reveal">
-          <figure class="hero-portrait hero-intro-portrait" tabindex="0" aria-label="Hand-drawn portrait of James Watts; hover or focus to reveal the colorized version">
-            <span class="hero-portrait-stack">
-              <img class="hero-portrait-mono" src="assets/james-portrait-smooth.png" alt="Hand-drawn portrait of James Watts" />
-              <img class="hero-portrait-color" src="assets/james-portrait-color.png" alt="" aria-hidden="true" />
-            </span>
-          </figure>
-          <p class="hero-intro hero-intro-wide">I’m James Watts, a BIM and preconstruction professional specializing in glazing and facade systems. My work sits between design, construction, and technology: I develop project-specific 3D models, coordinate changing design information, produce shop and proposal graphics, and create dependable workflows that support estimating, preconstruction, coordination, fabrication, field installation, and operations. With a background in industrial design and English literature, I bring equal attention to how information functions and how it is communicated—translating complicated facade conditions into clear models, diagrams, schedules, and presentations.</p>
         </div>
 
         <div class="hero-metrics reveal" aria-label="Professional highlights">
@@ -85,10 +76,31 @@
     </section>
 
     <div class="portfolio-accordion" data-portfolio-accordion>
+      <details class="portfolio-section" id="about">
+        <summary class="portfolio-section-trigger">
+          <span class="portfolio-section-title" role="heading" aria-level="2">About</span>
+          <span class="portfolio-section-number" aria-hidden="true">01</span>
+        </summary>
+        <div class="portfolio-section-panel">
+          <div class="container portfolio-section-inner about-section-inner">
+            <p class="about-kicker">BIM Coordination · Automation · Technical Communication</p>
+            <div class="about-copy-wrap reveal">
+              <figure class="hero-portrait about-portrait" tabindex="0" aria-label="Hand-drawn portrait of James Watts; hover or focus to reveal the colorized version">
+                <span class="hero-portrait-stack">
+                  <img class="hero-portrait-mono" src="assets/james-portrait-smooth.png" alt="Hand-drawn portrait of James Watts" />
+                  <img class="hero-portrait-color" src="assets/james-portrait-color.png" alt="" aria-hidden="true" />
+                </span>
+              </figure>
+              <p class="about-copy">I’m James Watts, a BIM and preconstruction professional specializing in glazing and facade systems. My work sits between design, construction, and technology: I develop project-specific 3D models, coordinate changing design information, produce shop and proposal graphics, and create dependable workflows that support estimating, preconstruction, coordination, fabrication, field installation, and operations. With a background in industrial design and English literature, I bring equal attention to how information functions and how it is communicated—translating complicated facade conditions into clear models, diagrams, schedules, and presentations.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
       <details class="portfolio-section" id="experience">
         <summary class="portfolio-section-trigger">
           <span class="portfolio-section-title" role="heading" aria-level="2">Experience</span>
-          <span class="portfolio-section-number" aria-hidden="true">01</span>
+          <span class="portfolio-section-number" aria-hidden="true">02</span>
         </summary>
         <div class="portfolio-section-panel">
           <div class="container portfolio-section-inner">
@@ -217,7 +229,7 @@
       <details class="portfolio-section" id="work">
         <summary class="portfolio-section-trigger">
           <span class="portfolio-section-title" role="heading" aria-level="2">Portfolio</span>
-          <span class="portfolio-section-number" aria-hidden="true">02</span>
+          <span class="portfolio-section-number" aria-hidden="true">03</span>
         </summary>
         <div class="portfolio-section-panel">
           <div class="container portfolio-section-inner">
@@ -246,7 +258,7 @@
       <details class="portfolio-section" id="services">
         <summary class="portfolio-section-trigger">
           <span class="portfolio-section-title" role="heading" aria-level="2">Services</span>
-          <span class="portfolio-section-number" aria-hidden="true">03</span>
+          <span class="portfolio-section-number" aria-hidden="true">04</span>
         </summary>
         <div class="portfolio-section-panel">
           <div class="container portfolio-section-inner">
@@ -277,7 +289,7 @@
       <details class="portfolio-section" id="contact">
         <summary class="portfolio-section-trigger">
           <span class="portfolio-section-title" role="heading" aria-level="2">Contact</span>
-          <span class="portfolio-section-number" aria-hidden="true">04</span>
+          <span class="portfolio-section-number" aria-hidden="true">05</span>
         </summary>
         <div class="portfolio-section-panel">
           <div class="contact-section">
