@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Athletics Sans Web";
+  src: url("assets/fonts/athletics-sans-extrabold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
 :root {
   --tech-blue: #3f60b1;
   --coral: #ff8a5b;
@@ -233,9 +241,9 @@ summary:focus-visible {
   max-width: 40rem;
   margin: 0;
   color: var(--deep-ink);
-  font-family: var(--display);
+  font-family: "Athletics Sans Web", var(--display);
   font-size: clamp(2.65rem, 3.75vw, 3.8rem);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.98;
   letter-spacing: -0.04em;
 }
