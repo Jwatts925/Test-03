@@ -18664,4 +18664,4 @@ K(class t extends qt {
 	}
 }, "uuid", "b3e5c7a9-1f2d-4e8b-9c0a-5d7f3b1e2c4a");
 //#endregion
-export { pf as Highlighter, gf as Hoverer };
+export { pf as Highlighter };
