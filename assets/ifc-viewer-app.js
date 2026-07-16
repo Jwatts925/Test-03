@@ -15268,13 +15268,7 @@ async function Lf(e) {
 		bf = Tf(e), Df(Ef() > 0), jf(bf);
 	}), _f.events.select.onClear.add(Of);
 	let n = e.get(t.Hoverer);
-	n.world = pf, n.material = new ae({
-		color: ff,
-		transparent: !0,
-		opacity: .42,
-		depthTest: !1,
-		depthWrite: !1
-	}), n.fade = !0, n.fadeDuration = 110, vf = e.get(Uc), yf = e.get(su), yf.setup({
+	n.world = pf, n.material.color.copy(ff), n.material.opacity = .42, n.material.userData._maxHoverOpacity = .42, n.fade = !0, n.fadeDuration = 110, vf = e.get(Uc), yf = e.get(su), yf.setup({
 		color: ff,
 		opacity: .24,
 		size: 1.5

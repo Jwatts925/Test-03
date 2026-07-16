@@ -210,13 +210,9 @@ async function initializeDesktopTools(components) {
 
   const hoverer = components.get(OBF.Hoverer);
   hoverer.world = world;
-  hoverer.material = new THREE.MeshBasicMaterial({
-    color: ORANGE,
-    transparent: true,
-    opacity: 0.42,
-    depthTest: false,
-    depthWrite: false,
-  });
+  hoverer.material.color.copy(ORANGE);
+  hoverer.material.opacity = 0.42;
+  hoverer.material.userData._maxHoverOpacity = 0.42;
   hoverer.fade = true;
   hoverer.fadeDuration = 110;
 
