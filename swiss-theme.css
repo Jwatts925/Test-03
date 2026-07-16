@@ -1966,7 +1966,7 @@ summary:focus-visible {
     z-index: 2;
     grid-column: 1 / span 6;
     align-self: start;
-    transform: translateY(clamp(0.65rem, 0.9vw, 1rem));
+    margin-top: calc(var(--hero-section-gap) + clamp(0.65rem, 0.9vw, 1rem));
   }
 
   .hero-message h1 {
@@ -1982,7 +1982,7 @@ summary:focus-visible {
     width: 100%;
     max-width: 34rem;
     justify-self: end;
-    transform: translateY(clamp(-1rem, -0.9vw, -0.65rem));
+    margin-top: 0;
   }
 }
 
