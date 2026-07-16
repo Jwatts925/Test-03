@@ -15165,7 +15165,7 @@ var Gd = document.querySelector("#viewer-container"), Kd = document.querySelecto
 if (!(Gd instanceof HTMLElement)) throw Error("Viewer container was not found.");
 var lf = document.body.dataset.modelId, uf = document.body.dataset.fragmentsSrc;
 if (!lf || !uf) throw Error("The prepared model source was not configured.");
-var df = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches, ff = document.body.dataset.viewMode === "hidden-line-spin", pf = new A("#ff8a5b"), mf, hf, gf, _f = null, vf = null, yf = null, bf = null, xf = {}, Sf = !1, Cf = 0, wf = null, Tf = !1, Ef = 0, Df = new A("#faf9f5"), Of = new A("#4164b3");
+var df = window.matchMedia("(max-width: 680px), (pointer: coarse)").matches, ff = document.body.dataset.viewMode === "hidden-line-spin", pf = new A("#ff8a5b"), mf, hf, gf, _f = null, vf = null, yf = null, bf = null, xf = {}, Sf = !1, Cf = 0, wf = null, Tf = !1, Ef = 0, Df = new A("#ffffff"), Of = new A("#4164b3");
 function kf(e) {
 	if (!(qd instanceof HTMLElement)) return;
 	let t = Number.isFinite(e) ? Math.max(0, Math.min(1, e > 1 ? e / 100 : e)) : .08;
@@ -15175,7 +15175,7 @@ function Af(e) {
 	console.error(e), Kd?.classList.add("is-hidden"), Jd instanceof HTMLElement && (Jd.hidden = !1), Yd instanceof HTMLElement && (Yd.textContent = e instanceof Error ? e.message : "An unknown viewer error occurred.");
 }
 function jf(e) {
-	!ff || !e || ("isLodMaterial" in e && e.isLodMaterial ? (e.lodColor = Of.clone(), e.lodOpacity = .82) : e.color?.copy && (e.color.copy(Df), e.opacity = 1, e.transparent = !1, e.side = 2, e.depthWrite = !0), e.needsUpdate = !0);
+	!ff || !e || ("isLodMaterial" in e && e.isLodMaterial ? (e.lodColor = Of.clone(), e.lodOpacity = .58) : e.color?.copy && (e.color.copy(Df), e.opacity = 1, e.transparent = !1, e.side = 2, e.depthWrite = !0), e.needsUpdate = !0);
 }
 function Mf() {
 	if (!mf?.camera?.controls || Ef) return;
@@ -15335,7 +15335,7 @@ Xd?.addEventListener("click", () => Vf(!0).catch(Af)), Zd?.addEventListener("cli
 }), (async () => {
 	kf(.08);
 	let e = new zl();
-	mf = e.get(Nl).create(), mf.scene = new Dl(e), mf.scene.setup(), mf.scene.three.background = new A(ff ? "#f7f6f2" : "#ffffff"), mf.renderer = new Al(e, Gd), mf.renderer.showLogo = !1, mf.renderer.three.setPixelRatio(Math.min(window.devicePixelRatio || 1, df ? 1.25 : 2)), mf.camera = new Wl(e), await mf.camera.controls.setLookAt(12, 10, 12, 0, 0, 0), e.init();
+	mf = e.get(Nl).create(), mf.scene = new Dl(e), mf.scene.setup(), mf.scene.three.background = new A("#ffffff"), mf.renderer = new Al(e, Gd), mf.renderer.showLogo = !1, mf.renderer.three.setPixelRatio(Math.min(window.devicePixelRatio || 1, df ? 1.25 : 2)), mf.camera = new Wl(e), await mf.camera.controls.setLookAt(12, 10, 12, 0, 0, 0), e.init();
 	let t = e.get(Ll).create(mf);
 	t?.three && (t.three.visible = !1);
 	let n = () => {
