@@ -21,26 +21,26 @@ const projectIndexData = [
   { name: "UCSD Discovery", address: "La Jolla, CA", slug: "ucsd-discovery", images: 3 },
   { name: "UNR Mathewson", address: "Reno, NV", slug: "unr-mathewson", images: 3 },
   { name: "Saint Francis High School", address: "Mountain View, CA", slug: "saint-francis-high-school", images: 3 },
-  { name: "UCSF Benioff Parking Structure", address: "San Francisco, CA", slug: "ucsf-benioff-parking-structure", images: 3 },
-  { name: "UCSC Heller Housing", address: "Santa Cruz, CA", slug: "ucsc-heller-housing", images: 3 },
-  { name: "East County Services Center", address: "Contra Costa County, CA", slug: "east-county-services-center", images: 3 },
-  { name: "Sonoma Government Center", address: "Santa Rosa, CA", slug: "sonoma-government-center", images: 3 },
-  { name: "UCB Heathcock", address: "Berkeley, CA", slug: "ucb-heathcock", images: 3 },
-  { name: "SFO Guardrail", address: "San Francisco International Airport", slug: "sfo-guardrail", images: 3 },
-  { name: "SFO Icebox", address: "San Francisco International Airport", slug: "sfo-icebox", images: 3 },
-  { name: "SFUSD", address: "San Francisco, CA", slug: "sfusd", images: 3 },
-  { name: "STEM - Mission College", address: "Santa Clara, CA", slug: "stem-mission-college", images: 3 },
-  { name: "Gilead Technical Development Center", address: "Foster City, CA", slug: "gilead-technical-development-center", images: 3 },
-  { name: "Workday Meeting Center", address: "Pleasanton, CA", slug: "workday-meeting-center", images: 3 },
-  { name: "West Valley College", address: "Saratoga, CA", slug: "west-valley-college", images: 3 },
-  { name: "SFO Cargo", address: "San Francisco International Airport", slug: "sfo-cargo", images: 3 },
-  { name: "Sutter MOB", address: "Northern California", slug: "sutter-mob", images: 3 },
-  { name: "Millbrae Yards Phase II", address: "Millbrae, CA", slug: "millbrae-yards-phase-ii", images: 3 },
-  { name: "SLAC - National Accelerator Lab", address: "Menlo Park, CA", slug: "slac-national-accelerator-lab", images: 3 },
-  { name: "San Quentin Rehabilitation Center", address: "San Quentin, CA", slug: "san-quentin-rehabilitation-center", images: 3 },
-  { name: "Stanford Atrium", address: "Stanford, CA", slug: "stanford-atrium", images: 3 },
-  { name: "YMCA - Redwood City", address: "Redwood City, CA", slug: "ymca-redwood-city", images: 3 },
-  { name: "SSF Wellness", address: "South San Francisco, CA", slug: "ssf-wellness", images: 3 }
+  { name: "UCSF Benioff Parking Structure", address: "San Francisco, CA", slug: "ucsf-benioff-parking-structure", images: 5 },
+  { name: "UCSC Heller Housing", address: "Santa Cruz, CA", slug: "ucsc-heller-housing", images: 10 },
+  { name: "East County Services Center", address: "Contra Costa County, CA", slug: "east-county-services-center", images: 5 },
+  { name: "Sonoma Government Center", address: "Santa Rosa, CA", slug: "sonoma-government-center", images: 8 },
+  { name: "UCB Heathcock", address: "Berkeley, CA", slug: "ucb-heathcock", images: 4 },
+  { name: "SFO Guardrail", address: "San Francisco International Airport", slug: "sfo-guardrail", images: 6 },
+  { name: "SFO Icebox", address: "San Francisco International Airport", slug: "sfo-icebox", images: 10 },
+  { name: "SFUSD", address: "San Francisco, CA", slug: "sfusd", images: 6 },
+  { name: "STEM - Mission College", address: "Santa Clara, CA", slug: "stem-mission-college", images: 4 },
+  { name: "Gilead Technical Development Center", address: "Foster City, CA", slug: "gilead-technical-development-center", images: 5 },
+  { name: "Workday Meeting Center", address: "Pleasanton, CA", slug: "workday-meeting-center", images: 6 },
+  { name: "West Valley College", address: "Saratoga, CA", slug: "west-valley-college", images: 7 },
+  { name: "SFO Cargo", address: "San Francisco International Airport", slug: "sfo-cargo", images: 6 },
+  { name: "Sutter MOB", address: "Northern California", slug: "sutter-mob", images: 5 },
+  { name: "Millbrae Yards Phase II", address: "Millbrae, CA", slug: "millbrae-yards-phase-ii", images: 5 },
+  { name: "SLAC - National Accelerator Lab", address: "Menlo Park, CA", slug: "slac-national-accelerator-lab", images: 10 },
+  { name: "San Quentin Rehabilitation Center", address: "San Quentin, CA", slug: "san-quentin-rehabilitation-center", images: 13 },
+  { name: "Stanford Atrium", address: "Stanford, CA", slug: "stanford-atrium", images: 10 },
+  { name: "YMCA - Redwood City", address: "Redwood City, CA", slug: "ymca-redwood-city", images: 79 },
+  { name: "SSF Wellness", address: "South San Francisco, CA", slug: "ssf-wellness", images: 10 }
 ];
 
 const projectIndexList = document.querySelector("[data-project-index]");
@@ -66,7 +66,9 @@ if (projectIndexList) {
     const panelId = `project-panel-${index + 1}`;
     const buttonId = `project-trigger-${index + 1}`;
     const gallery = imageMarkup(project);
-    const galleryLayout = ["gallery-major-left", "gallery-row", "gallery-major-right"][index % 3];
+    const galleryLayout = project.images > 3
+      ? "gallery-many"
+      : ["gallery-major-left", "gallery-row", "gallery-major-right"][index % 3];
 
     article.innerHTML = `
       <button class="project-index-trigger" id="${buttonId}" type="button" aria-expanded="false" aria-controls="${panelId}">
@@ -78,8 +80,6 @@ if (projectIndexList) {
         <div class="project-index-panel-inner ${gallery ? "has-images" : "no-images"}">
           ${gallery ? `<div class="project-index-gallery ${galleryLayout}">${gallery}</div>` : ""}
           <div class="project-index-details">
-            <div><span>Project</span><strong>${project.name}</strong></div>
-            <div><span>Location</span><strong>${project.address}</strong></div>
             <div><span>Scope</span><strong>BIM modeling · coordination · technical documentation</strong></div>
             <div><span>Media</span><strong>${project.images ? `${project.images} selected project views` : "Project summary"}</strong></div>
           </div>
