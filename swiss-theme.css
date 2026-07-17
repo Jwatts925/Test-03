@@ -1846,7 +1846,7 @@ summary:focus-visible {
 
 .contact-fastener-01 { left: 2%; top: -8%; width: clamp(3.5rem, 4vw, 5rem); transform: rotate(76deg); }
 .contact-fastener-02 { left: 14%; top: 4%; width: clamp(7rem, 10vw, 12rem); transform: rotate(0deg); }
-.contact-fastener-03 { left: 14%; top: 37%; width: clamp(4rem, 5vw, 6rem); transform: rotate(12deg); }
+.contact-fastener-03 { left: 7%; top: 39%; width: clamp(4rem, 5vw, 6rem); transform: rotate(12deg); }
 .contact-fastener-04 { left: 42%; top: -2%; width: clamp(2rem, 2.4vw, 2.75rem); transform: rotate(72deg); }
 .contact-fastener-05 { left: 47%; top: 4%; width: clamp(14rem, 22vw, 27rem); transform: rotate(0deg); }
 .contact-fastener-06 { left: 74%; top: 2%; width: auto; height: clamp(7rem, 9vw, 10rem); transform: rotate(78deg); }
@@ -1856,7 +1856,7 @@ summary:focus-visible {
 .contact-fastener-10 { left: 39%; bottom: 2%; width: clamp(10rem, 16vw, 20rem); transform: rotate(0deg); }
 .contact-fastener-11 { right: 1%; bottom: 2%; width: auto; height: clamp(7rem, 9vw, 10rem); transform: rotate(82deg); }
 .contact-fastener-12 { left: 58%; bottom: 1%; width: clamp(5rem, 7vw, 8rem); transform: rotate(10deg); }
-.contact-fastener-13 { left: 82%; top: 64%; width: clamp(4.5rem, 6vw, 7rem); transform: rotate(-10deg); }
+.contact-fastener-13 { left: 90%; top: 61%; width: clamp(4.5rem, 6vw, 7rem); transform: rotate(-10deg); }
 .contact-fastener-14 { left: -0.5%; top: 52%; width: clamp(2rem, 2.4vw, 2.75rem); transform: rotate(0deg); }
 .contact-fastener-15 { left: 59%; top: 31%; width: clamp(6rem, 8vw, 10rem); transform: rotate(88deg); }
 .contact-fastener-16 { left: 52%; top: 64%; width: clamp(2.5rem, 3vw, 3.75rem); transform: rotate(8deg); }
