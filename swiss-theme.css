@@ -1687,6 +1687,18 @@ summary:focus-visible {
   grid-row: auto;
 }
 
+.project-index-gallery.gallery-many {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: none;
+  grid-auto-rows: clamp(13rem, 22vw, 25rem);
+  height: auto;
+}
+
+.project-index-gallery.gallery-many .project-index-image:first-child {
+  grid-column: auto;
+  grid-row: auto;
+}
+
 .project-index-image img {
   display: block;
   width: 100%;
@@ -1700,7 +1712,7 @@ summary:focus-visible {
 .project-index-details {
   display: grid;
   align-content: start;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: clamp(1rem, 2vw, 2.5rem);
 }
 
@@ -1765,7 +1777,8 @@ summary:focus-visible {
   }
 
   .project-index-gallery.gallery-row,
-  .project-index-gallery.gallery-major-right {
+  .project-index-gallery.gallery-major-right,
+  .project-index-gallery.gallery-many {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto;
     height: auto;
@@ -1773,7 +1786,8 @@ summary:focus-visible {
 
   .project-index-image:first-child,
   .project-index-gallery.gallery-row .project-index-image:first-child,
-  .project-index-gallery.gallery-major-right .project-index-image:first-child {
+  .project-index-gallery.gallery-major-right .project-index-image:first-child,
+  .project-index-gallery.gallery-many .project-index-image:first-child {
     grid-column: 1 / 3;
     grid-row: auto;
   }
