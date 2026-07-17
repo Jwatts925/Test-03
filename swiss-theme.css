@@ -1466,6 +1466,11 @@ summary:focus-visible {
   margin-bottom: clamp(3.5rem, 7vw, 7rem);
 }
 
+.logistics-project-index .logistics-panel-inner {
+  display: block;
+  padding: 0;
+}
+
 .logistics-sheet-gallery {
   padding: clamp(1.25rem, 2.5vw, 3rem) var(--page-gutter) clamp(2.5rem, 5vw, 5rem);
 }
