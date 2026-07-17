@@ -1880,6 +1880,10 @@ summary:focus-visible {
   z-index: 1;
 }
 
+/* Category contact panels have one fewer link, so their lower field is tighter. */
+.category-page .contact-fastener-11 { height: 5rem; }
+.category-page .contact-fastener-12 { width: 2.5rem; }
+
 @media (max-width: 760px) {
   .contact-section {
     padding-top: 8rem;
