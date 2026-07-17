@@ -1866,6 +1866,15 @@ summary:focus-visible {
 .contact-fastener-20 { left: 51%; top: 49%; bottom: auto; width: clamp(4rem, 5vw, 6rem); transform: rotate(92deg); }
 .contact-fastener-21 { right: 14%; bottom: 1%; width: clamp(8rem, 11vw, 13rem); transform: rotate(0deg); }
 
+/* The wide composition has side gutters for these two pieces. On laptops,
+   keep them out of the tighter copy zone; mobile has its own collage layout. */
+@media (min-width: 761px) and (max-width: 1400px) {
+  .contact-fastener-03,
+  .contact-fastener-13 {
+    display: none;
+  }
+}
+
 .contact-grid {
   position: relative;
   z-index: 1;
