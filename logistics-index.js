@@ -1,6 +1,52 @@
 const logisticsIndex = document.querySelector("[data-logistics-index]");
 
 if (logisticsIndex) {
+  const logisticsProjects = [
+    {
+      name: "SFO Cargo",
+      slug: "sfo-cargo",
+      location: "San Francisco, CA",
+    },
+    {
+      name: "SLAC",
+      slug: "slac",
+      location: "Menlo Park, CA",
+    },
+  ];
+
+  logisticsProjects.forEach((project, index) => {
+    const triggerId = `${project.slug}-trigger`;
+    const panelId = `${project.slug}-panel`;
+    const sheets = Array.from({ length: 16 }, (_, pageIndex) => {
+      const page = pageIndex + 2;
+      const pageLabel = String(page).padStart(2, "0");
+      const source = `assets/logistics-proposal/${project.slug}/page-${pageLabel}.webp`;
+
+      return `
+        <a class="logistics-sheet" href="${source}" target="_blank" rel="noopener" aria-label="Open ${project.name} logistics plan page ${page}">
+          <img src="${source}" alt="${project.name} logistics plan page ${page}" loading="lazy" decoding="async" />
+        </a>`;
+    }).join("");
+
+    const article = document.createElement("article");
+    article.className = "project-index-item";
+    article.innerHTML = `
+      <button class="project-index-trigger" id="${triggerId}" type="button" aria-expanded="false" aria-controls="${panelId}">
+        <span class="project-index-number">${String(index + 1).padStart(2, "0")}</span>
+        <span class="project-index-title">${project.name}</span>
+        <span class="project-index-address">${project.location}</span>
+      </button>
+      <div class="project-index-panel" id="${panelId}" role="region" aria-labelledby="${triggerId}" hidden>
+        <div class="project-index-panel-inner logistics-panel-inner">
+          <div class="logistics-sheet-gallery">
+            <div class="logistics-sheet-grid">${sheets}</div>
+          </div>
+        </div>
+      </div>`;
+
+    logisticsIndex.appendChild(article);
+  });
+
   const closeItem = (item) => {
     if (!item) return;
     item.classList.remove("is-open");
