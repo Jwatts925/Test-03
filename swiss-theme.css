@@ -245,7 +245,7 @@ summary:focus-visible {
   font-size: clamp(4rem, 10.8vw, 11.5rem);
   font-weight: 700;
   line-height: 0.72;
-  letter-spacing: 0.055em;
+  letter-spacing: 0.065em;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -769,6 +769,10 @@ summary:focus-visible {
   right: 0;
   z-index: 1;
   color: var(--coral);
+}
+
+.experience-entry:first-child .experience-index {
+  top: -1.75rem;
 }
 
 .experience-index,
@@ -1840,20 +1844,27 @@ summary:focus-visible {
   filter: brightness(0) invert(1) drop-shadow(0 0 0.01px rgba(255, 255, 255, 0.15));
 }
 
-.contact-fastener-01 { left: 1.5%; top: 3%; width: clamp(5rem, 7.5vw, 9rem); transform: rotate(76deg); }
-.contact-fastener-02 { left: 22%; top: 5%; width: clamp(7rem, 10vw, 12rem); transform: rotate(0deg); }
-.contact-fastener-03 { left: 46%; top: 7%; width: clamp(15rem, 24vw, 30rem); transform: rotate(0deg); }
-.contact-fastener-04 { left: 72%; top: 7%; width: clamp(12rem, 19vw, 24rem); transform: rotate(44deg); }
-.contact-fastener-05 { right: 2%; top: 10%; width: clamp(5rem, 8vw, 10rem); transform: rotate(35deg); }
-.contact-fastener-06 { left: 4%; top: 40%; width: clamp(4rem, 6vw, 7.5rem); transform: rotate(55deg); }
-.contact-fastener-07 { left: 41%; top: 61%; width: clamp(4.5rem, 7vw, 8.5rem); transform: rotate(24deg); }
-.contact-fastener-08 { left: 49%; top: 23%; width: clamp(2.8rem, 4vw, 5rem); transform: rotate(0deg); }
-.contact-fastener-09 { left: 67%; top: 24%; width: clamp(2.8rem, 4vw, 5rem); transform: rotate(32deg); }
-.contact-fastener-10 { left: 77%; top: 26%; width: clamp(2.4rem, 3.5vw, 4.25rem); transform: rotate(-15deg); }
-.contact-fastener-11 { left: 1%; bottom: -7%; width: auto; height: clamp(14rem, 22vw, 27rem); transform: rotate(-76deg); }
-.contact-fastener-12 { left: 43%; bottom: 2%; width: clamp(3rem, 4.5vw, 5.5rem); transform: rotate(0deg); }
-.contact-fastener-13 { left: 58%; bottom: 5%; width: clamp(19rem, 29vw, 36rem); transform: rotate(0deg); }
-.contact-fastener-14 { right: 1%; bottom: 19%; width: auto; height: clamp(8rem, 10vw, 12rem); transform: rotate(0deg); }
+.contact-fastener-01 { left: 2%; top: 3%; width: clamp(5rem, 7vw, 8rem); transform: rotate(76deg); }
+.contact-fastener-02 { left: 14%; top: 4%; width: clamp(7rem, 10vw, 12rem); transform: rotate(0deg); }
+.contact-fastener-03 { left: 29%; top: 4%; width: clamp(4rem, 5vw, 6rem); transform: rotate(12deg); }
+.contact-fastener-04 { left: 38%; top: 3%; width: clamp(3.5rem, 4.5vw, 5.5rem); transform: rotate(72deg); }
+.contact-fastener-05 { left: 47%; top: 4%; width: clamp(14rem, 22vw, 27rem); transform: rotate(0deg); }
+.contact-fastener-06 { left: 74%; top: 2%; width: auto; height: clamp(7rem, 9vw, 10rem); transform: rotate(78deg); }
+.contact-fastener-07 { right: 2%; top: 3%; width: clamp(4.5rem, 6vw, 7rem); transform: rotate(18deg); }
+.contact-fastener-08 { left: 2%; bottom: 1%; width: clamp(14rem, 22vw, 27rem); transform: rotate(0deg); }
+.contact-fastener-09 { left: 29%; bottom: 3%; width: clamp(5rem, 7vw, 8rem); transform: rotate(-8deg); }
+.contact-fastener-10 { left: 39%; bottom: 2%; width: clamp(10rem, 16vw, 20rem); transform: rotate(0deg); }
+.contact-fastener-11 { right: 1%; bottom: 2%; width: auto; height: clamp(7rem, 9vw, 10rem); transform: rotate(82deg); }
+.contact-fastener-12 { left: 58%; bottom: 1%; width: clamp(5rem, 7vw, 8rem); transform: rotate(10deg); }
+.contact-fastener-13 { left: 68%; bottom: 2%; width: clamp(4.5rem, 6vw, 7rem); transform: rotate(-10deg); }
+.contact-fastener-14 { left: 1%; top: 44%; width: clamp(2.5rem, 3vw, 3.75rem); transform: rotate(0deg); }
+.contact-fastener-15 { left: 50.5%; top: 31%; width: clamp(6rem, 8vw, 10rem); transform: rotate(88deg); }
+.contact-fastener-16 { left: 52%; top: 64%; width: clamp(2.5rem, 3vw, 3.75rem); transform: rotate(8deg); }
+.contact-fastener-17 { right: 1%; top: 43%; width: clamp(2.5rem, 3.5vw, 4rem); transform: rotate(12deg); }
+.contact-fastener-18 { left: 1%; top: 25%; width: clamp(7rem, 9vw, 11rem); transform: rotate(68deg); }
+.contact-fastener-19 { right: 1%; top: 24%; width: clamp(5rem, 7vw, 8rem); transform: rotate(64deg); }
+.contact-fastener-20 { left: 51%; bottom: 24%; width: clamp(4rem, 5vw, 6rem); transform: rotate(92deg); }
+.contact-fastener-21 { right: 14%; bottom: 1%; width: clamp(8rem, 11vw, 13rem); transform: rotate(0deg); }
 
 .contact-grid {
   position: relative;
@@ -1880,7 +1891,14 @@ summary:focus-visible {
   .contact-fastener-09,
   .contact-fastener-10,
   .contact-fastener-12,
-  .contact-fastener-14 { display: none; }
+  .contact-fastener-14,
+  .contact-fastener-15,
+  .contact-fastener-16,
+  .contact-fastener-17,
+  .contact-fastener-18,
+  .contact-fastener-19,
+  .contact-fastener-20,
+  .contact-fastener-21 { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1989,7 +2007,7 @@ summary:focus-visible {
 
 @media (min-width: 981px) {
   .hero-message {
-    top: clamp(6.5rem, 7vw, 8.25rem);
+    top: clamp(6.1rem, 6.7vw, 7.85rem);
   }
 
   .hero-ifc-grid {
