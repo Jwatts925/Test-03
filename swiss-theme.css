@@ -1402,6 +1402,54 @@ summary:focus-visible {
 .category-page .category-navigation a { color: var(--tech-blue) !important; background: var(--white) !important; border: 1px solid var(--tech-blue) !important; }
 .category-page .category-navigation a[aria-current="page"] { background: var(--coral) !important; }
 
+/* Compact 3D Modeling introduction: title and return link on the left,
+   supporting copy on the right, with the project wall pulled directly below. */
+.bim-category-page .category-hero {
+  padding-top: clamp(3.5rem, 5vw, 5.5rem);
+  padding-bottom: clamp(3.25rem, 4.5vw, 5rem);
+}
+
+.bim-category-page .category-hero-grid {
+  grid-template-columns: minmax(0, 1.18fr) minmax(22rem, 0.82fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  align-items: center;
+}
+
+.bim-category-page .category-title-block,
+.bim-category-page .category-hero-description {
+  min-width: 0;
+}
+
+.bim-category-page .category-hero h1 {
+  margin-bottom: 0;
+}
+
+.bim-category-page .category-back {
+  margin-top: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+.bim-category-page .category-hero-copy {
+  max-width: 42rem;
+  margin: 0;
+  font-size: clamp(1.05rem, 1.25vw, 1.3rem);
+  line-height: 1.5;
+}
+
+.bim-category-page .section-light {
+  padding-top: 0;
+}
+
+@media (max-width: 980px) {
+  .bim-category-page .category-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .bim-category-page .category-hero-copy {
+    max-width: 48rem;
+  }
+}
+
 /* Project title wall */
 .category-page .project-index {
   width: 100vw;
