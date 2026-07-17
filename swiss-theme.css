@@ -1463,6 +1463,10 @@ summary:focus-visible {
 /* Logistics and Proposals keeps the compact category introduction used on
    the 3D Modeling page, while the original proposal sheets remain intact. */
 .documentation-category-page .logistics-project-index {
+  margin-bottom: clamp(5rem, 9vw, 9rem);
+}
+
+.documentation-category-page .waterproofing-project-index {
   margin-bottom: clamp(3.5rem, 7vw, 7rem);
 }
 
