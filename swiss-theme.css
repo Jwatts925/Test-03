@@ -926,12 +926,12 @@ summary:focus-visible {
   grid-column: 1 / span 8;
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 2.5vw, 2.5rem);
+  gap: clamp(1rem, 1.5vw, 1.5rem);
   min-width: 0;
 }
 
 .education-logo {
-  width: clamp(5.5rem, 10vw, 10rem);
+  width: clamp(5.5rem, 8vw, 8rem);
   height: auto;
   flex: 0 0 auto;
   object-fit: contain;
@@ -941,7 +941,7 @@ summary:focus-visible {
   margin: 0;
   color: var(--tech-blue);
   font-family: var(--display);
-  font-size: clamp(3.25rem, 6.6vw, 7.75rem);
+  font-size: clamp(3.25rem, 5.7vw, 6.75rem);
   line-height: 0.8;
   letter-spacing: -0.06em;
 }
