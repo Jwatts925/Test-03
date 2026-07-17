@@ -1,6 +1,26 @@
 const menuButton = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('.site-nav');
 
+// Keep the technical fastener field consistent anywhere the contact section appears.
+document.querySelectorAll('.contact-section').forEach((contactSection) => {
+  if (contactSection.querySelector('.contact-fastener-collage')) return;
+
+  const collage = document.createElement('div');
+  collage.className = 'contact-fastener-collage';
+  collage.setAttribute('aria-hidden', 'true');
+
+  for (let index = 1; index <= 21; index += 1) {
+    const paddedIndex = String(index).padStart(2, '0');
+    const image = document.createElement('img');
+    image.className = `contact-fastener contact-fastener-${paddedIndex}`;
+    image.src = `assets/contact-fasteners-layout/fastener-${paddedIndex}.png?v=fasteners-2026-1`;
+    image.alt = '';
+    collage.appendChild(image);
+  }
+
+  contactSection.prepend(collage);
+});
+
 if (menuButton && siteNav) {
   menuButton.addEventListener('click', () => {
     const isOpen = siteNav.classList.toggle('is-open');
