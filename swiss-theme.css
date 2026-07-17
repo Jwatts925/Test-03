@@ -1033,7 +1033,7 @@ summary:focus-visible {
 .capability-grid-merged .capability-card {
   min-height: 25rem;
   display: grid !important;
-  grid-template-rows: auto 7rem auto 1fr !important;
+  grid-template-rows: auto 7rem 6.5rem 1fr !important;
   row-gap: 1.75rem;
   padding: 1.5rem !important;
   color: var(--white);
@@ -1071,17 +1071,22 @@ summary:focus-visible {
 
 .capability-grid-merged .capability-card h3 {
   grid-row: 3;
+  align-self: center;
+  width: 100%;
   min-height: 0 !important;
-  margin: 0 0 1rem !important;
+  margin: 0 !important;
   color: var(--white) !important;
   font-family: var(--display);
-  font-size: clamp(2rem, 3vw, 3.4rem);
+  font-size: clamp(1.9rem, 2.35vw, 3.1rem);
   line-height: 0.9;
+  text-align: center;
 }
 
 .capability-grid-merged .capability-card p {
   grid-row: 4;
-  align-self: end;
+  align-self: start;
+  margin: 0;
+  padding-top: 0.5rem;
   color: var(--white) !important;
 }
 
