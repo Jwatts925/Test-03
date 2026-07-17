@@ -1,38 +1,58 @@
-const logisticsIndex = document.querySelector("[data-logistics-index]");
+const logisticsProjects = [
+  {
+    name: "SFO Cargo",
+    slug: "sfo-cargo",
+    location: "San Francisco, CA",
+    pageCount: 16,
+    assetBase: "assets/logistics-proposal/sfo-cargo",
+  },
+  {
+    name: "SLAC",
+    slug: "slac",
+    location: "Menlo Park, CA",
+    pageCount: 16,
+    assetBase: "assets/logistics-proposal/slac",
+  },
+  {
+    name: "SSF Wellness",
+    slug: "ssf-wellness",
+    location: "South San Francisco, CA",
+    pageCount: 4,
+    assetBase: "assets/logistics-proposal/ssf-wellness",
+  },
+];
 
-if (logisticsIndex) {
-  const logisticsProjects = [
-    {
-      name: "SFO Cargo",
-      slug: "sfo-cargo",
-      location: "San Francisco, CA",
-      pageCount: 16,
-    },
-    {
-      name: "SLAC",
-      slug: "slac",
-      location: "Menlo Park, CA",
-      pageCount: 16,
-    },
-    {
-      name: "SSF Wellness",
-      slug: "ssf-wellness",
-      location: "South San Francisco, CA",
-      pageCount: 4,
-    },
-  ];
+const waterproofingProjects = [
+  {
+    name: "CCSF",
+    slug: "ccsf",
+    location: "San Francisco, CA",
+    pageCount: 15,
+    assetBase: "assets/waterproofing/ccsf",
+  },
+  {
+    name: "SSF Wellness",
+    slug: "ssf-wellness",
+    location: "South San Francisco, CA",
+    pageCount: 56,
+    assetBase: "assets/waterproofing/ssf-wellness",
+  },
+];
 
-  logisticsProjects.forEach((project, index) => {
-    const triggerId = `${project.slug}-trigger`;
-    const panelId = `${project.slug}-panel`;
+const renderProjectIndex = (indexElement, projects, idPrefix, sheetType) => {
+  if (!indexElement) return;
+
+  projects.forEach((project, index) => {
+    const triggerId = `${idPrefix}-${project.slug}-trigger`;
+    const panelId = `${idPrefix}-${project.slug}-panel`;
     const sheets = Array.from({ length: project.pageCount }, (_, pageIndex) => {
       const page = pageIndex + 2;
       const pageLabel = String(page).padStart(2, "0");
-      const source = `assets/logistics-proposal/${project.slug}/page-${pageLabel}.webp`;
+      const source = `${project.assetBase}/page-${pageLabel}.webp`;
 
       return `
-        <a class="logistics-sheet" href="${source}" target="_blank" rel="noopener" aria-label="Open ${project.name} logistics plan page ${page}">
-          <img src="${source}" alt="${project.name} logistics plan page ${page}" loading="lazy" decoding="async" />
+        <a class="logistics-sheet" href="${source}" target="_blank" rel="noopener" aria-label="Open ${project.name} ${sheetType} page ${page}">
+          <img src="${source}" alt="${project.name} ${sheetType} page ${page}" loading="lazy" decoding="async" />
         </a>`;
     }).join("");
 
@@ -52,7 +72,7 @@ if (logisticsIndex) {
         </div>
       </div>`;
 
-    logisticsIndex.appendChild(article);
+    indexElement.appendChild(article);
   });
 
   const closeItem = (item) => {
@@ -74,13 +94,13 @@ if (logisticsIndex) {
     });
   };
 
-  logisticsIndex.addEventListener("click", (event) => {
+  indexElement.addEventListener("click", (event) => {
     const trigger = event.target.closest(".project-index-trigger");
     if (!trigger) return;
 
     const selectedItem = trigger.closest(".project-index-item");
     const wasOpen = selectedItem.classList.contains("is-open");
-    closeItem(logisticsIndex.querySelector(".project-index-item.is-open"));
+    closeItem(indexElement.querySelector(".project-index-item.is-open"));
 
     if (wasOpen) return;
 
@@ -89,4 +109,18 @@ if (logisticsIndex) {
     selectedItem.querySelector(".project-index-panel").hidden = false;
     scrollItemToTop(selectedItem);
   });
-}
+};
+
+renderProjectIndex(
+  document.querySelector("[data-logistics-index]"),
+  logisticsProjects,
+  "logistics",
+  "logistics plan",
+);
+
+renderProjectIndex(
+  document.querySelector("[data-waterproofing-index]"),
+  waterproofingProjects,
+  "waterproofing",
+  "waterproofing diagram",
+);
