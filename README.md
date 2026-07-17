@@ -1,103 +1,54 @@
 # James Watts Portfolio
 
-A responsive GitHub Pages portfolio for James Watts, focused on BIM, preconstruction, facade systems, technical communication, and automation.
+A responsive GitHub Pages portfolio focused on BIM, preconstruction, facade systems, technical communication, automation, and visualization.
 
-## Files
+## Main pages
 
-- `index.html` — website content and structure
-- `style.css` — responsive visual design
-- `script.js` — mobile navigation, reveal effects, and dynamic footer year
-- `assets/James-Watts-Resume.pdf` — downloadable résumé
+- `index.html` — home page, About, Experience, Portfolio, Services, and Contact sections
+- `bim-coordination.html` — 3D Modeling portfolio and project index
+- `facade-design-manual.html` — facade design portfolio category
+- `automation.html` — automation portfolio category
+- `documentation.html` — Logistics & Proposals portfolio category
+- `visualization.html` — visualization portfolio category
 
-## Publish with GitHub Pages
+## Main editing files
 
-1. Upload all files and the `assets` folder to the root of your GitHub repository.
-2. Open the repository's **Settings**.
-3. Select **Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and `/root` folder, then save.
+- `swiss-theme.css` — current Athletics typography, colors, grids, spacing, and responsive layout
+- `style.css` — original/base styling and shared IFC presentation rules
+- `script.js` — section expansion, navigation behavior, contact fasteners, and IFC interaction controls
+- `project-index.js` — project names, locations, project details, image counts, and project-index interactions
 
-## Add project images
+## Assets
 
-Create an `assets/images` folder and replace each `.project-visual` placeholder in `index.html` with an image, for example:
+- `assets/James-Watts-Resume.pdf` — downloadable resume
+- `assets/project-index/` — project image folders used by `project-index.js`
+- `assets/logistics-proposal/` — selected Logistics & Proposals sheets
+- `assets/contact-fasteners-layout/` — contact-section fastener artwork
+- `assets/fonts/` — Athletics Sans font family
+- `assets/models/` — source IFC files and optimized Fragment models
 
-```html
-<img src="assets/images/project-name.jpg" alt="Description of the project" />
-```
+## IFC viewer workflow
 
-Update the related project title, description, and link in the same card.
+The site displays prepared `.frag` models so visitors do not need to parse full IFC files in the browser. The viewer source is `src/ifc-viewer.js`, and Vite builds the browser bundle as `assets/ifc-viewer-app.js`.
 
+The four home-page models are embedded through:
 
-## Portfolio category pages
+- `ifc-home-01.html`
+- `ifc-home-02.html`
+- `ifc-home-03.html`
+- `ifc-home-04.html`
 
-The four capability cards on the home page now link to:
+The interactive 3D Modeling page uses `ifc-viewer.html`, `ifc-viewer-02.html`, and `ifc-hidden-line-spin.html`.
 
-- `bim-coordination.html`
-- `automation.html`
-- `documentation.html`
-- `visualization.html`
-
-Keep these HTML files in the repository root beside `index.html`.
-
-
-## BIM portfolio PDF
-
-The BIM & Coordination page now embeds:
-
-`assets/bim-coordination-portfolio.pdf`
-
-Upload your BIM portfolio PDF to the `assets` folder using that exact filename.
-
-
-## Scrollable BIM portfolio
-
-The BIM & Coordination page now displays optimized WebP renders of all
-30 PDF pages in a clean scrolling reader without the browser PDF toolbar
-or thumbnail sidebar.
-
-The source PDF remains available at:
-
-`assets/bim-coordination-portfolio.pdf`
-
-The rendered pages are stored in:
-
-`assets/bim-portfolio-pages/`
-
-
-## BIM Master Pages PDF viewer
-
-The BIM & Coordination page now loads a single PDF:
-
-`assets/bim-masterpages.pdf`
-
-The viewer is rendered with `pdf-viewer.js` and does not require the former
-`assets/bim-portfolio-pages/` image folder. It includes a clean scrolling
-layout, page counter, and Open PDF fallback button.
-
-
-## Optimized IFC model viewers
-
-The two embedded viewers load prepared That Open Fragments files instead of
-parsing the full IFC files in every visitor's browser:
-
-- `assets/models/SFPUC_914-IFC.frag`
-- `assets/models/SFPUC_603-IFC.frag`
-
-The original `.ifc` files remain the editable source models and can still be
-offered as downloads. The prepared files provide the same interactive geometry
-with much faster startup, especially on phones.
-
-When either source IFC changes, rebuild the prepared models and the shared
-viewer bundle from the repository root:
+To rebuild available IFC sources and the viewer bundle:
 
 ```text
 pnpm install
 pnpm run build:ifc
 ```
 
-`scripts/convert-ifc.mjs` controls which IFC files are converted. The viewer
-source is `src/ifc-viewer.js`; Vite publishes the shared browser bundle to
-`assets/ifc-viewer-app.js`. Keep `assets/ifc/fragments-worker.mjs` alongside it.
+`scripts/convert-ifc.mjs` controls the IFC-to-Fragments conversion. Keep `assets/ifc/fragments-worker.mjs` with the built viewer files.
 
-Each model must be activated with its top-left button before it captures the
-mouse wheel. Click the same button again to return to normal page scrolling.
+## Publishing
+
+The production site is deployed from the `main` branch through GitHub Pages.
