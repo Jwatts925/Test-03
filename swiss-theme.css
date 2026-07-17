@@ -1404,49 +1404,114 @@ summary:focus-visible {
 
 /* Compact 3D Modeling introduction: title and return link on the left,
    supporting copy on the right, with the project wall pulled directly below. */
-.bim-category-page .category-hero {
+.bim-category-page .category-hero,
+.documentation-category-page .category-hero {
   padding-top: clamp(3.5rem, 5vw, 5.5rem);
   padding-bottom: clamp(3.25rem, 4.5vw, 5rem);
 }
 
-.bim-category-page .category-hero-grid {
+.bim-category-page .category-hero-grid,
+.documentation-category-page .category-hero-grid {
   grid-template-columns: minmax(0, 1.18fr) minmax(22rem, 0.82fr);
   gap: clamp(2.5rem, 6vw, 7rem);
   align-items: center;
 }
 
 .bim-category-page .category-title-block,
-.bim-category-page .category-hero-description {
+.bim-category-page .category-hero-description,
+.documentation-category-page .category-title-block,
+.documentation-category-page .category-hero-description {
   min-width: 0;
 }
 
-.bim-category-page .category-hero h1 {
+.bim-category-page .category-hero h1,
+.documentation-category-page .category-hero h1 {
   margin-bottom: 0;
 }
 
-.bim-category-page .category-back {
+.bim-category-page .category-back,
+.documentation-category-page .category-back {
   margin-top: clamp(1rem, 1.5vw, 1.5rem);
 }
 
-.bim-category-page .category-hero-copy {
+.bim-category-page .category-hero-copy,
+.documentation-category-page .category-hero-copy {
   max-width: 42rem;
   margin: 0;
   font-size: clamp(1.05rem, 1.25vw, 1.3rem);
   line-height: 1.5;
 }
 
-.bim-category-page .section-light {
+.bim-category-page .section-light,
+.documentation-category-page .section-light {
   padding-top: 0;
 }
 
 @media (max-width: 980px) {
-  .bim-category-page .category-hero-grid {
+  .bim-category-page .category-hero-grid,
+  .documentation-category-page .category-hero-grid {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
 
-  .bim-category-page .category-hero-copy {
+  .bim-category-page .category-hero-copy,
+  .documentation-category-page .category-hero-copy {
     max-width: 48rem;
+  }
+}
+
+/* Logistics and Proposals keeps the compact category introduction used on
+   the 3D Modeling page, while the original proposal sheets remain intact. */
+.documentation-category-page .logistics-project-index {
+  margin-bottom: clamp(3.5rem, 7vw, 7rem);
+}
+
+.logistics-sheet-gallery {
+  padding: clamp(1.25rem, 2.5vw, 3rem) var(--page-gutter) clamp(2.5rem, 5vw, 5rem);
+}
+
+.logistics-sheet {
+  display: block;
+  min-width: 0;
+  background: var(--white);
+}
+
+.logistics-sheet img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logistics-sheet-feature {
+  width: min(100%, 70rem);
+  margin: 0 auto clamp(1.5rem, 3vw, 3.25rem);
+}
+
+.logistics-sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 2.25rem);
+  align-items: start;
+}
+
+.logistics-sheet:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 0.35rem;
+}
+
+@media (max-width: 980px) {
+  .logistics-sheet-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .logistics-sheet-gallery {
+    padding-inline: 1rem;
+  }
+
+  .logistics-sheet-grid {
+    grid-template-columns: 1fr;
   }
 }
 
