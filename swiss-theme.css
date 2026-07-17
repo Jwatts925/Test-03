@@ -1401,7 +1401,9 @@ summary:focus-visible {
 .category-page .project-index {
   width: 100vw;
   margin: 0 0 clamp(5rem, 9vw, 10rem) calc(50% - 50vw);
-  border-top: 1px solid var(--tech-blue);
+  color: var(--white);
+  background: var(--tech-blue);
+  border-top: 1px solid rgba(255, 255, 255, 0.72);
 }
 
 .category-page .section-heading[hidden],
@@ -1412,7 +1414,7 @@ summary:focus-visible {
 .category-page .project-index > h2 {
   margin: 0;
   padding: 0.45rem var(--page-gutter) 0.18rem;
-  color: var(--tech-blue);
+  color: var(--white);
   font-family: var(--display);
   font-size: clamp(3.5rem, 7.5vw, 8.75rem);
   font-weight: 700;
@@ -1422,11 +1424,11 @@ summary:focus-visible {
 }
 
 .project-index-list {
-  border-top: 1px solid var(--tech-blue);
+  border-top: 1px solid rgba(255, 255, 255, 0.72);
 }
 
 .project-index-item {
-  border-bottom: 1px solid var(--tech-blue);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.72);
 }
 
 .project-index-trigger {
@@ -1438,7 +1440,7 @@ summary:focus-visible {
   margin: 0;
   padding: 0 var(--page-gutter);
   overflow: visible;
-  color: var(--tech-blue);
+  color: var(--white);
   text-align: left;
   background: transparent;
   border: 0;
@@ -1464,7 +1466,7 @@ summary:focus-visible {
 .project-index-title {
   display: block;
   min-width: 0;
-  color: var(--tech-blue);
+  color: var(--white);
   font-family: var(--display);
   font-size: clamp(2.3rem, 3.25vw, 4.4rem);
   font-weight: 700;
@@ -1493,7 +1495,7 @@ summary:focus-visible {
 .project-index-trigger:hover .project-index-address,
 .project-index-trigger:focus-visible .project-index-address,
 .project-index-item.is-open .project-index-address {
-  color: var(--tech-blue);
+  color: var(--white);
 }
 
 .project-index-trigger:focus-visible {
@@ -1575,7 +1577,7 @@ summary:focus-visible {
 
 .project-index-details > div {
   padding: 0.8rem 0 1rem;
-  border-bottom: 1px solid rgba(var(--blue-rgb), 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
 }
 
 .project-index-details span,
@@ -1585,7 +1587,7 @@ summary:focus-visible {
 
 .project-index-details span {
   margin-bottom: 0.35rem;
-  color: var(--tech-blue);
+  color: var(--coral);
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 700;
@@ -1594,7 +1596,7 @@ summary:focus-visible {
 }
 
 .project-index-details strong {
-  color: var(--deep-ink);
+  color: var(--white);
   font-size: clamp(0.88rem, 1vw, 1.05rem);
   font-weight: 500;
   line-height: 1.42;
