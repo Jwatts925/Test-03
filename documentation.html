@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="swiss-theme.css?v=athletics-site-28" />
   <script defer src="script.js?v=contact-fasteners-2"></script>
+  <script defer src="logistics-index.js?v=1"></script>
 </head>
 <body class="category-page documentation-category-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -50,34 +51,48 @@
 
     <section class="section section-light">
       <div class="container">
-        <section class="project-index logistics-project-index" id="project-index" aria-labelledby="project-index-title">
-          <h2 id="project-index-title">Project Index</h2>
+        <section class="project-index logistics-project-index" id="logistics-plans" aria-labelledby="logistics-plans-title">
+          <h2 id="logistics-plans-title">Logistics Plans</h2>
 
-          <div class="logistics-sheet-gallery">
-            <a class="logistics-sheet logistics-sheet-feature reveal" href="assets/logistics-proposal/page-09.webp" target="_blank" rel="noopener" aria-label="Open Install Sequence Overall sheet">
-              <img src="assets/logistics-proposal/page-09.webp" alt="SFO Cargo 626 install sequence overall logistics sheet" loading="eager" decoding="async" />
-            </a>
+          <div class="project-index-list" data-logistics-index>
+            <article class="project-index-item">
+              <button class="project-index-trigger" id="sfo-cargo-trigger" type="button" aria-expanded="false" aria-controls="sfo-cargo-panel">
+                <span class="project-index-number">01</span>
+                <span class="project-index-title">SFO Cargo</span>
+                <span class="project-index-address">San Francisco, CA</span>
+              </button>
 
-            <div class="logistics-sheet-grid">
-              <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-03.webp" target="_blank" rel="noopener" aria-label="Open Laydown Area Front Load sheet">
-                <img src="assets/logistics-proposal/page-03.webp" alt="SFO Cargo 626 laydown area front load logistics sheet" loading="lazy" decoding="async" />
-              </a>
-              <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-05.webp" target="_blank" rel="noopener" aria-label="Open Primary Installation Method sheet">
-                <img src="assets/logistics-proposal/page-05.webp" alt="SFO Cargo 626 primary installation method sheet" loading="lazy" decoding="async" />
-              </a>
-              <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-08.webp" target="_blank" rel="noopener" aria-label="Open Equipment Locations sheet">
-                <img src="assets/logistics-proposal/page-08.webp" alt="SFO Cargo 626 equipment locations logistics sheet" loading="lazy" decoding="async" />
-              </a>
-              <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-10.webp" target="_blank" rel="noopener" aria-label="Open Install Sequence South sheet">
-                <img src="assets/logistics-proposal/page-10.webp" alt="SFO Cargo 626 install sequence south logistics sheet" loading="lazy" decoding="async" />
-              </a>
-              <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-16.webp" target="_blank" rel="noopener" aria-label="Open Temporary Stair Location sheet">
-                <img src="assets/logistics-proposal/page-16.webp" alt="SFO Cargo 626 temporary stair location logistics sheet" loading="lazy" decoding="async" />
-              </a>
-              <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-17.webp" target="_blank" rel="noopener" aria-label="Open Fall Protection Measures sheet">
-                <img src="assets/logistics-proposal/page-17.webp" alt="SFO Cargo 626 fall protection measures sheet" loading="lazy" decoding="async" />
-              </a>
-            </div>
+              <div class="project-index-panel" id="sfo-cargo-panel" role="region" aria-labelledby="sfo-cargo-trigger" hidden>
+                <div class="project-index-panel-inner logistics-panel-inner">
+                  <div class="logistics-sheet-gallery">
+                    <a class="logistics-sheet logistics-sheet-feature reveal" href="assets/logistics-proposal/page-09.webp" target="_blank" rel="noopener" aria-label="Open Install Sequence Overall sheet">
+                      <img src="assets/logistics-proposal/page-09.webp" alt="SFO Cargo 626 install sequence overall logistics sheet" loading="eager" decoding="async" />
+                    </a>
+
+                    <div class="logistics-sheet-grid">
+                      <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-03.webp" target="_blank" rel="noopener" aria-label="Open Laydown Area Front Load sheet">
+                        <img src="assets/logistics-proposal/page-03.webp" alt="SFO Cargo 626 laydown area front load logistics sheet" loading="lazy" decoding="async" />
+                      </a>
+                      <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-05.webp" target="_blank" rel="noopener" aria-label="Open Primary Installation Method sheet">
+                        <img src="assets/logistics-proposal/page-05.webp" alt="SFO Cargo 626 primary installation method sheet" loading="lazy" decoding="async" />
+                      </a>
+                      <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-08.webp" target="_blank" rel="noopener" aria-label="Open Equipment Locations sheet">
+                        <img src="assets/logistics-proposal/page-08.webp" alt="SFO Cargo 626 equipment locations logistics sheet" loading="lazy" decoding="async" />
+                      </a>
+                      <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-10.webp" target="_blank" rel="noopener" aria-label="Open Install Sequence South sheet">
+                        <img src="assets/logistics-proposal/page-10.webp" alt="SFO Cargo 626 install sequence south logistics sheet" loading="lazy" decoding="async" />
+                      </a>
+                      <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-16.webp" target="_blank" rel="noopener" aria-label="Open Temporary Stair Location sheet">
+                        <img src="assets/logistics-proposal/page-16.webp" alt="SFO Cargo 626 temporary stair location logistics sheet" loading="lazy" decoding="async" />
+                      </a>
+                      <a class="logistics-sheet reveal" href="assets/logistics-proposal/page-17.webp" target="_blank" rel="noopener" aria-label="Open Fall Protection Measures sheet">
+                        <img src="assets/logistics-proposal/page-17.webp" alt="SFO Cargo 626 fall protection measures sheet" loading="lazy" decoding="async" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
