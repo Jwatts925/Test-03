@@ -10,9 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="swiss-theme.css?v=athletics-site-16" />
+  <link rel="stylesheet" href="facade-manual.css?v=1" />
   <script defer src="script.js?v=contact-fasteners-2"></script>
+  <script defer src="facade-manual.js?v=1"></script>
 </head>
-<body class="category-page">
+<body class="category-page facade-manual-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header" id="top">
@@ -55,36 +57,15 @@
       </div>
     </section>
 
-    <section class="section section-light">
+    <section class="section section-light manual-gallery-section" aria-label="Facade Design Manual pages">
       <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Portfolio</p>
-          <h2>Selected Manual Content</h2>
-          <p class="section-note">This page is ready for design-manual spreads, system diagrams, material references, and standardized facade details.</p>
-        </div>
+        <div class="manual-gallery" data-manual-gallery data-page-count="57"></div>
 
-        <div class="category-work-grid">
-          <article class="category-project reveal">
-            <span class="project-number">01</span>
-            <h3>System Fundamentals</h3>
-            <p>Organize common facade assemblies, performance criteria, components, and terminology into an accessible technical reference.</p>
-            <span class="project-status">Add manual content ↗</span>
-          </article>
-          <article class="category-project reveal">
-            <span class="project-number">02</span>
-            <h3>Typical Interfaces</h3>
-            <p>Present repeatable head, sill, jamb, transition, waterproofing, and attachment conditions with clear graphic hierarchy.</p>
-            <span class="project-status">Add manual content ↗</span>
-          </article>
-          <article class="category-project reveal">
-            <span class="project-number">03</span>
-            <h3>Design Coordination</h3>
-            <p>Document coordination checkpoints that connect architectural intent with engineering, fabrication, and installation requirements.</p>
-            <span class="project-status">Add manual content ↗</span>
-          </article>
-        </div>
+        <noscript>
+          <p class="manual-noscript">JavaScript is required to display the manual gallery.</p>
+        </noscript>
 
-        <nav class="category-navigation reveal" aria-label="Portfolio categories">
+        <nav class="category-navigation reveal manual-category-navigation" aria-label="Portfolio categories">
           <a href="bim-coordination.html">3D Modeling</a>
           <a href="facade-design-manual.html" aria-current="page">Facade Design Manual</a>
           <a href="automation.html">Custom Dynamo Workflows</a>
@@ -121,5 +102,14 @@
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
+
+  <div class="manual-lightbox" data-manual-lightbox role="dialog" aria-modal="true" aria-label="Enlarged manual page" hidden>
+    <button class="manual-lightbox-close" type="button" data-lightbox-close aria-label="Close enlarged page">&times;</button>
+    <button class="manual-lightbox-arrow manual-lightbox-previous" type="button" data-lightbox-previous aria-label="Previous manual page">&larr;</button>
+    <div class="manual-lightbox-stage" data-lightbox-stage>
+      <img data-lightbox-image src="" alt="" draggable="false" />
+    </div>
+    <button class="manual-lightbox-arrow manual-lightbox-next" type="button" data-lightbox-next aria-label="Next manual page">&rarr;</button>
+  </div>
 </body>
 </html>
