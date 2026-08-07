@@ -1927,6 +1927,12 @@ summary:focus-visible {
   .editorial-project-grid .project-visual img {
     filter: grayscale(1) contrast(1.08) brightness(1.02);
   }
+  .editorial-project-grid .project-card:nth-child(2) .project-visual img {
+    filter: grayscale(1) contrast(1.28) brightness(1.1);
+  }
+  .editorial-project-grid .project-card:nth-child(3) .project-visual img {
+    filter: grayscale(1) contrast(1.15) brightness(1.06);
+  }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 20rem; border-right: 0; border-bottom: 1px solid var(--tech-blue); }
   .service-card:last-child { border-bottom: 0; }
