@@ -1006,8 +1006,6 @@ summary:focus-visible {
   margin: 2rem 0 0 auto;
   padding: 0.9rem 0;
   color: var(--coral);
-  border-top: 1px solid var(--tech-blue);
-  border-bottom: 1px solid var(--tech-blue);
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 700;
@@ -1088,6 +1086,31 @@ summary:focus-visible {
   filter: grayscale(1) brightness(0) invert(1);
 }
 
+.capability-grid-merged .documentation-capability-card .capability-card-visual,
+.capability-grid-merged .visualization-capability-card .capability-card-visual {
+  overflow: visible;
+}
+
+.capability-grid-merged .documentation-capability-card .capability-card-visual img,
+.capability-grid-merged .visualization-capability-card .capability-card-visual img {
+  transform: scale(1.55);
+  transform-origin: center center;
+}
+
+@media (max-width: 980px) {
+  .capability-grid-merged .documentation-capability-card .capability-card-visual img,
+  .capability-grid-merged .visualization-capability-card .capability-card-visual img {
+    transform: scale(1.3);
+  }
+}
+
+@media (max-width: 760px) {
+  .capability-grid-merged .documentation-capability-card .capability-card-visual img,
+  .capability-grid-merged .visualization-capability-card .capability-card-visual img {
+    transform: scale(1.15);
+  }
+}
+
 .capability-grid-merged .capability-card h3 {
   grid-row: 3;
   align-self: center;
@@ -1111,8 +1134,8 @@ summary:focus-visible {
 
 .skills-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: 1fr;
+  gap: 0;
   margin-top: 3rem;
   padding: 0 !important;
   color: var(--tech-blue);
@@ -1129,7 +1152,7 @@ summary:focus-visible {
 }
 
 .skills-wrap h3 {
-  color: var(--tech-blue) !important;
+  color: var(--coral) !important;
   font-family: var(--mono);
   font-size: 0.7rem;
   letter-spacing: 0.06em;
@@ -1137,9 +1160,9 @@ summary:focus-visible {
 }
 
 .tag-list span {
-  color: var(--tech-blue) !important;
+  color: var(--coral) !important;
   background: transparent !important;
-  border: 1px solid var(--grid-line);
+  border: 1px solid rgba(255, 138, 91, 0.34);
   border-radius: 0;
   font-family: var(--mono);
   font-size: 0.62rem;
