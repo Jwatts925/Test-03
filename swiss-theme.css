@@ -1938,12 +1938,20 @@ summary:focus-visible {
   }
   #work .editorial-project-grid .project-card:nth-child(2) .project-picture img,
   #work .editorial-project-grid .project-card:nth-child(3) .project-picture img {
+    position: absolute;
+    inset: 0;
     width: 100% !important;
     height: 100% !important;
     max-width: 100% !important;
     max-height: 100% !important;
     object-fit: contain;
     object-position: center;
+  }
+  #work .editorial-project-grid .project-card:nth-child(2) .project-picture,
+  #work .editorial-project-grid .project-card:nth-child(3) .project-picture {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
   }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 20rem; border-right: 0; border-bottom: 1px solid var(--tech-blue); }
