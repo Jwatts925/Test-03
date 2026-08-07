@@ -1978,6 +1978,18 @@ body {
   background: var(--paper);
 }
 
+.bim-category-page .project-index {
+  margin-bottom: clamp(0.75rem, 1.5vw, 1.5rem) !important;
+}
+
+.bim-category-page .bim-sheet-gallery {
+  margin-top: 0 !important;
+}
+
+.bim-category-page .bim-sheet-list {
+  gap: clamp(0.25rem, 0.45vw, 0.5rem);
+}
+
 @media (max-width: 760px) {
   .bim-sheet-gallery {
     margin-top: 46px;
@@ -1985,6 +1997,14 @@ body {
 
   .bim-sheet-list {
     gap: 14px;
+  }
+
+  .bim-category-page .project-index {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .bim-category-page .bim-sheet-list {
+    gap: 0.25rem;
   }
 }
 
