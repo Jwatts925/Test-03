@@ -655,7 +655,11 @@ summary:focus-visible {
 
 /* About is intentionally separated from the hero so the opening composition stays concise. */
 .about-section-inner {
-  padding-top: clamp(2.75rem, 5vw, 5rem);
+  display: grid;
+  align-items: center;
+  min-height: clamp(26rem, 34vw, 36rem);
+  padding-top: clamp(2rem, 3vw, 3rem);
+  padding-bottom: clamp(2rem, 3vw, 3rem);
 }
 
 .about-kicker {
@@ -680,8 +684,11 @@ summary:focus-visible {
 
 .about-copy-wrap {
   display: flow-root;
-  padding-top: clamp(1rem, 2vw, 2rem);
-  border-top: 1px solid var(--tech-blue);
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .about-copy {
