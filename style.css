@@ -1979,7 +1979,7 @@ body {
 }
 
 .bim-category-page .project-index {
-  margin-bottom: clamp(0.75rem, 1.5vw, 1.5rem) !important;
+  margin-bottom: clamp(1.5rem, 2.5vw, 2.5rem) !important;
 }
 
 .bim-category-page .bim-sheet-gallery {
@@ -2000,7 +2000,7 @@ body {
   }
 
   .bim-category-page .project-index {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .bim-category-page .bim-sheet-list {
