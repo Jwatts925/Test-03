@@ -1,40 +1,40 @@
 const projectIndexData = [
-  { name: "200 Mission", address: "200 Mission St · San Francisco, CA", slug: "200-mission", images: 3 },
-  { name: "405 Industrial", address: "405 Industrial Rd · San Carlos, CA", slug: "405-industrial", images: 3 },
+  { name: "200 Mission", address: "San Francisco, CA", slug: "200-mission", images: 3 },
+  { name: "405 Industrial", address: "San Carlos, CA", slug: "405-industrial", images: 3 },
   { name: "Samuel Merritt University", address: "Oakland, CA", slug: "samuel-merritt-university", images: 3 },
   { name: "Stanford Bridge", address: "Stanford, CA", slug: "stanford-bridge", images: 3 },
-  { name: "490 South Mathilda", address: "490 S Mathilda Ave · Sunnyvale, CA", slug: "490-south-mathilda", images: 3 },
-  { name: "777 Airport Boulevard", address: "777 Airport Blvd · Burlingame, CA", slug: "777-airport-boulevard", images: 3 },
-  { name: "ACLS", address: "California", slug: "acls", images: 3 },
-  { name: "888 Ross", address: "California", slug: "888-ross", images: 3 },
+  { name: "490 South Mathilda", address: "Sunnyvale, CA", slug: "490-south-mathilda", images: 3 },
+  { name: "777 Airport Boulevard", address: "Burlingame, CA", slug: "777-airport-boulevard", images: 3 },
+  { name: "ACLS", address: "Millbrae, CA", slug: "acls", images: 3 },
+  { name: "888 Ross", address: "Sunnyvale, CA", slug: "888-ross", images: 3 },
   { name: "IQHQ Aventine", address: "San Diego, CA", slug: "iqhq-aventine", images: 3 },
-  { name: "City of Hope", address: "California", slug: "city-of-hope", images: 3 },
+  { name: "City of Hope", address: "Duarte, CA", slug: "city-of-hope", images: 3 },
   { name: "1389 Moffett Park", address: "Sunnyvale, CA", slug: "1389-moffett-park", images: 3 },
-  { name: "Project 63", address: "California", slug: "project-63", images: 3 },
-  { name: "Project Nomar North", address: "California", slug: "project-nomar-north", images: 3 },
-  { name: "Project Nomar South", address: "California", slug: "project-nomar-south", images: 3 },
+  { name: "Project 63", address: "CA", slug: "project-63", images: 3 },
+  { name: "Project Nomar North", address: "Burlingame, CA", slug: "project-nomar-north", images: 3 },
+  { name: "Project Nomar South", address: "Burlingame, CA", slug: "project-nomar-south", images: 3 },
   { name: "Pier 70A", address: "San Francisco, CA", slug: "pier-70a", images: 3 },
   { name: "Moffett Towers Building 6", address: "Sunnyvale, CA", slug: "moffett-towers-building-6", images: 3 },
-  { name: "The Ranch Lot Studios", address: "California", slug: "the-ranch-lot-studios", images: 3 },
-  { name: "Joint Venture Cancer Center", address: "California", slug: "joint-venture-cancer-center", images: 3 },
+  { name: "The Ranch Lot Studios", address: "Burbank, CA", slug: "the-ranch-lot-studios", images: 3 },
+  { name: "Joint Venture Cancer Center", address: "Oakland, CA", slug: "joint-venture-cancer-center", images: 3 },
   { name: "UNLV", address: "Las Vegas, NV", slug: "unlv", images: 3 },
   { name: "UCSD Discovery", address: "La Jolla, CA", slug: "ucsd-discovery", images: 3 },
   { name: "UNR Mathewson", address: "Reno, NV", slug: "unr-mathewson", images: 3 },
   { name: "Saint Francis High School", address: "Mountain View, CA", slug: "saint-francis-high-school", images: 3 },
   { name: "UCSF Benioff Parking Structure", address: "San Francisco, CA", slug: "ucsf-benioff-parking-structure", images: 5 },
   { name: "UCSC Heller Housing", address: "Santa Cruz, CA", slug: "ucsc-heller-housing", images: 10 },
-  { name: "East County Services Center", address: "Contra Costa County, CA", slug: "east-county-services-center", images: 5 },
+  { name: "East County Services Center", address: "Brentwood, CA", slug: "east-county-services-center", images: 5 },
   { name: "Sonoma Government Center", address: "Santa Rosa, CA", slug: "sonoma-government-center", images: 8 },
   { name: "UCB Heathcock", address: "Berkeley, CA", slug: "ucb-heathcock", images: 4 },
-  { name: "SFO Guardrail", address: "San Francisco International Airport", slug: "sfo-guardrail", images: 6 },
-  { name: "SFO Icebox", address: "San Francisco International Airport", slug: "sfo-icebox", images: 10 },
+  { name: "SFO Guardrail", address: "San Francisco, CA", slug: "sfo-guardrail", images: 6 },
+  { name: "SFO Icebox", address: "San Francisco, CA", slug: "sfo-icebox", images: 10 },
   { name: "SFUSD", address: "San Francisco, CA", slug: "sfusd", images: 6 },
   { name: "STEM - Mission College", address: "Santa Clara, CA", slug: "stem-mission-college", images: 4 },
   { name: "Gilead Technical Development Center", address: "Foster City, CA", slug: "gilead-technical-development-center", images: 5 },
   { name: "Workday Meeting Center", address: "Pleasanton, CA", slug: "workday-meeting-center", images: 6 },
   { name: "West Valley College", address: "Saratoga, CA", slug: "west-valley-college", images: 7 },
-  { name: "SFO Cargo", address: "San Francisco International Airport", slug: "sfo-cargo", images: 6 },
-  { name: "Sutter MOB", address: "Northern California", slug: "sutter-mob", images: 5 },
+  { name: "SFO Cargo", address: "San Francisco, CA", slug: "sfo-cargo", images: 6 },
+  { name: "Sutter MOB", address: "Roseville, CA", slug: "sutter-mob", images: 5 },
   { name: "Millbrae Yards Phase II", address: "Millbrae, CA", slug: "millbrae-yards-phase-ii", images: 5 },
   { name: "SLAC - National Accelerator Lab", address: "Menlo Park, CA", slug: "slac-national-accelerator-lab", images: 10 },
   { name: "San Quentin Rehabilitation Center", address: "San Quentin, CA", slug: "san-quentin-rehabilitation-center", images: 13 },
@@ -79,10 +79,6 @@ if (projectIndexList) {
       <div class="project-index-panel" id="${panelId}" role="region" aria-labelledby="${buttonId}" hidden>
         <div class="project-index-panel-inner ${gallery ? "has-images" : "no-images"}">
           ${gallery ? `<div class="project-index-gallery ${galleryLayout}">${gallery}</div>` : ""}
-          <div class="project-index-details">
-            <div><span>Scope</span><strong>BIM modeling · coordination · technical documentation</strong></div>
-            <div><span>Media</span><strong>${project.images ? `${project.images} selected project views` : "Project summary"}</strong></div>
-          </div>
         </div>
       </div>`;
 
