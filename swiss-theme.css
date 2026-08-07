@@ -1337,7 +1337,7 @@ summary:focus-visible {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
   filter: grayscale(1) contrast(1.05);
   transform: scale(1.1);
   transition: filter 240ms ease, transform 240ms ease;
@@ -1924,15 +1924,6 @@ summary:focus-visible {
     background-color: #fff !important;
   }
   .editorial-project-grid .project-visual { padding: 1rem 0.9rem 0.45rem !important; }
-  .editorial-project-grid .project-visual img {
-    filter: grayscale(1) contrast(1.08) brightness(1.02);
-  }
-  .editorial-project-grid .project-card:nth-child(2) .project-visual img {
-    filter: grayscale(1) contrast(1.28) brightness(1.1);
-  }
-  .editorial-project-grid .project-card:nth-child(3) .project-visual img {
-    filter: grayscale(1) contrast(1.15) brightness(1.06);
-  }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 20rem; border-right: 0; border-bottom: 1px solid var(--tech-blue); }
   .service-card:last-child { border-bottom: 0; }
