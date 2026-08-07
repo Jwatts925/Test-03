@@ -1331,6 +1331,13 @@ summary:focus-visible {
 .editorial-project-grid .project-card:nth-child(3) .project-visual,
 .editorial-project-grid .project-card:nth-child(4) .project-visual { background-color: var(--white) !important; }
 
+.editorial-project-grid .project-picture {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .editorial-project-grid .project-visual img {
   width: 100%;
   height: 100%;
@@ -1924,6 +1931,11 @@ summary:focus-visible {
     background-color: #fff !important;
   }
   .editorial-project-grid .project-visual { padding: 1rem 0.9rem 0.45rem !important; }
+  .editorial-project-grid .project-visual img {
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 20rem; border-right: 0; border-bottom: 1px solid var(--tech-blue); }
   .service-card:last-child { border-bottom: 0; }
