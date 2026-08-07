@@ -2299,11 +2299,26 @@ summary:focus-visible {
 
   .hero-message {
     grid-row: 4;
-    margin-top: 1.5rem;
+    justify-self: center;
+    margin-top: 0.25rem;
+    text-align: center;
+  }
+
+  .hero-message h1 {
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .hero-message .hero-title-line {
+    width: 100%;
   }
 
   .hero-metrics {
     grid-row: 5;
+  }
+
+  .hero-metrics > div:first-child {
+    border-left: 1px solid var(--tech-blue);
   }
 
   .hero-actions {
