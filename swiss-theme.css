@@ -1916,7 +1916,17 @@ summary:focus-visible {
     border-bottom: 0;
   }
   .editorial-project-grid .project-content h3 { margin-top: 0.45rem; font-size: clamp(1.8rem, 9vw, 2.5rem); }
+  .portfolio-section-inner,
+  .editorial-project-grid,
+  .editorial-project-grid .project-card,
+  .editorial-project-grid .project-content,
+  .editorial-project-grid .project-visual {
+    background-color: #fff !important;
+  }
   .editorial-project-grid .project-visual { padding: 1rem 0.9rem 0.45rem !important; }
+  .editorial-project-grid .project-visual img {
+    filter: grayscale(1) contrast(1.08) brightness(1.02);
+  }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 20rem; border-right: 0; border-bottom: 1px solid var(--tech-blue); }
   .service-card:last-child { border-bottom: 0; }
