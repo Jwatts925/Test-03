@@ -1006,8 +1006,6 @@ summary:focus-visible {
   margin: 2rem 0 0 auto;
   padding: 0.9rem 0;
   color: var(--coral);
-  border-top: 1px solid var(--tech-blue);
-  border-bottom: 1px solid var(--tech-blue);
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 700;
