@@ -2318,7 +2318,7 @@ summary:focus-visible {
   }
 
   .hero-metrics > div:first-child {
-    border-left: 1px solid var(--tech-blue);
+    border-left: 1px solid var(--grid-line);
   }
 
   .hero-actions {
