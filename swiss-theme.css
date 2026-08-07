@@ -1820,18 +1820,19 @@ summary:focus-visible {
     position: relative;
     grid-template-columns: 1.85rem minmax(0, 1fr);
     align-items: end;
-    min-height: 5.2rem;
-    padding-top: 1.5rem;
+    min-height: 4.55rem;
+    padding-top: 1.15rem;
   }
 
   .project-index-title {
-    font-size: clamp(2rem, 11.5vw, 3.5rem);
-    line-height: 0.72;
+    font-size: clamp(1.4rem, 7.2vw, 2.15rem);
+    line-height: 0.78;
+    letter-spacing: -0.025em;
   }
 
   .project-index-address {
     position: absolute;
-    top: 0.5rem;
+    top: 0.35rem;
     right: var(--page-gutter);
     grid-column: auto;
     padding: 0;
@@ -1839,12 +1840,12 @@ summary:focus-visible {
 
   .project-index-number {
     grid-row: auto;
-    padding-bottom: 0.18rem;
+    padding-bottom: 0.12rem;
   }
 
   .project-index-address,
   .project-index-number {
-    font-size: 0.58rem;
+    font-size: 0.52rem;
   }
 
   .project-index-panel-inner {
@@ -1901,8 +1902,21 @@ summary:focus-visible {
   .education-heading-group,
   .education-details { grid-column: 1 / -1; }
   .education-details { margin-top: 2rem; }
-  .editorial-project-grid .project-card { grid-template-columns: 1fr; grid-template-rows: clamp(12rem, 60vw, 18rem) auto; }
-  .editorial-project-grid .project-content { min-height: 9rem; border-right: 0; border-bottom: 0; }
+  .editorial-project-grid { gap: 0.75rem; }
+  .editorial-project-grid .project-card,
+  .editorial-project-grid .project-card:last-child {
+    grid-template-columns: 1fr;
+    grid-template-rows: clamp(10.5rem, 50vw, 14rem) auto;
+    border: 1px solid var(--tech-blue) !important;
+  }
+  .editorial-project-grid .project-content {
+    min-height: 6.75rem;
+    padding: 0.85rem 1rem 1.1rem;
+    border-right: 0;
+    border-bottom: 0;
+  }
+  .editorial-project-grid .project-content h3 { margin-top: 0.45rem; font-size: clamp(1.8rem, 9vw, 2.5rem); }
+  .editorial-project-grid .project-visual { padding: 1rem 0.9rem 0.45rem !important; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 20rem; border-right: 0; border-bottom: 1px solid var(--tech-blue); }
   .service-card:last-child { border-bottom: 0; }
