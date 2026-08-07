@@ -117,10 +117,12 @@ body.manual-lightbox-open {
   position: absolute;
   top: 8px;
   right: 10px;
-  width: 52px;
-  height: 52px;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
   font-size: 2.4rem;
   line-height: 1;
+  touch-action: manipulation;
 }
 
 .manual-lightbox-arrow {
