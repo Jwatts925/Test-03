@@ -10,7 +10,7 @@ const projectIndexData = [
   { name: "IQHQ Aventine", address: "San Diego, CA", slug: "iqhq-aventine", images: 3 },
   { name: "City of Hope", address: "Duarte, CA", slug: "city-of-hope", images: 3 },
   { name: "1389 Moffett Park", address: "Sunnyvale, CA", slug: "1389-moffett-park", images: 3 },
-  { name: "Project 63", address: "CA", slug: "project-63", images: 3 },
+  { name: "Project 632", address: "Las Vegas, NV", slug: "project-63", images: 3 },
   { name: "Project Nomar North", address: "Burlingame, CA", slug: "project-nomar-north", images: 3 },
   { name: "Project Nomar South", address: "Burlingame, CA", slug: "project-nomar-south", images: 3 },
   { name: "Pier 70A", address: "San Francisco, CA", slug: "pier-70a", images: 3 },
