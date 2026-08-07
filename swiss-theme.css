@@ -2298,23 +2298,11 @@ summary:focus-visible {
   }
 
   .hero-message {
-    grid-row: 4;
-    justify-self: center;
-    margin-top: 0.25rem;
-    text-align: center;
-  }
-
-  .hero-message h1 {
-    width: 100%;
-    margin-inline: auto;
-  }
-
-  .hero-message .hero-title-line {
-    width: 100%;
+    display: none;
   }
 
   .hero-metrics {
-    grid-row: 5;
+    grid-row: 4;
   }
 
   .hero-metrics > div:first-child {
