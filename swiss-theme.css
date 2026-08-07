@@ -1936,6 +1936,15 @@ summary:focus-visible {
     transform: none !important;
     transition: none !important;
   }
+  #work .editorial-project-grid .project-card:nth-child(2) .project-picture img,
+  #work .editorial-project-grid .project-card:nth-child(3) .project-picture img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain;
+    object-position: center;
+  }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 20rem; border-right: 0; border-bottom: 1px solid var(--tech-blue); }
   .service-card:last-child { border-bottom: 0; }
