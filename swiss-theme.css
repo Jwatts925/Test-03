@@ -2479,7 +2479,7 @@ summary:focus-visible {
 
 /* BIM capability artwork supplied for card 01 */
 .capability-grid-merged .bim-capability-card .capability-card-visual {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .capability-grid-merged .bim-capability-card .capability-card-visual img {
