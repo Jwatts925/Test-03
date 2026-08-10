@@ -2495,7 +2495,7 @@ summary:focus-visible {
 .capability-grid-merged .bim-capability-card .capability-card-visual img {
   filter: none !important;
   mix-blend-mode: screen;
-  transform: scale(1.22);
+  transform: scale(1.55);
   transform-origin: center center;
 }
 
@@ -2514,6 +2514,6 @@ summary:focus-visible {
   }
 
   .capability-grid-merged .bim-capability-card .capability-card-visual img {
-    transform: scale(1.1);
+    transform: scale(1.3);
   }
 }
