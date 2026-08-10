@@ -2486,3 +2486,34 @@ summary:focus-visible {
     top: 0;
   }
 }
+
+/* BIM capability artwork supplied for card 01 */
+.capability-grid-merged .bim-capability-card .capability-card-visual {
+  overflow: hidden;
+}
+
+.capability-grid-merged .bim-capability-card .capability-card-visual img {
+  filter: none !important;
+  mix-blend-mode: screen;
+  transform: scale(1.22);
+  transform-origin: center center;
+}
+
+@media (max-width: 760px) {
+  .capability-grid-merged .bim-capability-card {
+    grid-template-rows: auto auto auto auto !important;
+  }
+
+  .capability-grid-merged .bim-capability-card h3 {
+    grid-row: 3;
+    margin-top: 0 !important;
+  }
+
+  .capability-grid-merged .bim-capability-card p {
+    grid-row: 4;
+  }
+
+  .capability-grid-merged .bim-capability-card .capability-card-visual img {
+    transform: scale(1.1);
+  }
+}
