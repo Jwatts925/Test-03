@@ -179,6 +179,12 @@ const workflowCategories = [
 ];
 
 const workflowIndex = document.querySelector("[data-workflow-index]");
+const workflowTotal = document.querySelector("[data-workflow-total]");
+
+if (workflowTotal) {
+  const totalTools = workflowCategories.reduce((total, category) => total + category.tools.length, 0);
+  workflowTotal.textContent = `${totalTools} ${totalTools === 1 ? "Tool" : "Tools"}`;
+}
 
 if (workflowIndex) {
   workflowCategories.forEach((category, categoryIndex) => {
