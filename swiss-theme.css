@@ -2484,6 +2484,22 @@ summary:focus-visible {
 }
 
 @media (max-width: 760px) {
+  .capability-grid-merged .capability-card {
+    grid-template-rows: auto auto auto auto !important;
+    row-gap: 0.75rem !important;
+  }
+
+  .capability-grid-merged .capability-card h3,
+  .capability-grid-merged .automation-capability-card h3,
+  .capability-grid-merged .documentation-capability-card h3,
+  .capability-grid-merged .visualization-capability-card h3 {
+    padding-top: 0.3rem;
+  }
+
+  .capability-grid-merged .capability-card p {
+    padding-top: 0;
+  }
+
   .capability-grid-merged .bim-capability-card {
     grid-template-columns: minmax(0, 1fr) !important;
     grid-template-rows: auto auto auto auto !important;
@@ -2498,13 +2514,15 @@ summary:focus-visible {
     grid-column: 1 / -1;
     grid-row: 2;
     width: 100%;
+    height: 11.75rem !important;
+    min-height: 11.75rem !important;
   }
 
   .capability-grid-merged .bim-capability-card h3 {
     grid-column: 1 / -1;
     grid-row: 3 !important;
     margin-top: 0 !important;
-    padding-top: 0.9rem;
+    padding-top: 0.3rem;
   }
 
   .capability-grid-merged .bim-capability-card p {
@@ -2513,7 +2531,18 @@ summary:focus-visible {
   }
 
   .capability-grid-merged .bim-capability-card .capability-card-visual img {
-    transform: scale(1.3);
+    transform: scale(1.55);
+  }
+
+  .capability-grid-merged .documentation-capability-card .capability-card-visual img,
+  .capability-grid-merged .visualization-capability-card .capability-card-visual img {
+    transform: scale(1.38);
+  }
+
+  .capability-grid-merged .documentation-capability-card .capability-card-visual,
+  .capability-grid-merged .visualization-capability-card .capability-card-visual {
+    height: 10.5rem !important;
+    min-height: 10.5rem !important;
   }
 }
 
