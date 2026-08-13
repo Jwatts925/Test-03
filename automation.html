@@ -3,26 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="James Watts — Custom Dynamo Workflows portfolio." />
-  <title>Custom Dynamo Workflows | James Watts Portfolio</title>
+  <meta name="description" content="James Watts — Dynamo and PyRevit automation tools for Revit project setup, documentation, dimensioning, tagging, data, and family management." />
+  <title>Dynamo + PyRevit | James Watts Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="swiss-theme.css?v=athletics-site-45" />
+  <link rel="stylesheet" href="swiss-theme.css?v=athletics-site-50" />
   <script defer src="script.js?v=contact-fasteners-2"></script>
+  <script defer src="automation-workflows.js?v=1"></script>
 </head>
-<body class="category-page">
+<body class="category-page automation-category-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header" id="top">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="James Watts portfolio home">James Watts</a>
-
       <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
         <span></span><span></span><span></span>
       </button>
-
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         <a href="index.html#about">About</a>
         <a href="index.html#experience">Experience</a>
@@ -35,58 +34,29 @@
   <main id="main-content">
     <section class="category-hero section section-dark">
       <div class="container category-hero-grid">
-        <div class="reveal">
+        <div class="category-title-block reveal">
           <p class="eyebrow">Portfolio 03</p>
-          <h1>Custom Dynamo Workflows</h1>
-          <p class="category-hero-copy">Custom Dynamo, Python, AutoLISP, VBA, and Excel workflows that remove repetitive work, standardize outputs, and make modeling, drafting, scheduling, and takeoff processes more dependable.</p>
+          <h1>Dynamo + PyRevit</h1>
           <a class="category-back" href="index.html#experience"><span aria-hidden="true">←</span> Back to experience</a>
         </div>
-
-        <aside class="category-summary reveal" aria-label="Automation services">
-          <p class="panel-label">Areas of work</p>
-          <ul>
-              <li>Dynamo and Revit API workflows</li>
-              <li>Python scripting and data processing</li>
-              <li>AutoLISP drafting automation</li>
-              <li>Excel and VBA tools</li>
-          </ul>
-        </aside>
+        <div class="category-hero-description reveal">
+          <p class="category-hero-copy">Custom Dynamo and PyRevit tools that standardize project setup, automate repetitive documentation, coordinate project data, and make production workflows more dependable.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section section-light">
+    <section class="section section-light automation-workflow-section">
       <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Portfolio</p>
-          <h2>Selected Dynamo Workflows</h2>
-          <p class="section-note">Use this page for before-and-after workflows, interface screenshots, process diagrams, and measurable time savings.</p>
-        </div>
-
-        <div class="category-work-grid">
-          <article class="category-project reveal">
-            <span class="project-number">01</span>
-            <h3>Revit &amp; Dynamo Tools</h3>
-            <p>Feature tools for curtain panels, family management, tagging, dimensions, schedules, or model quality control.</p>
-            <span class="project-status">Add project case study ↗</span>
-          </article>
-          <article class="category-project reveal">
-            <span class="project-number">02</span>
-            <h3>AutoCAD &amp; AutoLISP Workflows</h3>
-            <p>Show drafting utilities, export tools, cleanup scripts, and production-document automation.</p>
-            <span class="project-status">Add project case study ↗</span>
-          </article>
-          <article class="category-project reveal">
-            <span class="project-number">03</span>
-            <h3>Excel &amp; VBA Systems</h3>
-            <p>Present schedule processing, takeoff consolidation, formatting, database matching, or reporting tools.</p>
-            <span class="project-status">Add project case study ↗</span>
-          </article>
-        </div>
+        <section class="workflow-index" aria-labelledby="workflow-index-title">
+          <h2 id="workflow-index-title">Workflow Index</h2>
+          <p class="workflow-index-intro">Select a category to explore the tools and what each workflow produces.</p>
+          <div class="workflow-index-list" data-workflow-index></div>
+        </section>
 
         <nav class="category-navigation reveal" aria-label="Portfolio categories">
           <a href="bim-coordination.html">3D Modeling</a>
           <a href="facade-design-manual.html">Facade Design Manual</a>
-          <a href="automation.html" aria-current="page">Custom Dynamo Workflows</a>
+          <a href="automation.html" aria-current="page">Dynamo + PyRevit</a>
           <a href="documentation.html">Logistics &amp; Proposals</a>
         </nav>
       </div>
@@ -98,30 +68,17 @@
           <h2>Let’s build clearer project workflows.</h2>
           <p>For BIM, preconstruction, facade coordination, technical documentation, or automation opportunities, reach out directly.</p>
         </div>
-
         <div class="contact-links reveal">
-          <a href="mailto:james.watts@live.com">
-            <span>Email</span>
-            <strong>james.watts@live.com</strong>
-          </a>
-          <a href="assets/James-Watts-Resume.pdf?v=2026-001" target="_blank" rel="noopener">
-            <span>Resume</span>
-            <strong>Open PDF</strong>
-          </a>
-          <a href="https://www.linkedin.com/in/james-watts-935b4a135/" target="_blank" rel="noopener noreferrer">
-            <span>LinkedIn</span>
-            <strong>View Profile ↗</strong>
-          </a>
+          <a href="mailto:james.watts@live.com"><span>Email</span><strong>james.watts@live.com</strong></a>
+          <a href="assets/James-Watts-Resume.pdf?v=2026-001" target="_blank" rel="noopener"><span>Resume</span><strong>Open PDF</strong></a>
+          <a href="https://www.linkedin.com/in/james-watts-935b4a135/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>View Profile ↗</strong></a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="year"></span> James Watts</p>
-      <a href="#top">Back to top ↑</a>
-    </div>
+    <div class="container footer-wrap"><p>© <span id="year"></span> James Watts</p><a href="#top">Back to top ↑</a></div>
   </footer>
 </body>
 </html>
