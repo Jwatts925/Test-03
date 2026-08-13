@@ -2525,17 +2525,38 @@ summary:focus-visible {
   border-top: 1px solid var(--tech-blue);
 }
 
-.workflow-index > h2 {
-  margin: 0;
+.workflow-index-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
   padding: 0.45rem var(--page-gutter) 0.18rem;
-  color: var(--white) !important;
   background: var(--tech-blue);
+}
+
+.workflow-index-heading h2 {
+  margin: 0;
+  min-width: 0;
+  color: var(--white) !important;
   font-family: var(--display);
   font-size: clamp(3.5rem, 7.5vw, 8.75rem);
   font-weight: 700;
   line-height: 0.82;
   letter-spacing: -0.045em;
   text-transform: uppercase;
+}
+
+.workflow-index-total {
+  flex: 0 0 auto;
+  padding-bottom: 0.45rem;
+  color: var(--coral);
+  font-family: var(--mono);
+  font-size: clamp(0.82rem, 1.25vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .workflow-index-intro {
@@ -2696,8 +2717,17 @@ summary:focus-visible {
     font-size: clamp(3rem, 16vw, 5rem);
   }
 
-  .workflow-index > h2 {
+  .workflow-index-heading {
+    gap: 0.75rem;
+  }
+
+  .workflow-index-heading h2 {
     font-size: clamp(3rem, 15vw, 4.8rem);
+  }
+
+  .workflow-index-total {
+    padding-bottom: 0.32rem;
+    font-size: 0.68rem;
   }
 
   .workflow-index-intro {
