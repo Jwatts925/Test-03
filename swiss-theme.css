@@ -2485,16 +2485,31 @@ summary:focus-visible {
 
 @media (max-width: 760px) {
   .capability-grid-merged .bim-capability-card {
+    grid-template-columns: minmax(0, 1fr) !important;
     grid-template-rows: auto auto auto auto !important;
   }
 
+  .capability-grid-merged .bim-capability-card .card-number {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .capability-grid-merged .bim-capability-card .capability-card-visual {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+  }
+
   .capability-grid-merged .bim-capability-card h3 {
-    grid-row: 3;
+    grid-column: 1 / -1;
+    grid-row: 3 !important;
     margin-top: 0 !important;
+    padding-top: 0.9rem;
   }
 
   .capability-grid-merged .bim-capability-card p {
-    grid-row: 4;
+    grid-column: 1 / -1;
+    grid-row: 4 !important;
   }
 
   .capability-grid-merged .bim-capability-card .capability-card-visual img {
