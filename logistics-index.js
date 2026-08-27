@@ -41,6 +41,27 @@ const waterproofingProjects = [
   },
 ];
 
+const sideQuestProjects = [
+  {
+    name: "SSF Wellness - Tabletop Mockup",
+    slug: "ssf-tabletop-mockup",
+    location: "South San Francisco, CA",
+    startPage: 1,
+    endPage: 11,
+    extension: "jpg",
+    assetBase: "assets/side-quests/ssf-tabletop-mockup",
+  },
+  {
+    name: "SSF Wellness - Timber Study",
+    slug: "ssf-timber-study",
+    location: "South San Francisco, CA",
+    startPage: 1,
+    endPage: 9,
+    extension: "jpg",
+    assetBase: "assets/side-quests/ssf-timber-study",
+  },
+];
+
 const renderProjectIndex = (indexElement, projects, idPrefix, sheetType) => {
   if (!indexElement) return;
 
@@ -52,7 +73,7 @@ const renderProjectIndex = (indexElement, projects, idPrefix, sheetType) => {
     const sheets = Array.from({ length: lastPage - firstPage + 1 }, (_, pageIndex) => {
       const page = pageIndex + firstPage;
       const pageLabel = String(page).padStart(2, "0");
-      const source = `${project.assetBase}/page-${pageLabel}.webp`;
+      const source = `${project.assetBase}/page-${pageLabel}.${project.extension ?? "webp"}`;
 
       return `
         <a class="logistics-sheet" href="${source}" target="_blank" rel="noopener" aria-label="Open ${project.name} ${sheetType} page ${page}">
@@ -127,4 +148,11 @@ renderProjectIndex(
   waterproofingProjects,
   "waterproofing",
   "waterproofing diagram",
+);
+
+renderProjectIndex(
+  document.querySelector("[data-side-quests-index]"),
+  sideQuestProjects,
+  "side-quests",
+  "side quest document",
 );
