@@ -180,7 +180,7 @@ const workflowCategories = [
 
 const workflowToolDemos = {
   "Project Setup From Excel": {
-    src: "assets/tool-demos/project-setup-from-excel.mp4",
+    src: "assets/tool-demos/project-setup-from-excel.mp4?v=2",
     poster: "assets/tool-demos/project-setup-from-excel-poster.jpg",
     label: "Project Setup From Excel workflow demonstration",
   },
