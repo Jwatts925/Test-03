@@ -183,6 +183,13 @@ const workflowToolDemos = {
     src: "assets/tool-demos/project-setup-from-excel.mp4?v=2",
     poster: "assets/tool-demos/project-setup-from-excel-poster.jpg",
     label: "Project Setup From Excel workflow demonstration",
+    caption: "Excel-to-Revit project setup workflow",
+  },
+  "Create Plan Views and Sheets": {
+    src: "assets/tool-demos/create-plan-views-and-sheets.mp4",
+    poster: "assets/tool-demos/create-plan-views-and-sheets-poster.jpg",
+    label: "Create Plan Views and Sheets workflow demonstration",
+    caption: "Automated plan view and sheet creation workflow",
   },
 };
 
@@ -211,7 +218,7 @@ if (workflowIndex) {
             <source src="${demo.src}" type="video/mp4" />
             <a href="${demo.src}">Watch the ${name} demonstration</a>
           </video>
-          <figcaption>Excel-to-Revit project setup workflow</figcaption>
+          <figcaption>${demo.caption}</figcaption>
         </figure>` : "";
 
       return `
