@@ -178,6 +178,14 @@ const workflowCategories = [
   },
 ];
 
+const workflowToolDemos = {
+  "Project Setup From Excel": {
+    src: "assets/tool-demos/project-setup-from-excel.mp4",
+    poster: "assets/tool-demos/project-setup-from-excel-poster.jpg",
+    label: "Project Setup From Excel workflow demonstration",
+  },
+};
+
 const workflowIndex = document.querySelector("[data-workflow-index]");
 const workflowTotal = document.querySelector("[data-workflow-total]");
 
@@ -195,12 +203,25 @@ if (workflowIndex) {
     const panelId = `workflow-panel-${number}`;
     const toolLabel = `${category.tools.length} ${category.tools.length === 1 ? "tool" : "tools"}`;
 
-    const tools = category.tools.map(([name, description], toolIndex) => `
-      <article class="workflow-tool-card">
-        <span class="workflow-tool-number">${number}.${String(toolIndex + 1).padStart(2, "0")}</span>
-        <h3>${name}</h3>
-        <p>${description}</p>
-      </article>`).join("");
+    const tools = category.tools.map(([name, description], toolIndex) => {
+      const demo = workflowToolDemos[name];
+      const demoMarkup = demo ? `
+        <figure class="workflow-tool-demo">
+          <video class="workflow-demo-video" autoplay muted loop playsinline preload="metadata" poster="${demo.poster}" aria-label="${demo.label}">
+            <source src="${demo.src}" type="video/mp4" />
+            <a href="${demo.src}">Watch the ${name} demonstration</a>
+          </video>
+          <figcaption>Excel-to-Revit project setup workflow</figcaption>
+        </figure>` : "";
+
+      return `
+        <article class="workflow-tool-card${demo ? " has-demo" : ""}">
+          <span class="workflow-tool-number">${number}.${String(toolIndex + 1).padStart(2, "0")}</span>
+          <h3>${name}</h3>
+          <p>${description}</p>
+          ${demoMarkup}
+        </article>`;
+    }).join("");
 
     item.innerHTML = `
       <button class="workflow-index-trigger" id="${triggerId}" type="button" aria-expanded="false" aria-controls="${panelId}">
@@ -240,4 +261,23 @@ if (workflowIndex) {
       window.scrollTo({ top: Math.max(0, top), behavior: reduceMotion ? "auto" : "smooth" });
     }));
   });
+
+  const demoVideos = workflowIndex.querySelectorAll(".workflow-demo-video");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (reduceMotion) {
+    demoVideos.forEach((video) => video.pause());
+  } else if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+
+    demoVideos.forEach((video) => videoObserver.observe(video));
+  }
 }
