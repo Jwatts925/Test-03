@@ -221,6 +221,18 @@ const workflowToolDemos = {
     label: "Tag Infills in Current Elevation workflow demonstration",
     caption: "Automated current-elevation infill tagging workflow",
   },
+  "Color Mullions": {
+    src: "assets/tool-demos/color-mullions.mp4",
+    poster: "assets/tool-demos/color-mullions-poster.jpg",
+    label: "Color Mullions workflow demonstration",
+    caption: "Temporary mullion color-checking workflow",
+  },
+  "Color Units by System": {
+    src: "assets/tool-demos/color-units-by-system.mp4",
+    poster: "assets/tool-demos/color-units-by-system-poster.jpg",
+    label: "Color Units by System workflow demonstration",
+    caption: "Temporary unit-by-system color-checking workflow",
+  },
 };
 
 const workflowIndex = document.querySelector("[data-workflow-index]");
