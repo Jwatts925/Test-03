@@ -215,6 +215,12 @@ const workflowToolDemos = {
     label: "Dimension One Wall in Plan workflow demonstration",
     caption: "Automated single-wall plan dimensioning workflow",
   },
+  "Tag Infills in Current Elevation": {
+    src: "assets/tool-demos/tag-infills-current-elevation.mp4",
+    poster: "assets/tool-demos/tag-infills-current-elevation-poster.jpg",
+    label: "Tag Infills in Current Elevation workflow demonstration",
+    caption: "Automated current-elevation infill tagging workflow",
+  },
 };
 
 const workflowIndex = document.querySelector("[data-workflow-index]");
