@@ -2878,8 +2878,6 @@ summary:focus-visible {
 .workflow-tool-card.has-demo {
   grid-column: 1 / -1;
   padding-right: 0;
-  padding-left: 0;
-  border-left: 0;
 }
 
 .workflow-tool-demo {
@@ -2906,15 +2904,6 @@ summary:focus-visible {
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-}
-
-@media (min-width: 901px) {
-  .workflow-tool-demo {
-    grid-column: 1 / -1;
-    width: calc(100% + 3.5rem);
-    max-width: none;
-    margin-left: -3.5rem;
-  }
 }
 
 @media (max-width: 900px) {
