@@ -3,14 +3,16 @@ const logisticsProjects = [
     name: "SFO Cargo",
     slug: "sfo-cargo",
     location: "San Francisco, CA",
-    pageCount: 16,
+    startPage: 2,
+    endPage: 16,
     assetBase: "assets/logistics-proposal/sfo-cargo",
   },
   {
     name: "SLAC",
     slug: "slac",
     location: "Menlo Park, CA",
-    pageCount: 16,
+    startPage: 3,
+    endPage: 17,
     assetBase: "assets/logistics-proposal/slac",
   },
   {
@@ -45,8 +47,10 @@ const renderProjectIndex = (indexElement, projects, idPrefix, sheetType) => {
   projects.forEach((project, index) => {
     const triggerId = `${idPrefix}-${project.slug}-trigger`;
     const panelId = `${idPrefix}-${project.slug}-panel`;
-    const sheets = Array.from({ length: project.pageCount }, (_, pageIndex) => {
-      const page = pageIndex + 2;
+    const firstPage = project.startPage ?? 2;
+    const lastPage = project.endPage ?? firstPage + project.pageCount - 1;
+    const sheets = Array.from({ length: lastPage - firstPage + 1 }, (_, pageIndex) => {
+      const page = pageIndex + firstPage;
       const pageLabel = String(page).padStart(2, "0");
       const source = `${project.assetBase}/page-${pageLabel}.webp`;
 

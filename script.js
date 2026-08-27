@@ -63,6 +63,21 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
+// Let the About portrait toggle between its monochrome and color treatments.
+document.querySelectorAll('.hero-portrait[role="button"]').forEach((portrait) => {
+  const togglePortrait = () => {
+    const isColor = portrait.classList.toggle('is-color');
+    portrait.setAttribute('aria-pressed', String(isColor));
+  };
+
+  portrait.addEventListener('click', togglePortrait);
+  portrait.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    togglePortrait();
+  });
+});
+
 
 // Open portfolio sections when their navigation link is used.
 const portfolioSections = Array.from(document.querySelectorAll('.portfolio-section'));

@@ -1,23 +1,23 @@
 const projectIndexData = [
   { name: "200 Mission", address: "San Francisco, CA", slug: "200-mission", images: 3 },
   { name: "405 Industrial", address: "San Carlos, CA", slug: "405-industrial", images: 3 },
-  { name: "Samuel Merritt University", address: "Oakland, CA", slug: "samuel-merritt-university", images: 3 },
+  { name: "Samuel Merritt University", address: "Oakland, CA", slug: "samuel-merritt-university", images: 4 },
   { name: "Stanford Bridge", address: "Stanford, CA", slug: "stanford-bridge", images: 3 },
   { name: "490 South Mathilda", address: "Sunnyvale, CA", slug: "490-south-mathilda", images: 3 },
   { name: "777 Airport Boulevard", address: "Burlingame, CA", slug: "777-airport-boulevard", images: 3 },
   { name: "ACLS", address: "Millbrae, CA", slug: "acls", images: 3 },
   { name: "888 Ross", address: "Sunnyvale, CA", slug: "888-ross", images: 3 },
   { name: "IQHQ Aventine", address: "San Diego, CA", slug: "iqhq-aventine", images: 3 },
-  { name: "City of Hope", address: "Duarte, CA", slug: "city-of-hope", images: 3 },
+  { name: "City of Hope", address: "Duarte, CA", slug: "city-of-hope", images: 9 },
   { name: "1389 Moffett Park", address: "Sunnyvale, CA", slug: "1389-moffett-park", images: 3 },
-  { name: "Project 63", address: "Las Vegas, NV", slug: "project-63", images: 3 },
+  { name: "Project 63", address: "Las Vegas, NV", slug: "project-63", images: 5 },
   { name: "Project Nomar North", address: "Burlingame, CA", slug: "project-nomar-north", images: 3 },
   { name: "Project Nomar South", address: "Burlingame, CA", slug: "project-nomar-south", images: 3 },
   { name: "Pier 70A", address: "San Francisco, CA", slug: "pier-70a", images: 3 },
   { name: "Moffett Towers Building 6", address: "Sunnyvale, CA", slug: "moffett-towers-building-6", images: 3 },
   { name: "The Ranch Lot Studios", address: "Burbank, CA", slug: "the-ranch-lot-studios", images: 3 },
   { name: "Joint Venture Cancer Center", address: "Oakland, CA", slug: "joint-venture-cancer-center", images: 3 },
-  { name: "UNLV", address: "Las Vegas, NV", slug: "unlv", images: 3 },
+  { name: "UNLV", address: "Las Vegas, NV", slug: "unlv", images: 8 },
   { name: "UCSD Discovery", address: "La Jolla, CA", slug: "ucsd-discovery", images: 3 },
   { name: "UNR Mathewson", address: "Reno, NV", slug: "unr-mathewson", images: 3 },
   { name: "Saint Francis High School", address: "Mountain View, CA", slug: "saint-francis-high-school", images: 3 },
@@ -46,6 +46,36 @@ const projectIndexData = [
 const projectIndexList = document.querySelector("[data-project-index]");
 
 if (projectIndexList) {
+  const featuredWaltersWolfSlugs = [
+    "samuel-merritt-university",
+    "city-of-hope",
+    "project-63",
+    "unlv",
+  ];
+  const saintFrancisIndex = projectIndexData.findIndex(
+    (project) => project.slug === "saint-francis-high-school",
+  );
+  const featuredOrder = new Map(
+    featuredWaltersWolfSlugs.map((slug, index) => [slug, index]),
+  );
+  const waltersWolfProjects = projectIndexData
+    .slice(0, saintFrancisIndex + 1)
+    .sort((firstProject, secondProject) => {
+      const firstPriority = featuredOrder.get(firstProject.slug);
+      const secondPriority = featuredOrder.get(secondProject.slug);
+
+      if (firstPriority !== undefined && secondPriority !== undefined) {
+        return firstPriority - secondPriority;
+      }
+      if (firstPriority !== undefined) return -1;
+      if (secondPriority !== undefined) return 1;
+      return 0;
+    });
+  const companyGroups = [
+    { name: "Walters & Wolf", projects: waltersWolfProjects },
+    { name: "C/S Erectors", projects: projectIndexData.slice(saintFrancisIndex + 1) },
+  ];
+
   const imageMarkup = (project) => {
     if (!project.slug || !project.images) return "";
 
@@ -58,7 +88,7 @@ if (projectIndexList) {
     }).join("");
   };
 
-  projectIndexData.forEach((project, index) => {
+  const createProjectItem = (project, index) => {
     const article = document.createElement("article");
     article.className = "project-index-item";
     article.dataset.projectOrder = String(index);
@@ -82,14 +112,49 @@ if (projectIndexList) {
         </div>
       </div>`;
 
-    projectIndexList.appendChild(article);
+    return article;
+  };
+
+  let projectNumber = 0;
+  companyGroups.forEach((company, companyIndex) => {
+    const section = document.createElement("section");
+    section.className = "project-company-group";
+    const triggerId = `company-trigger-${companyIndex + 1}`;
+    const panelId = `company-panel-${companyIndex + 1}`;
+
+    section.innerHTML = `
+      <button class="project-company-trigger" id="${triggerId}" type="button" aria-expanded="false" aria-controls="${panelId}">
+        <span class="project-company-title">${company.name}</span>
+        <span class="project-company-meta">${company.projects.length} projects</span>
+        <span class="project-company-symbol" aria-hidden="true">+</span>
+      </button>
+      <div class="project-company-panel" id="${panelId}" role="region" aria-labelledby="${triggerId}" hidden>
+        <div class="project-company-projects"></div>
+      </div>`;
+
+    const companyProjectList = section.querySelector(".project-company-projects");
+    company.projects.forEach((project) => {
+      companyProjectList.appendChild(createProjectItem(project, projectNumber));
+      projectNumber += 1;
+    });
+    projectIndexList.appendChild(section);
   });
 
   const closeItem = (item) => {
     if (!item) return;
     item.classList.remove("is-open");
-    item.querySelector(".project-index-trigger").setAttribute("aria-expanded", "false");
-    item.querySelector(".project-index-panel").hidden = true;
+    item.querySelector(".project-index-trigger")?.setAttribute("aria-expanded", "false");
+    const panel = item.querySelector(".project-index-panel");
+    if (panel) panel.hidden = true;
+  };
+
+  const closeCompany = (company) => {
+    if (!company) return;
+    company.classList.remove("is-open");
+    company.querySelector(".project-company-trigger")?.setAttribute("aria-expanded", "false");
+    const panel = company.querySelector(".project-company-panel");
+    if (panel) panel.hidden = true;
+    closeItem(company.querySelector(".project-index-item.is-open"));
   };
 
   const scrollItemToTop = (item) => {
@@ -106,6 +171,21 @@ if (projectIndexList) {
   };
 
   projectIndexList.addEventListener("click", (event) => {
+    const companyTrigger = event.target.closest(".project-company-trigger");
+    if (companyTrigger) {
+      const selectedCompany = companyTrigger.closest(".project-company-group");
+      const wasOpen = selectedCompany.classList.contains("is-open");
+      closeCompany(projectIndexList.querySelector(".project-company-group.is-open"));
+
+      if (wasOpen) return;
+
+      selectedCompany.classList.add("is-open");
+      companyTrigger.setAttribute("aria-expanded", "true");
+      selectedCompany.querySelector(".project-company-panel").hidden = false;
+      scrollItemToTop(selectedCompany);
+      return;
+    }
+
     const trigger = event.target.closest(".project-index-trigger");
     if (!trigger) return;
 
