@@ -203,6 +203,12 @@ const workflowToolDemos = {
     label: "Create Sheets workflow demonstration",
     caption: "Automated sheet-series creation workflow",
   },
+  "Dimension Grids in Current Floor Plan": {
+    src: "assets/tool-demos/dimension-grids-current-floor-plan.mp4",
+    poster: "assets/tool-demos/dimension-grids-current-floor-plan-poster.jpg",
+    label: "Dimension Grids in Current Floor Plan workflow demonstration",
+    caption: "Automated current-plan grid dimensioning workflow",
+  },
 };
 
 const workflowIndex = document.querySelector("[data-workflow-index]");
