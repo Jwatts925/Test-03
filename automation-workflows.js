@@ -197,6 +197,12 @@ const workflowToolDemos = {
     label: "Duplicate Elevation Views workflow demonstration",
     caption: "Automated elevation view duplication workflow",
   },
+  "Create Sheets": {
+    src: "assets/tool-demos/create-sheets.mp4",
+    poster: "assets/tool-demos/create-sheets-poster.jpg",
+    label: "Create Sheets workflow demonstration",
+    caption: "Automated sheet-series creation workflow",
+  },
 };
 
 const workflowIndex = document.querySelector("[data-workflow-index]");
