@@ -2892,7 +2892,7 @@ summary:focus-visible {
   aspect-ratio: 16 / 9;
   object-fit: contain;
   background: var(--pale-slate);
-  border: 1px solid var(--tech-blue);
+  border: 0;
 }
 
 .workflow-tool-demo figcaption {
@@ -3008,14 +3008,14 @@ summary:focus-visible {
 
   .workflow-tool-demo {
     grid-column: 1;
-    width: 100vw;
+    width: 100%;
     max-width: none;
     margin-top: 0.9rem;
-    margin-left: calc(-1 * var(--page-gutter));
+    margin-left: 0;
   }
 
   .workflow-tool-demo figcaption {
-    padding-inline: var(--page-gutter);
+    padding-inline: 0;
     text-align: left;
   }
 }
