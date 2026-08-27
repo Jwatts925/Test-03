@@ -2874,6 +2874,37 @@ summary:focus-visible {
   line-height: 1.55;
 }
 
+.workflow-tool-card.has-demo {
+  grid-column: 1 / -1;
+  padding-right: 0;
+}
+
+.workflow-tool-demo {
+  grid-column: 2;
+  width: min(100%, 72rem);
+  margin: clamp(1rem, 2vw, 1.75rem) 0 0;
+}
+
+.workflow-demo-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--pale-slate);
+  border: 1px solid var(--tech-blue);
+}
+
+.workflow-tool-demo figcaption {
+  margin-top: 0.55rem;
+  color: var(--coral);
+  font-family: var(--mono);
+  font-size: clamp(0.62rem, 0.72vw, 0.78rem);
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
 @media (max-width: 900px) {
   .workflow-index-trigger {
     grid-template-columns: 2.25rem minmax(0, 1fr) max-content;
@@ -2962,5 +2993,10 @@ summary:focus-visible {
   .workflow-tool-card p {
     font-size: 0.9rem;
     line-height: 1.5;
+  }
+
+  .workflow-tool-demo {
+    width: 100%;
+    margin-top: 0.9rem;
   }
 }
