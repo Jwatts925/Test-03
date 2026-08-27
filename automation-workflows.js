@@ -209,6 +209,12 @@ const workflowToolDemos = {
     label: "Dimension Grids in Current Floor Plan workflow demonstration",
     caption: "Automated current-plan grid dimensioning workflow",
   },
+  "Dimension One Wall in Plan": {
+    src: "assets/tool-demos/single-wall-plan-view.mp4",
+    poster: "assets/tool-demos/single-wall-plan-view-poster.jpg",
+    label: "Dimension One Wall in Plan workflow demonstration",
+    caption: "Automated single-wall plan dimensioning workflow",
+  },
 };
 
 const workflowIndex = document.querySelector("[data-workflow-index]");
