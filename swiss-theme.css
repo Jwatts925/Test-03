@@ -2978,25 +2978,44 @@ summary:focus-visible {
   }
 
   .workflow-tool-grid {
-    padding: 1rem var(--page-gutter) 2.5rem calc(var(--page-gutter) + 1.85rem);
+    padding: 1rem var(--page-gutter) 2.5rem;
   }
 
   .workflow-tool-card {
-    grid-template-columns: 2.4rem minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    justify-items: stretch;
+    gap: 0.5rem;
     padding: 1.15rem 0 1.4rem;
+    text-align: left;
+  }
+
+  .workflow-tool-number {
+    grid-row: auto;
+    padding-top: 0;
   }
 
   .workflow-tool-card h3 {
+    grid-column: 1;
     font-size: clamp(1.35rem, 6.5vw, 1.85rem);
   }
 
   .workflow-tool-card p {
+    grid-column: 1;
     font-size: 0.9rem;
     line-height: 1.5;
   }
 
   .workflow-tool-demo {
-    width: 100%;
+    grid-column: 1;
+    width: 100vw;
+    max-width: none;
     margin-top: 0.9rem;
+    margin-left: calc(-1 * var(--page-gutter));
+  }
+
+  .workflow-tool-demo figcaption {
+    padding-inline: var(--page-gutter);
+    text-align: left;
   }
 }
