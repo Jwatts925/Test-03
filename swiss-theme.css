@@ -1364,6 +1364,14 @@ summary:focus-visible {
   transform: scale(1.14);
 }
 
+#work .editorial-project-grid .project-card:nth-child(2) .project-visual img {
+  transform: translateY(-0.45rem) scale(1.1);
+}
+
+#work .editorial-project-grid .project-card:nth-child(2):hover .project-visual img {
+  transform: translateY(-0.45rem) scale(1.14);
+}
+
 /* Contact */
 .contact-section {
   padding: clamp(3.5rem, 7vw, 7rem) 0;
