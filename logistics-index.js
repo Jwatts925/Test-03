@@ -22,6 +22,14 @@ const logisticsProjects = [
     pageCount: 4,
     assetBase: "assets/logistics-proposal/ssf-wellness",
   },
+  {
+    name: "SEP 7",
+    slug: "sep7",
+    location: "San Francisco, CA",
+    startPage: 2,
+    endPage: 26,
+    assetBase: "assets/logistics-proposal/sep7",
+  },
 ];
 
 const waterproofingProjects = [
