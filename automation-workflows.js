@@ -233,6 +233,12 @@ const workflowToolDemos = {
     label: "Color Units by System workflow demonstration",
     caption: "Temporary unit-by-system color-checking workflow",
   },
+  "Export Schedules to Excel": {
+    src: "assets/tool-demos/export-schedules-to-excel.mp4",
+    poster: "assets/tool-demos/export-schedules-to-excel-poster.jpg",
+    label: "Export Schedules to Excel workflow demonstration",
+    caption: "Automated Revit schedule export to Excel workflow",
+  },
 };
 
 const workflowIndex = document.querySelector("[data-workflow-index]");

@@ -2880,6 +2880,10 @@ summary:focus-visible {
   padding-right: 0;
 }
 
+.workflow-tool-card.has-demo:nth-child(even) {
+  border-left: 0;
+}
+
 .workflow-tool-demo {
   grid-column: 2;
   width: min(100%, 72rem);
