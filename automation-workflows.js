@@ -215,6 +215,12 @@ const workflowToolDemos = {
     label: "Dimension Grids in Selected Floor Plans workflow demonstration",
     caption: "Automated selected-plan grid dimensioning workflow",
   },
+  "Dimension Grids and Levels in Elevations": {
+    src: "assets/tool-demos/dimension-grids-levels-elevations.mp4",
+    poster: "assets/tool-demos/dimension-grids-levels-elevations-poster.png",
+    label: "Dimension Grids and Levels in Elevations workflow demonstration",
+    caption: "Automated elevation grid and level dimensioning workflow",
+  },
   "Dimension One Wall in Plan": {
     src: "assets/tool-demos/single-wall-plan-view.mp4",
     poster: "assets/tool-demos/single-wall-plan-view-poster.jpg",
