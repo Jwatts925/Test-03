@@ -11,7 +11,6 @@ const workflowCategories = [
       ["Create Plan Views and Sheets", "Uses selected source views, levels, view types, templates, and sheet settings to build the standard plan-view set. The resulting views are named, assigned the appropriate template, placed on newly created sheets, and arranged using the established layout."],
       ["Create Sheets", "Takes a title block and reviewed sheet information such as sheet number and name. It creates the selected sheets after showing the proposed list so the entries can be checked before committing."],
       ["Duplicate Elevation Views", "Takes selected elevation views plus the desired view type, template, and naming information. It creates the requested duplicates and applies the selected view settings to the new elevation views."],
-      ["Set Sheet Titles", "Takes selected sheets and a CSV containing view names, titles, and architectural references. It matches the placed views by name, then updates their Title on Sheet and Arch Ref values."],
     ],
   },
   {
@@ -96,6 +95,7 @@ const workflowCategories = [
     tools: [
       ["Create Drafting Views from DWGs", "Takes a folder of DWG details plus the desired drafting-view type and view template. It creates or reuses the drafting-view type, imports the drawings into new drafting views, and applies the chosen template."],
       ["Renumber Details on Selected Sheets", "Takes a checked list of sheets and reviews the viewports placed on them. It assigns clean, sequential detail numbers on each selected sheet without relying on a sheet-number prefix."],
+      ["Set Detail Titles", "Takes selected sheets and a CSV containing view names, titles, and architectural references. It matches the placed views by name, then updates their Title on Sheet and Arch Ref values."],
       ["Create Elevation Detail Bubbles", "Takes visible mullions in an elevation and the available matching drafting details. It places reference detail bubbles at the applicable mullion conditions so the view points to the correct drafting detail."],
       ["Create Plan Detail Bubbles", "Takes visible mullions in a plan view and the available matching drafting details. It places the corresponding reference detail bubbles at the valid plan conditions."],
       ["Create Embed Plan Detail Bubbles", "Takes visible embeds or anchors in selected plan views and the matching detail references. It places reference bubbles at the applicable embed locations."],
