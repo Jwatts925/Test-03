@@ -233,6 +233,12 @@ const workflowToolDemos = {
     label: "Tag Infills in Current Elevation workflow demonstration",
     caption: "Automated current-elevation infill tagging workflow",
   },
+  "Tag Infills by Elevation Template": {
+    src: "assets/tool-demos/tag-infills-by-elevation-template.mp4",
+    poster: "assets/tool-demos/tag-infills-by-elevation-template-poster.png",
+    label: "Tag Infills by Elevation Template workflow demonstration",
+    caption: "Automated elevation-template infill tagging workflow",
+  },
   "Color Mullions": {
     src: "assets/tool-demos/color-mullions.mp4",
     poster: "assets/tool-demos/color-mullions-poster.jpg",
