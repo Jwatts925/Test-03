@@ -209,6 +209,12 @@ const workflowToolDemos = {
     label: "Dimension Grids in Current Floor Plan workflow demonstration",
     caption: "Automated current-plan grid dimensioning workflow",
   },
+  "Dimension Grids in Selected Floor Plans": {
+    src: "assets/tool-demos/dimension-grids-selected-floor-plans.mp4",
+    poster: "assets/tool-demos/dimension-grids-selected-floor-plans-poster.png",
+    label: "Dimension Grids in Selected Floor Plans workflow demonstration",
+    caption: "Automated selected-plan grid dimensioning workflow",
+  },
   "Dimension One Wall in Plan": {
     src: "assets/tool-demos/single-wall-plan-view.mp4",
     poster: "assets/tool-demos/single-wall-plan-view-poster.jpg",
