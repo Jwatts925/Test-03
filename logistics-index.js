@@ -27,7 +27,8 @@ const logisticsProjects = [
     slug: "sep7",
     location: "San Francisco, CA",
     startPage: 2,
-    endPage: 26,
+    endPage: 25,
+    assetVersion: "2",
     assetBase: "assets/logistics-proposal/sep7",
   },
 ];
@@ -81,7 +82,8 @@ const renderProjectIndex = (indexElement, projects, idPrefix, sheetType) => {
     const sheets = Array.from({ length: lastPage - firstPage + 1 }, (_, pageIndex) => {
       const page = pageIndex + firstPage;
       const pageLabel = String(page).padStart(2, "0");
-      const source = `${project.assetBase}/page-${pageLabel}.${project.extension ?? "webp"}`;
+      const assetVersion = project.assetVersion ? `?v=${project.assetVersion}` : "";
+      const source = `${project.assetBase}/page-${pageLabel}.${project.extension ?? "webp"}${assetVersion}`;
 
       return `
         <a class="logistics-sheet" href="${source}" target="_blank" rel="noopener" aria-label="Open ${project.name} ${sheetType} page ${page}">
