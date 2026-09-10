@@ -203,6 +203,12 @@ const workflowToolDemos = {
     label: "Create Sheets workflow demonstration",
     caption: "Automated sheet-series creation workflow",
   },
+  "Create Wall Plan Callouts": {
+    src: "assets/tool-demos/create-wall-plan-callouts.mp4",
+    poster: "assets/tool-demos/create-wall-plan-callouts-poster.png",
+    label: "Create Wall Plan Callouts workflow demonstration",
+    caption: "Automated wall plan callout creation workflow",
+  },
   "Dimension Grids in Current Floor Plan": {
     src: "assets/tool-demos/dimension-grids-current-floor-plan.mp4",
     poster: "assets/tool-demos/dimension-grids-current-floor-plan-poster.jpg",
@@ -226,6 +232,18 @@ const workflowToolDemos = {
     poster: "assets/tool-demos/single-wall-plan-view-poster.jpg",
     label: "Dimension One Wall in Plan workflow demonstration",
     caption: "Automated single-wall plan dimensioning workflow",
+  },
+  "Rotate Current Crop 180°": {
+    src: "assets/tool-demos/rotate-current-crop-180.mp4",
+    poster: "assets/tool-demos/rotate-current-crop-180-poster.png",
+    label: "Rotate Current Crop 180 degrees workflow demonstration",
+    caption: "Automated 180-degree plan crop rotation workflow",
+  },
+  "Rotate Current Crop 90° Clockwise": {
+    src: "assets/tool-demos/rotate-current-crop-90-clockwise.mp4",
+    poster: "assets/tool-demos/rotate-current-crop-90-clockwise-poster.png",
+    label: "Rotate Current Crop 90 degrees clockwise workflow demonstration",
+    caption: "Automated clockwise plan crop rotation workflow",
   },
   "Tag Infills in Current Elevation": {
     src: "assets/tool-demos/tag-infills-current-elevation.mp4",
