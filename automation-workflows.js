@@ -14,12 +14,6 @@ const workflowCategories = [
     ],
   },
   {
-    title: "Schedules",
-    tools: [
-      ["Duplicate Schedules", "Takes a base schedule and reads the unique Part Numbers found on Generic Models in the project. It creates a filtered copy of the schedule for each part number while skipping schedule names that already exist."],
-    ],
-  },
-  {
     title: "Callouts",
     tools: [
       ["Create Wall Plan Callouts", "Takes walls selected in a plan view along with a callout type, view template, and name suffix. It creates cropped plan callouts around those walls and avoids creating another callout when the matching wall comment has already been used."],
