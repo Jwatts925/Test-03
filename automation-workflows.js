@@ -269,6 +269,12 @@ const workflowToolDemos = {
     label: "Export Schedules to Excel workflow demonstration",
     caption: "Automated Revit schedule export to Excel workflow",
   },
+  "Export Glass Pricing": {
+    src: "assets/tool-demos/export-glass-pricing.mp4",
+    poster: "assets/tool-demos/export-glass-pricing-poster.png",
+    label: "Export Glass Pricing workflow demonstration",
+    caption: "Automated Revit glass pricing export workflow",
+  },
 };
 
 const workflowIndex = document.querySelector("[data-workflow-index]");
