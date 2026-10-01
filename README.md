@@ -14,7 +14,7 @@ A responsive GitHub Pages portfolio focused on BIM, preconstruction, facade syst
 ## Main editing files
 
 - `swiss-theme.css` — current Athletics typography, colors, grids, spacing, and responsive layout
-- `style.css` — original/base styling and shared presentation rules
+- `style.css` — original/base styling
 - `script.js` — section expansion, navigation behavior, and contact fasteners
 - `project-index.js` — project names, locations, project details, image counts, and project-index interactions
 
@@ -29,7 +29,7 @@ A responsive GitHub Pages portfolio focused on BIM, preconstruction, facade syst
 
 ## Model presentation
 
-The public site uses pre-rendered MP4 animations rather than publishing raw IFC or Fragment model data. Files ending in `.ifc` or `.frag` are excluded from Git and must remain local.
+The public site uses pre-rendered MP4 animations rather than publishing raw IFC or Fragment model data. Files ending in `.ifc` or `.frag` are excluded from Git and must remain local. The retired interactive IFC viewer and its build dependencies have been removed from the public repository.
 
 ## Publishing
 
