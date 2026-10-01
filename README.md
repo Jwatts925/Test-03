@@ -14,8 +14,8 @@ A responsive GitHub Pages portfolio focused on BIM, preconstruction, facade syst
 ## Main editing files
 
 - `swiss-theme.css` — current Athletics typography, colors, grids, spacing, and responsive layout
-- `style.css` — original/base styling and shared IFC presentation rules
-- `script.js` — section expansion, navigation behavior, contact fasteners, and IFC interaction controls
+- `style.css` — original/base styling and shared presentation rules
+- `script.js` — section expansion, navigation behavior, and contact fasteners
 - `project-index.js` — project names, locations, project details, image counts, and project-index interactions
 
 ## Assets
@@ -25,29 +25,11 @@ A responsive GitHub Pages portfolio focused on BIM, preconstruction, facade syst
 - `assets/logistics-proposal/` — selected Logistics & Proposals sheets
 - `assets/contact-fasteners-layout/` — contact-section fastener artwork
 - `assets/fonts/` — Athletics Sans font family
-- `assets/models/` — source IFC files and optimized Fragment models
+- `assets/*-home-spin.mp4` — sanitized, rendered model animations used on the home page
 
-## IFC viewer workflow
+## Model presentation
 
-The site displays prepared `.frag` models so visitors do not need to parse full IFC files in the browser. The viewer source is `src/ifc-viewer.js`, and Vite builds the browser bundle as `assets/ifc-viewer-app.js`.
-
-The four home-page models are embedded through:
-
-- `ifc-home-01.html`
-- `ifc-home-02.html`
-- `ifc-home-03.html`
-- `ifc-home-04.html`
-
-The interactive 3D Modeling page uses `ifc-viewer.html`, `ifc-viewer-02.html`, and `ifc-hidden-line-spin.html`.
-
-To rebuild available IFC sources and the viewer bundle:
-
-```text
-pnpm install
-pnpm run build:ifc
-```
-
-`scripts/convert-ifc.mjs` controls the IFC-to-Fragments conversion. Keep `assets/ifc/fragments-worker.mjs` with the built viewer files.
+The public site uses pre-rendered MP4 animations rather than publishing raw IFC or Fragment model data. Files ending in `.ifc` or `.frag` are excluded from Git and must remain local.
 
 ## Publishing
 
